@@ -7,6 +7,8 @@ import Signup from "./pages/Signup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/Profile";
 
+console.log("test")
+
 function App() {
   return (
     <div className="App">
