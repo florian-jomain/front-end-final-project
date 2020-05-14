@@ -24,9 +24,14 @@ const NavMain = (props) => {
       <NavLink exact to="/">
         <h3 className="logo">dev43</h3>
       </NavLink>
+
       <ul className="nav-list">
         {context.isLoggedIn && (
           <React.Fragment>
+            <li>
+              <NavLink to="/UI">(UI)</NavLink>
+            </li>
+
             <li>
               <NavLink to="/profile">
                 {context.user && context.user.email}
@@ -39,6 +44,10 @@ const NavMain = (props) => {
         )}
         {!context.isLoggedIn && (
           <React.Fragment>
+            <li>
+              <NavLink to="/UI">(UI)</NavLink>
+            </li>
+
             <li>
               <NavLink to="/signin">Log in</NavLink>
             </li>

@@ -10,6 +10,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import PrivateProfile from "./pages/PrivateProfile";
 import PublicProfile from "./pages/PublicProfile";
 import Error404 from "./pages/Error404";
+import UIComponents from "./pages/UIComponents";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/projects" component={Projects} />
         <Route exact path="/users" component={Users} />
+
+        <Route exact path="/UI" component={UIComponents} />
 
         {/* Routing to the public profile page */}
         <Route exact path="/profile" component={PublicProfile} />
