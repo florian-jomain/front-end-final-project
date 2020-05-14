@@ -7,17 +7,15 @@ import Signup from "./pages/Signup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/Profile";
 
-console.log("test")
-
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <NavMain />
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/signin" component={Signin} />
-        <Route exact path="/signup" component={Signup} />
-        <ProtectedRoute exact path="/profile" component={Profile} />
+        <Route exact path='/' component={Home} />
+        <Route exact path='/signin' component={Signin} />
+        <Route exact path='/signup' component={Signup} />
+        <ProtectedRoute exact path='/profile' component={Profile} />
       </Switch>
     </div>
   );
