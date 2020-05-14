@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { withUser } from "../components/Auth/withUser";
 import apiHandler from "../api/apiHandler";
 
-import "../styles/NavMain.css";
+import "../App.scss";
 
 const NavMain = (props) => {
   const { context } = props;
@@ -22,7 +22,7 @@ const NavMain = (props) => {
   return (
     <nav className="NavMain">
       <NavLink exact to="/">
-        <h3 className="logo">App name</h3>
+        <h3 className="logo">dev43</h3>
       </NavLink>
       <ul className="nav-list">
         {context.isLoggedIn && (

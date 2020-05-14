@@ -1,6 +1,6 @@
 import React from "react";
 
-const Profile = (props) => {
+const PrivateProfile = (props) => {
   return (
     <div>
       <h1>Protected profile</h1>
@@ -8,4 +8,4 @@ const Profile = (props) => {
   );
 };
 
-export default Profile;
+export default PrivateProfile;
