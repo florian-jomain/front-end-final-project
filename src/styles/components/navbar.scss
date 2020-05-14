@@ -10,6 +10,13 @@
 .NavMain .nav-list {
   margin-left: auto;
   display: flex;
+
+  a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-weight: 600;
+  }
 }
 
 .NavMain .nav-list li:not(:last-child) {

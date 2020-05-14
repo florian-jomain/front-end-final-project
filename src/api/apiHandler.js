@@ -16,9 +16,16 @@ function errorHandler(error) {
 export default {
   service,
 
-  signup(userInfo) {
+  signupHelper(userInfo) {
     return service
-      .post("/api/auth/signup", userInfo)
+      .post("/api/auth/signup/helper", userInfo)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  signupCharity(userInfo) {
+    return service
+      .post("/api/auth/signup/charity", userInfo)
       .then((res) => res.data)
       .catch(errorHandler);
   },
@@ -44,9 +51,37 @@ export default {
       .catch(errorHandler);
   },
 
-  getItems() {
+  getProjects() {
     return service
-      .get("/api/items")
+      .get("/api/projects")
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  getOneProject(id) {
+    return service
+      .get(`/api/projects/${id}`)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  createProject(data) {
+    return service
+      .post(`/api/projects/`, data)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  editProject(id, data) {
+    return service
+      .patch(`/api/projects/${id}`, data)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  deleteProject(id) {
+    return service
+      .delete(`/api/items/${id}`)
       .then((res) => res.data)
       .catch(errorHandler);
   },

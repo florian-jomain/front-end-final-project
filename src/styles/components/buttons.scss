@@ -3,6 +3,7 @@ button {
   border-radius: 50px;
   font-size: 16px;
   border: none;
+  cursor: pointer;
 }
 
 .primaryButton {
@@ -13,4 +14,9 @@ button {
 .secondaryButton {
   background: white;
   color: black;
+}
+
+.tertiary {
+  background: transparent;
+  border: 1px solid black;
 }
