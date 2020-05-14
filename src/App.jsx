@@ -13,6 +13,7 @@ import PrivateProfile from './pages/PrivateProfile'
 import PublicProfile from './pages/PublicProfile'
 import Error404 from './pages/Error404'
 import UIComponents from './pages/UIComponents'
+import './fonts/bodoni/BodoniFLF-Roman.ttf'
 
 function App() {
   return (

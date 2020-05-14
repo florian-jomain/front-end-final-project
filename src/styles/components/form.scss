@@ -1,0 +1,26 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .form__group {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-top: 10px;
+    }
+
+    input {
+      margin-top: 5px;
+      height: 45px;
+      border: 1px solid $lightGrey;
+      border-radius: $radius__small;
+    }
+  }
+
+  button {
+    margin-top: 20px;
+    line-height: 32px;
+  }
+}
