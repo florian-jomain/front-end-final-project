@@ -3,7 +3,7 @@ import React from "react";
 const Error404 = (props) => {
   return (
     <div>
-      <h1>Not found 🥺</h1>
+      <span role="img" aria-label="sad">Not found 🥺</span>
     </div>
   );
 };
