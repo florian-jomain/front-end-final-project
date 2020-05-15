@@ -28,7 +28,7 @@ function App() {
         <Route exact path="/projects" component={Projects} />
         <Route exact path="/users" component={Users} />
 
-        <Route exact path="/UI" component={UIComponents} />
+        <Route exact path="/ui" component={UIComponents} />
 
         {/* Routing to the public profile page */}
         <Route exact path="/profile" component={PublicProfile} />

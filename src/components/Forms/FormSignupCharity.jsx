@@ -42,12 +42,27 @@ class FormSignupCharity extends Component {
   render() {
     return (
       <div>
-        <p> Charity</p>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" />
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password" />
+          <div className="form__group">
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" />
+          </div>
+
+          <div className="form__group">
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" name="password" />
+          </div>
+
+          <div className="form__group">
+            <label htmlFor="username">Username</label>
+            <input type="username" id="username" name="username" />
+          </div>
+
+          <div className="form__group">
+            <label htmlFor="name">Name</label>
+            <input type="name" id="name" name="name" />
+          </div>
+
           <Button type="primary">Get started!</Button>
         </form>
       </div>
