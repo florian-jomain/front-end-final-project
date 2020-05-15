@@ -1,8 +1,10 @@
 .Categories {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 100px;
+  padding: 0;
+  align-items: center;
 }
 
 .LinkBox__container {
@@ -12,4 +14,5 @@
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+  max-width: 700px;
 }

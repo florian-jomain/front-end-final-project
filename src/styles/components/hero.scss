@@ -1,15 +1,31 @@
 .Hero {
-  height: 50vh;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap-reverse;
   justify-content: center;
+  flex-wrap: wrap-reverse;
   align-items: center;
-  padding: 100px;
+  margin-top: 70px;
 
   .illustration__container {
-    flex: 2;
-    min-width: 350px;
-    max-width: 600px;
+    // flex: 3;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 767px) {
+  .Hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 30px;
+
+    .illustration__container {
+      // flex: 1;
+      min-width: 200px;
+      max-width: 500px;
+    }
   }
 }

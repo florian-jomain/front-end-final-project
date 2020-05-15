@@ -11,6 +11,8 @@ function Categories() {
           <LinkBox emoji="🐯" title="Animals" text="14 projects" link="/" />
           <LinkBox emoji="🐯" title="Animals" text="14 projects" link="/" />
           <LinkBox emoji="🐯" title="Animals" text="14 projects" link="/" />
+          <LinkBox emoji="🐯" title="Animals" text="14 projects" link="/" />
+          <LinkBox emoji="🐯" title="Animals" text="14 projects" link="/" />
         </div>
       </section>
     </React.Fragment>
