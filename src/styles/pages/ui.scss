@@ -1,0 +1,17 @@
+.ui__page {
+  max-width: 500px;
+  margin: 60px auto;
+
+  section {
+    padding: 60px 0;
+  }
+
+  .buttons button:not(:last-child) {
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+
+  .text p {
+    margin-bottom: 32px;
+  }
+}

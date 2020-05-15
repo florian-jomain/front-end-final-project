@@ -1,0 +1,12 @@
+.signup__page {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px;
+
+  .form {
+    background: white;
+    padding: 30px;
+    border-radius: $radius__medium;
+    margin-top: 50px;
+  }
+}

@@ -1,32 +1,42 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { withUser } from "../components/Auth/withUser";
-import apiHandler from "../api/apiHandler";
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { withUser } from '../components/Auth/withUser'
+import apiHandler from '../api/apiHandler'
+import Button from '../components/UI/Button'
 
-import "../styles/NavMain.css";
+import '../App.scss'
 
 const NavMain = (props) => {
-  const { context } = props;
+  const { context } = props
 
   function handleLogout() {
     apiHandler
       .logout()
       .then(() => {
-        context.removeUser();
+        context.removeUser()
       })
       .catch((error) => {
-        console.log(error);
-      });
+        console.log(error)
+      })
   }
 
   return (
     <nav className="NavMain">
       <NavLink exact to="/">
-        <h3 className="logo">App name</h3>
+        <h3 className="logo">dev43</h3>
       </NavLink>
+
       <ul className="nav-list">
         {context.isLoggedIn && (
           <React.Fragment>
+            <li>
+              <NavLink to="/UI">UI</NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/project">Browse project</NavLink>
+            </li>
+
             <li>
               <NavLink to="/profile">
                 {context.user && context.user.email}
@@ -40,16 +50,27 @@ const NavMain = (props) => {
         {!context.isLoggedIn && (
           <React.Fragment>
             <li>
-              <NavLink to="/signin">Log in</NavLink>
+              <NavLink to="/UI">UI</NavLink>
             </li>
+
             <li>
-              <NavLink to="/signup">Create account</NavLink>
+              <NavLink to="/signup">Sign up</NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/projects">Browse project</NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/signin">
+                <Button type="secondary">Log in</Button>
+              </NavLink>
             </li>
           </React.Fragment>
         )}
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default withUser(NavMain);
+export default withUser(NavMain)

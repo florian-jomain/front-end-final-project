@@ -3,13 +3,20 @@
   color: rgb(57, 57, 57);
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 40px 60px;
   height: 70px;
 }
 
 .NavMain .nav-list {
   margin-left: auto;
   display: flex;
+
+  a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-weight: 600;
+  }
 }
 
 .NavMain .nav-list li:not(:last-child) {

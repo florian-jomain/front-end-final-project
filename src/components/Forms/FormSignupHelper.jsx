@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-
-import UserContext from '../Auth/UserContext'
 import { withRouter } from 'react-router-dom'
+import UserContext from '../Auth/UserContext'
 import apiHandler from '../../api/apiHandler'
 import Button from '../../components/UI/Button'
 
-class FormSignin extends Component {
+class FormSignupCharity extends Component {
   static contextType = UserContext
 
   state = {
@@ -14,15 +13,14 @@ class FormSignin extends Component {
   }
 
   handleChange = (event) => {
-    const key = event.target.name
-
-    // You can test more if you have to handle different sorts of inputs.
     const value =
       event.target.type === 'file'
         ? event.target.files[0]
         : event.target.type === 'checkbox'
         ? event.target.checked
         : event.target.value
+
+    const key = event.target.name
 
     this.setState({ [key]: value })
   }
@@ -31,28 +29,33 @@ class FormSignin extends Component {
     event.preventDefault()
 
     apiHandler
-      .signin(this.state)
+      .signup(this.state)
       .then((data) => {
         this.context.setUser(data)
         this.props.history.push('/')
       })
       .catch((error) => {
         console.log(error)
-        // Display error message here, if you set the state
       })
   }
 
   render() {
     return (
-      <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-        <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" />
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" name="password" />
-        <Button type="primary">Let's go!</Button>
-      </form>
+      <div>
+        <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
+          <div className="form__group">
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div className="form__group">
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" name="password" />
+          </div>
+          <Button type="primary">Get started!</Button>
+        </form>
+      </div>
     )
   }
 }
 
-export default withRouter(FormSignin)
+export default withRouter(FormSignupCharity)
