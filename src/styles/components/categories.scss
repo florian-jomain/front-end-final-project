@@ -1,0 +1,15 @@
+.Categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 100px;
+}
+
+.LinkBox__container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}

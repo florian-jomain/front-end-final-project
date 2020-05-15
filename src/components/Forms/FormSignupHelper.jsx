@@ -4,7 +4,7 @@ import UserContext from '../Auth/UserContext'
 import apiHandler from '../../api/apiHandler'
 import Button from '../../components/UI/Button'
 
-class FormSignupCharity extends Component {
+class FormSignupHelper extends Component {
   static contextType = UserContext
 
   state = {
@@ -29,7 +29,7 @@ class FormSignupCharity extends Component {
     event.preventDefault()
 
     apiHandler
-      .signup(this.state)
+      .signupHelper(this.state)
       .then((data) => {
         this.context.setUser(data)
         this.props.history.push('/')
@@ -47,10 +47,22 @@ class FormSignupCharity extends Component {
             <label htmlFor="email">Email</label>
             <input type="email" id="email" name="email" />
           </div>
+
           <div className="form__group">
             <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" />
           </div>
+
+          <div className="form__group">
+            <label htmlFor="username">Username</label>
+            <input type="username" id="username" name="username" />
+          </div>
+
+          <div className="form__group">
+            <label htmlFor="name">Name</label>
+            <input type="name" id="name" name="name" />
+          </div>
+
           <Button type="primary">Get started!</Button>
         </form>
       </div>
@@ -58,4 +70,4 @@ class FormSignupCharity extends Component {
   }
 }
 
-export default withRouter(FormSignupCharity)
+export default withRouter(FormSignupHelper)

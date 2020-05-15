@@ -1,0 +1,12 @@
+.text__container {
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin-right: 60px;
+
+  button {
+    margin-top: 20px;
+  }
+}

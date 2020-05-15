@@ -1,0 +1,11 @@
+.LinkBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.LinkBox:not(:last-child) {
+  margin-right: 50px;
+}
