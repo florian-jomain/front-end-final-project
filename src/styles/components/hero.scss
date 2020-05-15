@@ -1,0 +1,15 @@
+.Hero {
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+
+  .illustration__container {
+    flex: 2;
+    min-width: 350px;
+    max-width: 600px;
+  }
+}

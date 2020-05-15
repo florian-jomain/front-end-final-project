@@ -2,9 +2,13 @@
 @import 'setup.scss';
 
 @import 'styles/components/navbar.scss';
-// @import "styles/pages/navbar.scss";
-@import 'styles/reset.scss';
+@import 'styles/components/hero.scss';
+@import 'styles/components/categories.scss';
+@import 'styles/components/textContainer.scss';
+@import 'styles/components/linkBox.scss';
 
+@import 'styles/reset.scss';
+// @import "styles/pages/navbar.scss";
 // Pages
 @import 'styles/pages/ui.scss';
 @import 'styles/pages/signup.scss';
