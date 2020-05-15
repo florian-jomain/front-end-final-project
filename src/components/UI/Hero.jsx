@@ -11,7 +11,7 @@ function Hero() {
         <TextContainer
           title="Lorem ipsum"
           text={HeroText}
-          button="true"
+          button={true}
           buttonType="primary"
           buttonLink="/signup"
           buttonText="Create account"

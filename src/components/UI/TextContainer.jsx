@@ -8,7 +8,7 @@ function Hero(props) {
       <div className="text__container">
         <h1 className="serif">{props.title}</h1>
         <p>{props.text}</p>
-        {!props.button.true && (
+        {props.button && (
           <NavLink to={props.buttonLink}>
             <Button type={props.buttonType}>{props.buttonText}</Button>
           </NavLink>

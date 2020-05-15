@@ -3,11 +3,15 @@ import { NavLink } from 'react-router-dom'
 
 function LinkBox(props) {
   return (
-    <div className="LinkBox">
-      <span>{props.emoji}</span>
-      <h4 className="serif">{props.title}</h4>
-      <p>{props.text}</p>
-    </div>
+    <React.Fragment>
+      <NavLink to={props.link}>
+        <div className="LinkBox">
+          <span>{props.emoji}</span>
+          <h4 className="serif">{props.title}</h4>
+          <p>{props.text}</p>
+        </div>
+      </NavLink>
+    </React.Fragment>
   )
 }
 
