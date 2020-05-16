@@ -1,19 +1,19 @@
 import React from 'react'
 
 function ButtonPrimary(props) {
-  let buttonClass = "primaryButton"
+  let buttonClass = 'secondaryButton'
   switch (props.type) {
-    case "primary":
-      buttonClass = "primaryButton";
-      break;
-    case "secondary":
-      buttonClass = "secondaryButton";
-      break;
-    case "tertiary":
-      buttonClass = "tertiary";
-      break;
+    case 'primary':
+      buttonClass = 'primaryButton'
+      break
+    case 'secondary':
+      buttonClass = 'secondaryButton'
+      break
+    case 'tertiary':
+      buttonClass = 'tertiaryButton'
+      break
     default:
-      break;
+      break
   }
 
   return (

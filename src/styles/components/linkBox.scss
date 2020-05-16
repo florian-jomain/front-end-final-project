@@ -5,6 +5,8 @@
   align-items: center;
   padding: 30px;
   margin: 10px;
+  transition: all 0.7s ease;
+  background: 255, 255, 255, 0;
 }
 
 .LinkBox:not(:last-child) {
@@ -12,7 +14,9 @@
 }
 
 .LinkBox:hover {
+  opacity: 1;
   background: white;
+  transform: translate3d(0px, -1px, 0px);
   border-radius: $radius__medium;
   box-shadow: 0 0.9px 4px rgba(0, 0, 0, 0.006),
     0 2.1px 8.5px rgba(0, 0, 0, 0.008), 0 3.9px 14.1px rgba(0, 0, 0, 0.01),

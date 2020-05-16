@@ -30,7 +30,7 @@ const NavMain = (props) => {
         {context.isLoggedIn && (
           <React.Fragment>
             <li>
-              <NavLink to="/UI">UI</NavLink>
+              <NavLink to="/ui">UI</NavLink>
             </li>
 
             <li>
@@ -50,7 +50,7 @@ const NavMain = (props) => {
         {!context.isLoggedIn && (
           <React.Fragment>
             <li>
-              <NavLink to="/UI">UI</NavLink>
+              <NavLink to="/ui">UI</NavLink>
             </li>
 
             <li>
