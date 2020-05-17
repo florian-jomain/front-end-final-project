@@ -1,7 +1,5 @@
 import React from "react";
-// import FormSignUpHelper from "../components/Forms/FormSignupHelper";
-import FormSignupHelperTemp from "../components/Forms/FormSignUpHelperTemp";
-import FormSignupHelperTemp2 from "../components/Forms/FormSignUpHelperTemp2";
+import FormSignUpHelper from "../components/Forms/FormSignupHelper";
 
 const SignupHelper = () => {
   return (
@@ -13,9 +11,7 @@ const SignupHelper = () => {
           like-minded. Become a digital volunteer today.
         </p>
         <div className='form'>
-          {/* <FormSignupHelperTemp /> */}
-          <FormSignupHelperTemp2 />
-          {/* <FormSignUpHelper /> */}
+          <FormSignUpHelper />
         </div>
       </section>
     </React.Fragment>
