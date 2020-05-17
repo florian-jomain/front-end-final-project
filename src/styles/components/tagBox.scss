@@ -1,0 +1,31 @@
+.tag-box input {
+    width: 100%;
+    padding: 10px;
+}
+
+.tag-box-pills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag-box-pill {
+    height: 30px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #F5F5FB;
+    border-radius: $radius__medium;
+    padding: 10px;
+
+    .tag-box-pill-text {
+        font-weight: 600;
+    }
+
+    .remove {
+        padding: 0;
+        margin: 10px;
+        font-weight: 900;
+        font-size: 24px;
+        background-color: transparent;
+    }
+}
