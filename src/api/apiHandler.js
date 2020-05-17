@@ -67,7 +67,7 @@ export default {
 
   createProject(data) {
     return service
-      .post(`/api/projects/`, data)
+      .post(`/api/projects/create`, data)
       .then((res) => res.data)
       .catch(errorHandler);
   },
