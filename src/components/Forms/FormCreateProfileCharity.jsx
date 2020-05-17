@@ -3,9 +3,8 @@ import { withRouter } from "react-router-dom";
 import UserContext from "../Auth/UserContext";
 import apiHandler from "../../api/apiHandler";
 import Button from "../../components/UI/Button";
-import TagBox from "../UI/TagBox";
 
-class FormCreateProfileHelper extends Component {
+class FormCreateProfileCharity extends Component {
   static contextType = UserContext;
 
   state = {
@@ -14,9 +13,6 @@ class FormCreateProfileHelper extends Component {
     links:[],
     bio:"",
     location:"",
-    phone:"",
-    tags: [],
-    selected: [],
   };
 
   handleChange = (event) => {
@@ -29,8 +25,6 @@ class FormCreateProfileHelper extends Component {
 
     const key = event.target.name;
 
-    console.log(UserContext)
-
     this.setState({ [key]: value });
   };
 
@@ -38,7 +32,7 @@ class FormCreateProfileHelper extends Component {
     event.preventDefault();
 
     apiHandler
-      .createProfileHelper(this.state)
+      .createProfileCharity(this.state)
       .then((data) => {
         this.context.setUser(data);
         this.props.history.push("/");
@@ -62,20 +56,12 @@ class FormCreateProfileHelper extends Component {
             <input type='file' id='image' name='image' />
           </div>
           <div className='form__group'>
-            <label htmlFor='tags'>Skills</label>
-            <TagBox />
-          </div>
-          <div className='form__group'>
             <label htmlFor='bio'>Your Bio</label>
             <input type='text' id='bio' name='bio' />
           </div>
           <div className='form__group'>
             <label htmlFor='location'>Location</label>
             <input type='text' id='location' name='location' />
-          </div>
-          <div className='form__group'>
-            <label htmlFor='phone'>Phone</label>
-            <input type='text' id='phone' name='phone' />
           </div>
           <div className='form__group'>
             <label htmlFor='links'>Links</label>
@@ -89,4 +75,4 @@ class FormCreateProfileHelper extends Component {
   }
 }
 
-export default withRouter(FormCreateProfileHelper);
+export default withRouter(FormCreateProfileCharity);

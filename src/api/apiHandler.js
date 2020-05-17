@@ -85,4 +85,18 @@ export default {
       .then((res) => res.data)
       .catch(errorHandler);
   },
+
+  createProfileHelper(userInfo) {
+    return service
+      .patch("/api/helpers/create/5ec12e1620d3b338667089c2", userInfo)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  createProfileCharity(userInfo) {
+    return service
+      .patch("/api/charities/create/5ec13a818bc8923bf61fbdf3", userInfo)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
 };

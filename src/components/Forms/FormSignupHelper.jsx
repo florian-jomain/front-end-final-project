@@ -35,7 +35,7 @@ class FormSignUpHelper extends Component {
       .signupHelper(this.state)
       .then((data) => {
         this.context.setUser(data);
-        this.props.history.push("/");
+        this.props.history.push("/helpers/create/"+data._id);
       })
       .catch((error) => {
         console.log(error);

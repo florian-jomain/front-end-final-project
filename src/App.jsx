@@ -15,6 +15,7 @@ import Error404 from "./pages/Error404";
 import UIComponents from "./pages/UIComponents";
 import "./fonts/bodoni/BodoniFLF-Roman.ttf";
 import CreateProfileHelper from "./pages/CreateProfileHelper";
+import CreateProfileCharity from "./pages/CreateProfileCharity";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
         <Route exact path='/projects' component={Projects} />
         <Route exact path='/users' component={Users} />
         <Route exact path='/helpers/create/:id' component={CreateProfileHelper} />
-
+        <Route exact path='/charities/create/:id' component={CreateProfileCharity} />
 
         <Route exact path="/ui" component={UIComponents} />
 
