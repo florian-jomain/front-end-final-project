@@ -5,7 +5,7 @@ import apiHandler from "../../api/apiHandler";
 import Button from "../../components/UI/Button";
 import TagBox from "../UI/TagBox";
 
-class FormSignUpHelper extends Component {
+class FormCreateProfileHelper extends Component {
   static contextType = UserContext;
 
   state = {
@@ -47,30 +47,40 @@ class FormSignUpHelper extends Component {
       <div>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <div className='form__group'>
-            <label htmlFor='email'>Email</label>
-            <input type='email' id='email' name='email' />
-          </div>
-          <div className='form__group'>
-            <label htmlFor='password'>Password</label>
-            <input type='password' id='password' name='password' />
-          </div>
-          <div className='form__group'>
-            <label htmlFor='name'>Name</label>
-            <input type='text' id='name' name='name' />
-          </div>
           <div className='form__group'>
             <label htmlFor='username'>Username</label>
             <input type='text' id='username' name='username' />
           </div>
           <div className='form__group'>
+            <label htmlFor='image'>Profile Picture</label>
+            <input type='file' id='image' name='image' />
+          </div>
+          <div className='form__group'>
             <label htmlFor='tags'>Skills</label>
             <TagBox />
           </div>
+          <div className='form__group'>
+            <label htmlFor='bio'>Your Bio</label>
+            <input type='text' id='bio' name='bio' />
+          </div>
+          <div className='form__group'>
+            <label htmlFor='location'>Location</label>
+            <input type='text' id='location' name='location' />
+          </div>
+          <div className='form__group'>
+            <label htmlFor='phone'>Phone</label>
+            <input type='text' id='phone' name='phone' />
+          </div>
+          <div className='form__group'>
+            <label htmlFor='links'>Links</label>
+            <input type='text' id='links' name='links' />
+          </div>
           <Button type='primary'>Get started!</Button>
+          </div>
         </form>
       </div>
     );
   }
 }
 
-export default withRouter(FormSignUpHelper);
+export default withRouter(FormCreateProfileHelper);
