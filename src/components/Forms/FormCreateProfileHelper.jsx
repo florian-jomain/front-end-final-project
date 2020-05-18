@@ -120,9 +120,12 @@ class FormCreateProfileHelper extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    var formData = new FormData()
+    formData.append("image",this.state.image)
+    formData.append("links",this.state.links)
 
     apiHandler
-      .createProfileHelper(this.state, this.context.user._id)
+      .createProfileHelper(formData, this.context.user._id)
       .then((data) => {
         this.context.setUser(data);
         this.props.history.push("/");

@@ -86,9 +86,9 @@ export default {
       .catch(errorHandler);
   },
 
-  createProfileHelper(userInfo, id) {
+  createProfileHelper(userInfo) {
     return service
-      .patch("/api/helpers/create/"+id, userInfo)
+      .patch("/api/helpers/create/", userInfo)
       .then((res) => res.data)
       .catch(errorHandler);
   },
