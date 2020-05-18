@@ -3,7 +3,91 @@ import { withRouter } from "react-router-dom";
 import UserContext from "../Auth/UserContext";
 import apiHandler from "../../api/apiHandler";
 import Button from "../../components/UI/Button";
-import TagBox from "../UI/TagBox";
+import { TagBox } from "react-tag-box";
+
+const options = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Node.js",
+  "Express",
+  "MongoDB",
+  "Ruby",
+  "Rails",
+  "MySQL",
+  "NoSQL",
+  "PHP",
+  "Python",
+  "C",
+  "C++",
+  "TypeScript",
+  "Vue.js",
+  "Angular",
+  "Java",
+  "Docker",
+  "Azure",
+  "React Native",
+  "Swift",
+  "Redux",
+  "GraphQL",
+  "Android",
+  "Fullstack",
+  "Bootstrap",
+  "Spring",
+  "PostgreSQL",
+  "Agile methodology",
+  "jhipster",
+  "Heroku",
+  "Netlify",
+  "Wordpress",
+  "Ionic",
+  "Firebase",
+  "Meteor.js",
+  "API",
+  "Django",
+  "Git",
+  "Symfony",
+  "Scrum",
+  "Laravel",
+  "Semantic UI",
+  "jQuery",
+  "Figma",
+  "Sketch",
+  "InVision",
+  "Zeplin",
+  "Adobe Photoshop",
+  "Adobe InDesign",
+  "Adobe Illustrator",
+  "Product Design",
+  "User Testing",
+  "UI Design",
+  "UX Design",
+  "Design Thinking",
+  "Service Design",
+  "Logo Design",
+  "Graphic Design",
+  "Print Design",
+  "Workshops",
+  "Wireframing",
+  "Webdesign",
+  "Artistic Direction",
+  "Mobile Design",
+  "Project Management",
+  "Reporting",
+  "Data analytics",
+  "Web analytics",
+  "Product Management",
+  "Design Sprint",
+  "E-commerce",
+  "Go",
+].map((option) => ({
+  label: option.toLowerCase(),
+  value: option.toLowerCase(),
+  name: option.toLowerCase(),
+}));
+
+let tagsArray = [];
 
 class FormCreateProject extends Component {
   static contextType = UserContext;
@@ -11,7 +95,7 @@ class FormCreateProject extends Component {
   state = {
     email: "",
     password: "",
-    tags: [],
+    tags: options,
     selected: [],
   };
 
@@ -42,6 +126,25 @@ class FormCreateProject extends Component {
       });
   };
 
+  onSelect = (tag) => {
+    const newTag = {
+      label: tag.label,
+      value: tag.value || tag.label,
+      name: tag.name || tag.label,
+    };
+    tagsArray.push(newTag);
+
+    this.setState({
+      selected: tagsArray,
+    });
+  };
+
+  remove = (tag) => {
+    this.setState({
+      selected: this.state.selected.filter((t) => t.value !== tag.value),
+    });
+  };
+
   render() {
     return (
       <div>
@@ -60,38 +163,44 @@ class FormCreateProject extends Component {
           </div>
           <div className='form__group'>
             <label htmlFor='category'>Category</label>
-            <select name="category">
-            <option value="Covid-19">Covid-19</option>
-            <option value="Education">Education</option>
-            <option value="Arts">Arts</option>
-            <option value="Animals">Animals</option>
-            <option value="Environment">Environment</option>
-            <option value="Poverty">Poverty</option>
-            <option value="Equality">Equality</option>
-          </select>
+            <select name='category'>
+              <option value='Covid-19'>Covid-19</option>
+              <option value='Education'>Education</option>
+              <option value='Arts'>Arts</option>
+              <option value='Animals'>Animals</option>
+              <option value='Environment'>Environment</option>
+              <option value='Poverty'>Poverty</option>
+              <option value='Equality'>Equality</option>
+            </select>
           </div>
           <div className='form__group'>
-            <label htmlFor='tags'>Skills</label>
-            <TagBox />
+            <label htmlFor='skills'>Your skills</label>
+            <TagBox
+              tags={this.state.tags}
+              selected={this.state.selected}
+              onSelect={this.onSelect}
+              removeTag={this.remove}
+              backspaceDelete={true}
+            />
           </div>
           <div className='form__group'>
             <label htmlFor='location'>Location</label>
             <input type='text' id='location' name='location' />
           </div>
           <div className='form__group'>
-          <label htmlFor='frequency'>Frequency</label>
-          <select name="frequency">
-            <option value="Regular">Regular</option>
-            <option value="Temporary">Temporary</option>
-          </select>
+            <label htmlFor='frequency'>Frequency</label>
+            <select name='frequency'>
+              <option value='Regular'>Regular</option>
+              <option value='Temporary'>Temporary</option>
+            </select>
           </div>
           <div className='form__group'>
-          <label htmlFor='status'>Status</label>
-          <select name="status">
-            <option value="Full">Full</option>
-            <option value="Open">Open</option>
-            <option value="Completed">Completed</option>
-          </select>
+            <label htmlFor='status'>Status</label>
+            <select name='status'>
+              <option value='Full'>Full</option>
+              <option value='Open'>Open</option>
+              <option value='Completed'>Completed</option>
+            </select>
           </div>
           <Button type='primary'>Get started!</Button>
         </form>
