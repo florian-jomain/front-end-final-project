@@ -1,4 +1,5 @@
 import React from "react";
+import Tag from "./Tag";
 
 function ProjectCard(props) {
   const { image, title, description, id_tags } = props.project;
@@ -14,9 +15,7 @@ function ProjectCard(props) {
           </div>
           <div className='ProjectCard__tags'>
             {id_tags.map((tag, index) => (
-              <p key={index} className='ProjectCard__tag'>
-                {tag.label}
-              </p>
+              <Tag key={index} tag={tag} />
             ))}
           </div>
           <p>{description}</p>
