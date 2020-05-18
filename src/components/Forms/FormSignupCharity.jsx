@@ -8,18 +8,10 @@ class FormSignupCharity extends Component {
   static contextType = UserContext;
 
   state = {
-<<<<<<< HEAD
-    email: '',
-    password: '',
-    username: '',
-    name: '',
-  }
-=======
     email: "",
     password: "",
     username: "",
   };
->>>>>>> 2ee7679a06145c796e1e1b6caeed269a2d64ecb9
 
   handleChange = (event) => {
     const value =
@@ -35,15 +27,6 @@ class FormSignupCharity extends Component {
   };
 
   handleSubmit = (event) => {
-<<<<<<< HEAD
-    event.preventDefault()
-    console.log(this.state)
-    apiHandler
-      .signupCharity(this.state)
-      .then((data) => {
-        this.context.setUser(data)
-        this.props.history.push('/charities/create/' + data._id)
-=======
     event.preventDefault();
 
     apiHandler
@@ -51,7 +34,6 @@ class FormSignupCharity extends Component {
       .then((data) => {
         this.context.setUser(data);
         this.props.history.push("/charities/create/" + data._id);
->>>>>>> 2ee7679a06145c796e1e1b6caeed269a2d64ecb9
       })
       .catch((error) => {
         console.log(error);
