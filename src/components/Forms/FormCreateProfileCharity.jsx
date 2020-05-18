@@ -8,11 +8,11 @@ class FormCreateProfileCharity extends Component {
   static contextType = UserContext;
 
   state = {
-    username:"",
-    image:"",
-    links:[],
-    bio:"",
-    location:"",
+    name: "",
+    image: "",
+    links: [],
+    bio: "",
+    location: "",
   };
 
   handleChange = (event) => {
@@ -47,27 +47,27 @@ class FormCreateProfileCharity extends Component {
       <div>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <div className='form__group'>
-          <div className='form__group'>
-            <label htmlFor='username'>Username</label>
-            <input type='text' id='username' name='username' />
-          </div>
-          <div className='form__group'>
-            <label htmlFor='image'>Profile Picture</label>
-            <input type='file' id='image' name='image' />
-          </div>
-          <div className='form__group'>
-            <label htmlFor='bio'>Your Bio</label>
-            <input type='text' id='bio' name='bio' />
-          </div>
-          <div className='form__group'>
-            <label htmlFor='location'>Location</label>
-            <input type='text' id='location' name='location' />
-          </div>
-          <div className='form__group'>
-            <label htmlFor='links'>Links</label>
-            <input type='text' id='links' name='links' />
-          </div>
-          <Button type='primary'>Create your profile!</Button>
+            <div className='form__group'>
+              <label htmlFor='username'>Name</label>
+              <input type='text' id='name' name='name' />
+            </div>
+            <div className='form__group'>
+              <label htmlFor='image'>Profile Picture</label>
+              <input type='file' id='image' name='image' />
+            </div>
+            <div className='form__group'>
+              <label htmlFor='bio'>Your bio</label>
+              <input type='text' id='bio' name='bio' />
+            </div>
+            <div className='form__group'>
+              <label htmlFor='location'>Location</label>
+              <input type='text' id='location' name='location' />
+            </div>
+            <div className='form__group'>
+              <label htmlFor='links'>Links</label>
+              <input type='text' id='links' name='links' />
+            </div>
+            <Button type='primary'>Create your profile!</Button>
           </div>
         </form>
       </div>
