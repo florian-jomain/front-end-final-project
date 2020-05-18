@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import apiHandler from "../api/apiHandler";
-import SingleProject from "./SingleProject";
+import ProjectCard from "../components/UI/ProjectCard";
 import axios from "axios";
 
 export class Projects extends Component {
@@ -25,7 +25,7 @@ export class Projects extends Component {
       <div>
         <h1>Test</h1>
         {this.state.projects.map((project, index) => (
-          <SingleProject key={index} index={index} project={project} />
+          <ProjectCard key={index} index={index} project={project} />
         ))}
       </div>
     );
