@@ -19,14 +19,16 @@ export class Projects extends Component {
       .catch((apiError) => {
         console.log(apiError);
       });
+      
   }
 
   render() {
+    console.log(this.state.projects)
     return (
       <React.Fragment>
         <div className='Projects'>
           {/* <TextContainer /> */}
-          <Filter className='Projects__filter' />
+          <Filter className='Projects__filter' data={this.state.projects}/>
           <div className='Projects__cards'>
             {this.state.projects.map((project, index) => (
               <Link

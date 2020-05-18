@@ -1,13 +1,83 @@
-import React from "react";
+import React, { Component } from 'react'
 
-function Filter(props) {
-  return (
-    <React.Fragment>
-      <div className={props.className}>
-        <h1>Waiting for a filter</h1>
+export class Filter extends Component {
+
+  
+  state = {
+    data: this.props.data,
+    category:"",
+    frequency:"",
+    status:"",
+  }
+
+  // componentDidMount(){
+  //   console.log(this.props.data)
+  // }
+  render() {
+    console.log(this.state.data)
+    return (
+      <React.Fragment>
+      <div className={this.props.className}>
+        <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
+        <div className='form__group'>
+            <label htmlFor='category'>Category</label>
+            <div>
+            <label htmlFor='Covid-19'>Covid-19</label>
+            <input type="checkbox" name="Covid-19"/>
+            </div>
+            {/* <label htmlFor='Education'>Education</label>
+            <input type="checkbox" name="Education">Education</input>
+            <label htmlFor='Arts'>Arts</label>
+            <input type="checkbox" name="Arts">Arts</input>
+            <label htmlFor='Animals'>Animals</label>
+            <input type="checkbox" name="Animals">Animals</input>
+            <label htmlFor='category'>Category</label>
+            <input type="checkbox" name="Covid-19">Covid-19</input>
+            <label htmlFor='category'>Category</label>
+            <input type="checkbox" name="Covid-19">Covid-19</input>
+            <label htmlFor='category'>Category</label>
+            <input type="checkbox" name="Covid-19">Covid-19</input>
+            <select multiple={true} name='category'>
+              <option value='Covid-19'>Covid-19</option>
+              <option value='Education'>Education</option>
+              <option value='Arts'>Arts</option>
+              <option value='Animals'>Animals</option>
+              <option value='Environment'>Environment</option>
+              <option value='Poverty'>Poverty</option>
+              <option value='Equality'>Equality</option>
+            </select> */}
+          </div>
+          {/* <div className='form__group'>
+            <label htmlFor='skills'>Your skills</label>
+            <TagBox
+              tags={this.state.tags}
+              selected={this.state.selected}
+              onSelect={this.onSelect}
+              removeTag={this.remove}
+              backspaceDelete={true}
+            />
+          </div> */}
+         
+          <div className='form__group'>
+            <label htmlFor='frequency'>Frequency</label>
+            <select name='frequency'>
+              <option value='Regular'>Regular</option>
+              <option value='Temporary'>Temporary</option>
+            </select>
+          </div>
+          <div className='form__group'>
+            <label htmlFor='status'>Status</label>
+            <select name='status'>
+              <option value='Full'>Full</option>
+              <option value='Open'>Open</option>
+              <option value='Completed'>Completed</option>
+            </select>
+          </div>
+        </form>
       </div>
     </React.Fragment>
-  );
+    )
+  }
 }
 
-export default Filter;
+export default Filter
