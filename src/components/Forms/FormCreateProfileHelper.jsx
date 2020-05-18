@@ -115,8 +115,6 @@ class FormCreateProfileHelper extends Component {
 
     const key = event.target.name;
 
-    console.log(UserContext);
-
     this.setState({ [key]: value });
   };
 
@@ -150,13 +148,11 @@ class FormCreateProfileHelper extends Component {
     };
     tagsArray.push(newTag);
     skillsArray.push(tag.name)
-    console.log(skillsArray)
 
     this.setState({
       selected: tagsArray,
       skills: skillsArray
     });
-    console.log(this.state.skills)
   };
 
   remove = (tag) => {
