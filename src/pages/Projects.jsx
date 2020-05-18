@@ -20,6 +20,7 @@ export class Projects extends Component {
   }
 
   render() {
+    console.log(this.state.projects);
     return (
       <div>
         <h1>Test</h1>
