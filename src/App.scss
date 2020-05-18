@@ -12,6 +12,7 @@
 // Pages
 @import 'styles/pages/ui.scss';
 @import 'styles/pages/signup.scss';
+@import 'styles/pages/projects.scss';
 
 // Components
 @import 'styles/components/buttons.scss';
@@ -19,6 +20,9 @@
 @import 'styles/components/form.scss';
 @import 'styles/components/tagBox.scss';
 @import 'styles/components/profile.scss';
+@import 'styles/components/projectCard.scss';
+@import 'styles/components/filter.scss';
+@import 'styles/components/tag.scss';
 
 * {
   margin: 0;

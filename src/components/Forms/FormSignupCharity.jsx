@@ -33,7 +33,7 @@ class FormSignupCharity extends Component {
       .signupCharity(this.state)
       .then((data) => {
         this.context.setUser(data);
-        this.props.history.push("/charities/create/" + data._id);
+        this.props.history.push("/charities/create/" + data.username);
       })
       .catch((error) => {
         console.log(error);

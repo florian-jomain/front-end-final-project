@@ -88,6 +88,7 @@ const options = [
 }));
 
 let tagsArray = [];
+let skillsArray=[]
 
 class FormCreateProfileHelper extends Component {
   static contextType = UserContext;
@@ -101,6 +102,7 @@ class FormCreateProfileHelper extends Component {
     phone: "",
     tags: options,
     selected: [],
+    skills:[]
   };
 
   handleChange = (event) => {
@@ -113,16 +115,22 @@ class FormCreateProfileHelper extends Component {
 
     const key = event.target.name;
 
-    console.log(UserContext);
-
     this.setState({ [key]: value });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
+    var formData = new FormData()
+    formData.append("image",this.state.image)
+    formData.append("links",this.state.links)
+    formData.append("name",this.state.name)
+    formData.append("bio",this.state.bio)
+    formData.append("skills",this.state.skills)
+    formData.append("location",this.state.location)
+    formData.append("phone",this.state.phone)
 
     apiHandler
-      .createProfileHelper(this.state, this.context.user._id)
+      .createProfileHelper(formData)
       .then((data) => {
         this.context.setUser(data);
         this.props.history.push("/");
@@ -139,9 +147,11 @@ class FormCreateProfileHelper extends Component {
       name: tag.name || tag.label,
     };
     tagsArray.push(newTag);
+    skillsArray.push(tag.name)
 
     this.setState({
       selected: tagsArray,
+      skills: skillsArray
     });
   };
 
@@ -152,6 +162,7 @@ class FormCreateProfileHelper extends Component {
   };
 
   render() {
+    console.log(this.state.skills)
     return (
       <div>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-// import apiHandler from "../api/apiHandler";
 import ProjectCard from "../components/UI/ProjectCard";
+import Filter from "../components/UI/Filter";
 import axios from "axios";
+import { Link } from "react-router-dom";
+// import TextContainer from "../components/UI/TextContainer";
 
 export class Projects extends Component {
   state = {
@@ -10,7 +12,7 @@ export class Projects extends Component {
 
   componentDidMount() {
     axios
-      .get("/api/projects")
+      .get("http://localhost:4000/api/projects")
       .then((apiResponse) => {
         this.setState({ projects: apiResponse.data });
       })
@@ -20,14 +22,24 @@ export class Projects extends Component {
   }
 
   render() {
-    console.log(this.state.projects);
     return (
-      <div>
-        <h1>Test</h1>
-        {this.state.projects.map((project, index) => (
-          <ProjectCard key={index} index={index} project={project} />
-        ))}
-      </div>
+      <React.Fragment>
+        <div className='Projects'>
+          {/* <TextContainer /> */}
+          <Filter className='Projects__filter' />
+          <div className='Projects__cards'>
+            {this.state.projects.map((project, index) => (
+              <Link
+                className='Projects__links'
+                key={index}
+                to={`/projects/${this.state.projects[index]._id}`}
+              >
+                <ProjectCard key={index} index={index} project={project} />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </React.Fragment>
     );
   }
 }

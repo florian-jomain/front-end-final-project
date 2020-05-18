@@ -30,6 +30,7 @@ function App() {
         <Route exact path='/signup/helper' component={SignupHelper} />
         <Route exact path='/signup/charity' component={SignupCharity} />
         <Route exact path='/projects' component={Projects} />
+        <Route exact path='/projects/create' component={CreateProject} />
         <Route exact path='/projects/:id' component={SingleProject} />
         <Route exact path='/users' component={Users} />
         <Route
@@ -42,7 +43,7 @@ function App() {
           path='/charities/create/:id'
           component={CreateProfileCharity}
         />
-        <Route exact path='/projects/create' component={CreateProject} />
+        
 
         <Route exact path='/ui' component={UIComponents} />
 
