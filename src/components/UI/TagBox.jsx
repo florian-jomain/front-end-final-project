@@ -84,6 +84,8 @@ const options = [
   name: option.toLowerCase(),
 }));
 
+let tagsArray = [];
+
 export default class CustomTagBox extends Component {
   state = {
     tags: options,
@@ -96,8 +98,11 @@ export default class CustomTagBox extends Component {
       value: tag.value || tag.label,
       name: tag.name || tag.label,
     };
+    tagsArray.push(newTag);
 
-    this.state.selected.push(newTag);
+    this.setState({
+      selected: tagsArray,
+    });
   };
 
   remove = (tag) => {
