@@ -30,7 +30,6 @@ export class Projects extends Component {
           <div className='Projects__cards'>
             {this.state.projects.map((project, index) => (
               <Link
-                exact
                 className='Projects__links'
                 key={index}
                 to={`/projects/${this.state.projects[index]._id}`}

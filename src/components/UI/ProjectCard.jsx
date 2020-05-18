@@ -13,8 +13,10 @@ function ProjectCard(props) {
             <h5>{title}</h5>
           </div>
           <div className='ProjectCard__tags'>
-            {id_tags.map((tag) => (
-              <p className='ProjectCard__tag'>{tag.label}</p>
+            {id_tags.map((tag, index) => (
+              <p key={index} className='ProjectCard__tag'>
+                {tag.label}
+              </p>
             ))}
           </div>
           <p>{description}</p>
