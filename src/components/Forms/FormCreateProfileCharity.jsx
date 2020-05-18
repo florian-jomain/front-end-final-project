@@ -30,9 +30,15 @@ class FormCreateProfileCharity extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    var formData = new FormData()
+    formData.append("image",this.state.image)
+    formData.append("links",this.state.links)
+    formData.append("name",this.state.name)
+    formData.append("bio",this.state.bio)
+    formData.append("location",this.state.location)
 
     apiHandler
-      .createProfileCharity(this.state, this.context.user._id)
+      .createProfileCharity(formData)
       .then((data) => {
         this.context.setUser(data);
         this.props.history.push("/");

@@ -93,9 +93,9 @@ export default {
       .catch(errorHandler);
   },
 
-  createProfileCharity(userInfo, id) {
+  createProfileCharity(userInfo) {
     return service
-      .patch("/api/charities/create/"+id, userInfo)
+      .patch("/api/charities/create/", userInfo)
       .then((res) => res.data)
       .catch(errorHandler);
   },
