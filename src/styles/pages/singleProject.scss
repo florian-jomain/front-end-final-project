@@ -1,0 +1,37 @@
+.singleProject {
+    width: 80%;
+    margin: 4vh 0 0 10vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "left left right";
+
+    &__leftColumn {
+        grid-area: left;
+    }
+
+    &__rightColumn {
+        grid-area: right;
+    }
+
+    &__category {
+        padding: 10px;
+        display: inline-block;
+        margin: 20px 0;
+        border-radius: $radius__small;
+        background-color: lightgreen;
+    }
+
+    &__charity-bio {
+        width: 80%;
+    }
+
+    &__image {
+        margin: 20px 0;
+        border-radius: $radius__medium;
+    }
+
+    &__project-description {
+        width: 80%;
+    }
+}

@@ -1,0 +1,25 @@
+.Charity {
+
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+
+    &__rounded-div {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    &__image {
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+
+    &__text {
+        margin-left: 5px;
+    }
+}

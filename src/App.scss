@@ -14,6 +14,7 @@
 @import 'styles/pages/ui.scss';
 @import 'styles/pages/signup.scss';
 @import 'styles/pages/projects.scss';
+@import 'styles/pages/singleProject.scss';
 
 // Components
 @import 'styles/components/buttons.scss';
@@ -24,6 +25,9 @@
 @import 'styles/components/projectCard.scss';
 @import 'styles/components/filter.scss';
 @import 'styles/components/tag.scss';
+@import 'styles/components/charity.scss';
+@import 'styles/components/skillsCard.scss';
+@import 'styles/components/teamMembersCard.scss';
 
 * {
   margin: 0;
