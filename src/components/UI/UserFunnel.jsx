@@ -5,7 +5,7 @@ function UserFunnel() {
   return (
     <React.Fragment>
       <section className="Categories">
-        <div className="LinkBox__container">
+        <div className="LinkBox__container nowrap centered">
           <LinkBox
             emoji="🙏"
             title="Help out"

@@ -1,5 +1,4 @@
 .Categories {
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -9,10 +8,13 @@
 
 .LinkBox__container {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
   max-width: 800px;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
 }

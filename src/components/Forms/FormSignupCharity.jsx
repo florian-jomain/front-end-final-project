@@ -10,8 +10,8 @@ class FormSignupCharity extends Component {
   state = {
     email: '',
     password: '',
-    username:'',
-    name:''
+    username: '',
+    name: '',
   }
 
   handleChange = (event) => {
@@ -29,12 +29,12 @@ class FormSignupCharity extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-
+    console.log(this.state)
     apiHandler
       .signupCharity(this.state)
       .then((data) => {
         this.context.setUser(data)
-        this.props.history.push('/charities/create/'+data._id)
+        this.props.history.push('/charities/create/' + data._id)
       })
       .catch((error) => {
         console.log(error)

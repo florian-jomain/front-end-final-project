@@ -2,10 +2,7 @@ import React from 'react'
 import TextContainer from './TextContainer'
 
 function Hero(props) {
-  let HeroClass = 'HeroWide'
-  {
-    props.HeroWide ? (HeroClass = `Hero__Wide`) : (HeroClass = `Hero__Small`)
-  }
+  let HeroClass = props.HeroWide ? `Hero__Wide` : `Hero__Small`
 
   return (
     <React.Fragment>
