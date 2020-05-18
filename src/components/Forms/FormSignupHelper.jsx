@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import UserContext from "../Auth/UserContext";
 import apiHandler from "../../api/apiHandler";
 import Button from "../../components/UI/Button";
-import TagBox from "../UI/TagBox";
 
 class FormSignUpHelper extends Component {
   static contextType = UserContext;
@@ -11,8 +10,7 @@ class FormSignUpHelper extends Component {
   state = {
     email: "",
     password: "",
-    tags: [],
-    selected: [],
+    username: "",
   };
 
   handleChange = (event) => {
@@ -35,7 +33,7 @@ class FormSignUpHelper extends Component {
       .signupHelper(this.state)
       .then((data) => {
         this.context.setUser(data);
-        this.props.history.push("/helpers/create/"+data._id);
+        this.props.history.push("/helpers/create/" + data._id);
       })
       .catch((error) => {
         console.log(error);
@@ -47,24 +45,16 @@ class FormSignUpHelper extends Component {
       <div>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <div className='form__group'>
+            <label htmlFor='username'>Username</label>
+            <input type='text' id='username' name='username' />
+          </div>
+          <div className='form__group'>
             <label htmlFor='email'>Email</label>
             <input type='email' id='email' name='email' />
           </div>
           <div className='form__group'>
             <label htmlFor='password'>Password</label>
             <input type='password' id='password' name='password' />
-          </div>
-          <div className='form__group'>
-            <label htmlFor='name'>Name</label>
-            <input type='text' id='name' name='name' />
-          </div>
-          <div className='form__group'>
-            <label htmlFor='username'>Username</label>
-            <input type='text' id='username' name='username' />
-          </div>
-          <div className='form__group'>
-            <label htmlFor='tags'>Skills</label>
-            <TagBox />
           </div>
           <Button type='primary'>Get started!</Button>
         </form>
