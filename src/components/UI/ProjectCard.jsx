@@ -2,7 +2,7 @@ import React from "react";
 import Tag from "./Tag";
 
 function ProjectCard(props) {
-  const { image, title, description, id_tags } = props.project;
+  const { image, title, description, skills } = props.project;
   console.log(props.project);
   return (
     <React.Fragment>
@@ -14,7 +14,7 @@ function ProjectCard(props) {
             <h5>{title}</h5>
           </div>
           <div className='ProjectCard__tags'>
-            {id_tags.map((tag, index) => (
+            {skills.map((tag, index) => (
               <Tag key={index} tag={tag} />
             ))}
           </div>
