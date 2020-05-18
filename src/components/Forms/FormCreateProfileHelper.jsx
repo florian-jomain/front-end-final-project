@@ -19,6 +19,7 @@ class FormCreateProfileHelper extends Component {
     selected: [],
   };
 
+
   handleChange = (event) => {
     const value =
       event.target.type === "file"
@@ -38,7 +39,7 @@ class FormCreateProfileHelper extends Component {
     event.preventDefault();
 
     apiHandler
-      .createProfileHelper(this.state)
+      .createProfileHelper(this.state, this.context.user._id)
       .then((data) => {
         this.context.setUser(data);
         this.props.history.push("/");

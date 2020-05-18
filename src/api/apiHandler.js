@@ -86,17 +86,19 @@ export default {
       .catch(errorHandler);
   },
 
-  createProfileHelper(userInfo) {
+  createProfileHelper(userInfo, id) {
     return service
-      .patch("/api/helpers/create/5ec12e1620d3b338667089c2", userInfo)
+      .patch("/api/helpers/create/"+id, userInfo)
       .then((res) => res.data)
       .catch(errorHandler);
   },
 
-  createProfileCharity(userInfo) {
+  createProfileCharity(userInfo, id) {
     return service
-      .patch("/api/charities/create/5ec13a818bc8923bf61fbdf3", userInfo)
+      .patch("/api/charities/create/"+id, userInfo)
       .then((res) => res.data)
       .catch(errorHandler);
   },
+
+  // getHelper()
 };

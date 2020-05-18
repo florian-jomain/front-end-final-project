@@ -32,7 +32,7 @@ class FormCreateProfileCharity extends Component {
     event.preventDefault();
 
     apiHandler
-      .createProfileCharity(this.state)
+      .createProfileCharity(this.state, this.context.user._id)
       .then((data) => {
         this.context.setUser(data);
         this.props.history.push("/");
