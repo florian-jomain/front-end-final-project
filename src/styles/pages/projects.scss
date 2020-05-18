@@ -1,0 +1,21 @@
+.Projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "filter cards cards"
+}
+
+.Projects__filter {
+    grid-area: filter;
+}
+
+.Projects__cards {
+    grid-area: cards;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Projects__links {
+    width: 40%;
+    margin: 30px;
+}

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import ProjectCard from "../components/UI/ProjectCard";
+import Filter from "../components/UI/Filter";
 import axios from "axios";
 import { Link } from "react-router-dom";
+// import TextContainer from "../components/UI/TextContainer";
 
 export class Projects extends Component {
   state = {
@@ -12,7 +14,6 @@ export class Projects extends Component {
     axios
       .get("http://localhost:4000/api/projects")
       .then((apiResponse) => {
-        console.log(apiResponse);
         this.setState({ projects: apiResponse.data });
       })
       .catch((apiError) => {
@@ -22,20 +23,24 @@ export class Projects extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Test</h1>
-        <div className='filter'></div>
-        {this.state.projects.map((project, index) => (
-          <Link
-            exact
-            className='links'
-            key={index}
-            to={`/projects/${this.state.projects[index]._id}`}
-          >
-            <ProjectCard key={index} index={index} project={project} />
-          </Link>
-        ))}
-      </div>
+      <React.Fragment>
+        <div className='Projects'>
+          {/* <TextContainer /> */}
+          <Filter className='Projects__filter' />
+          <div className='Projects__cards'>
+            {this.state.projects.map((project, index) => (
+              <Link
+                exact
+                className='Projects__links'
+                key={index}
+                to={`/projects/${this.state.projects[index]._id}`}
+              >
+                <ProjectCard key={index} index={index} project={project} />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </React.Fragment>
     );
   }
 }
