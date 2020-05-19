@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 function Profile(props) {
   const { context } = props
-  console.log(props)
+
   return (
     <React.Fragment>
       <section className="Profile">
@@ -39,7 +39,7 @@ function Profile(props) {
           <div className="Profile__side">
             <div className="info__box">
               <h5>Skills</h5>
-              {context.user.skills.length < 0 ? (
+              {context.user.skills.length > 1 ? (
                 <ul>
                   {context.user.skills.map((skill) => (
                     <li key={skill}>{skill}</li>
@@ -52,7 +52,7 @@ function Profile(props) {
             <div className="info__box">
               <h5>Social</h5>
 
-              {context.user.links.length < 0 ? (
+              {context.user.links.length > 1 ? (
                 <ul>
                   {context.user.links.map((link) => (
                     <li key={link}>

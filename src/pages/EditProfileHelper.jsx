@@ -10,9 +10,9 @@ const EditProfileHelper = () => {
           Let charities and other helpers know more about you.
         </p>
         <p className="centered">
-          Don't want to add this now?
+          Don't want to do this?
           <a className="colored margin" href="/user-profile">
-            Skip for now
+            Skip
           </a>
         </p>
         <div className="form">
