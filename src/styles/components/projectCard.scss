@@ -2,14 +2,19 @@
     padding: 20px;
     width: 100%;
     // background-color: $lightGrey;
-    background-color: grey;
+    background-color: lightgrey;
     border-radius: $radius__medium;
-}
 
-.ProjectCard__image {
-    border-radius: $radius__medium;
-}
+    &__image {
+        border-radius: $radius__medium;
+    }
 
-.ProjectCard__text {
-    margin-top: 10px;
+    &__text {
+        margin-top: 10px;
+    }
+
+    &__description {
+        height: 100px;
+        overflow: scroll;
+    }
 }

@@ -20,24 +20,36 @@ export class Filter extends Component {
       <div className={this.props.className}>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
         <div className='form__group'>
-            <label htmlFor='category'>Category</label>
+            <p>Category</p>
             <div>
             <label htmlFor='Covid-19'>Covid-19</label>
             <input type="checkbox" name="Covid-19"/>
             </div>
-            {/* <label htmlFor='Education'>Education</label>
-            <input type="checkbox" name="Education">Education</input>
+            <div>
+            <label htmlFor='Education'>Education</label>
+            <input type="checkbox" name="Education"/>
+            </div>
+            <div>
             <label htmlFor='Arts'>Arts</label>
-            <input type="checkbox" name="Arts">Arts</input>
+            <input type="checkbox" name="Arts"/>
+            </div>
+            <div>
             <label htmlFor='Animals'>Animals</label>
-            <input type="checkbox" name="Animals">Animals</input>
-            <label htmlFor='category'>Category</label>
-            <input type="checkbox" name="Covid-19">Covid-19</input>
-            <label htmlFor='category'>Category</label>
-            <input type="checkbox" name="Covid-19">Covid-19</input>
-            <label htmlFor='category'>Category</label>
-            <input type="checkbox" name="Covid-19">Covid-19</input>
-            <select multiple={true} name='category'>
+            <input type="checkbox" name="Animals"/>
+            </div>
+            <div>
+             <label htmlFor='category'>Category</label>
+            <input type="checkbox" name="Covid-19"/>
+            </div>
+             <div>
+             <label htmlFor='category'>Category</label>
+            <input type="checkbox" name="Covid-19"/>
+             </div>
+             <div>
+             <label htmlFor='category'>Category</label>
+            <input type="checkbox" name="Covid-19"/>
+             </div>
+            {/* <select multiple={true} name='category'>
               <option value='Covid-19'>Covid-19</option>
               <option value='Education'>Education</option>
               <option value='Arts'>Arts</option>

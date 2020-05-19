@@ -26,16 +26,16 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
 
     .navbar__image {
-      margin-right: 8px;
       img {
         width: 30px;
         height: 30px;
       }
     }
     .chevron {
-      margin-left: 2px;
+      margin-left: 8px;
       margin-top: 1px;
     }
 
@@ -55,6 +55,7 @@
 
 .tippy-box {
   background: $darkGrey;
+  border-radius: $radius__medium;
   .tippy-content {
     padding: 15px 0;
   }
@@ -64,12 +65,17 @@
   color: $darkGrey;
 }
 .dropdown {
+  margin: 0;
+  padding: 0;
   .user__menu {
     padding: 5px;
     margin: 0px 15px;
+
+    .user__image {
+      margin-right: 10px;
+      margin-left: 0;
+    }
   }
-  margin: 0;
-  padding: 0;
 
   li {
     padding: 12px 25px;

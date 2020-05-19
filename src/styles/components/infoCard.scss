@@ -1,0 +1,34 @@
+.InfoCard {
+  max-width: 1200px;
+  background: $palePink;
+  padding: 50px 100px;
+  margin: 50px auto 200px auto;
+  border-radius: $radius__large;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .text__container {
+    max-width: 600px;
+  }
+  .illustration__container {
+    max-width: 500px;
+  }
+}
+
+.palePink {
+  background: $palePink;
+}
+
+.paleBlue {
+  background: $paleBlue;
+}
+
+.paleYellow {
+  background: $paleYellow;
+}
+.paleGreen {
+  background: $paleGreen;
+}

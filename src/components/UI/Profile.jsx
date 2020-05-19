@@ -11,7 +11,7 @@ function Profile(props) {
         <div className="Profile__header">
           <div className="Profile__image">
             <div className="user__image round__image">
-              <img src={context.user.image} alt={context.user.name} />
+              <img src={context.user.image} alt={context.user.username} />
             </div>
             <Button type="secondary">Edit profile</Button>
           </div>
