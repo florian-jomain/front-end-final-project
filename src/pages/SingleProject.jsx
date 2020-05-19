@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import BackButton from "../components/UI/BackButton";
+import Button from "../components/UI/Button";
 import SkillsCard from "../components/UI/SkillsCard";
 import TeamMembersCard from "../components/UI/TeamMembersCard";
 import Charity from "../components/UI/Charity";
@@ -61,6 +62,9 @@ export default class SingleProject extends React.Component {
           <div className='singleProject__rightColumn'>
             <TeamMembersCard members={id_teamMembers} />
             <SkillsCard skills={skills} />
+            <Button className='rightColumn__button' type='primary'>
+              Apply to this project
+            </Button>
           </div>
         </div>
       );

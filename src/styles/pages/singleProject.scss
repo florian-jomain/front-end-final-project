@@ -12,7 +12,11 @@
 
     &__rightColumn {
         grid-area: right;
+        display: flex;
+        flex-direction: column;
     }
+
+
 
     &__category {
         padding: 10px;
