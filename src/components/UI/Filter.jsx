@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
-
 export class Filter extends Component {
-
-  
   state = {
     data: this.props.data,
     category:"",
     frequency:"",
     status:"",
   }
-
   // componentDidMount(){
   //   console.log(this.props.data)
   // }
@@ -69,7 +65,6 @@ export class Filter extends Component {
               backspaceDelete={true}
             />
           </div> */}
-         
           <div className='form__group'>
             <label htmlFor='frequency'>Frequency</label>
             <select name='frequency'>
@@ -91,5 +86,4 @@ export class Filter extends Component {
     )
   }
 }
-
 export default Filter

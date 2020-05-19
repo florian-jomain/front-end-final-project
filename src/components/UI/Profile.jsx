@@ -73,13 +73,12 @@ function Profile(props) {
           </div>
           <div className="Profile__projects">
             <div className="tabs">
-              <h4>Active projects</h4>
-              <h4>Inactive projects</h4>
-            </div>
-            <div className="project">rerwerw</div>
-          </div>
-        </div>
-      </section>
+              <h4> Active projects </h4> <h4> Inactive projects </h4>{' '}
+            </div>{' '}
+            <div className="project"> rerwerw </div>{' '}
+          </div>{' '}
+        </div>{' '}
+      </section>{' '}
     </React.Fragment>
   )
 }
