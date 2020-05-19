@@ -1,11 +1,11 @@
 import React from 'react'
-import FormCreateProfileHelper from '../components/Forms/FormCreateProfileHelper'
+import FormEditProfileHelper from '../components/Forms/FormEditProfileHelper'
 
-const CreateProfileHelper = () => {
+const EditProfileHelper = () => {
   return (
     <React.Fragment>
       <section className="signup__page">
-        <h2 className="serif centered">Create your profile</h2>
+        <h2 className="serif centered">Edit your profile</h2>
         <p className="centered">
           Let charities and other helpers know more about you.
         </p>
@@ -16,11 +16,11 @@ const CreateProfileHelper = () => {
           </a>
         </p>
         <div className="form">
-          <FormCreateProfileHelper />
+          <FormEditProfileHelper />
         </div>
       </section>
     </React.Fragment>
   )
 }
 
-export default CreateProfileHelper
+export default EditProfileHelper

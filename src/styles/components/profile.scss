@@ -21,6 +21,7 @@
 
     .Profile__info {
       width: auto;
+      min-width: 550px;
 
       .Profile__location {
         display: flex;
@@ -35,7 +36,6 @@
       }
     }
   }
-
   .Profile__content {
     max-width: 900px;
     margin: 70px auto;
@@ -62,6 +62,11 @@
   border-radius: $radius__medium;
   margin-bottom: 20px;
   background: $lightGrey;
+
+  a {
+    color: $secondary;
+    font-weight: 600;
+  }
 }
 
 .tabs {

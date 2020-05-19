@@ -13,9 +13,17 @@ form {
 
     input {
       margin-top: 5px;
+      padding-left: 10px;
       height: 45px;
       border: 1px solid $lightGrey;
       border-radius: $radius__small;
+    }
+
+    textarea {
+      border: 1px solid $lightGrey;
+      border-radius: $radius__small;
+      margin-top: 5px;
+      padding: 10px;
     }
   }
 
