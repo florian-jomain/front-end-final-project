@@ -20,6 +20,23 @@
     align-items: center;
     height: 100%;
     font-weight: 600;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+    color: $primary;
+  }
+
+  a:hover {
+    color: #5a5a5a;
+  }
+
+  .active {
+    font-weight: 600;
+    border-bottom: 2px solid $primary;
+    transform: translate3d(0px, 1px, 0px);
+  }
+
+  .notActive {
+    border-bottom: none;
   }
 
   .user__menu {
@@ -50,6 +67,14 @@
 
   .NavMain .nav-list li:not(:last-child) {
     margin-right: 20px;
+  }
+
+  .dropdown {
+    li {
+      a {
+        color: white;
+      }
+    }
   }
 }
 
@@ -82,14 +107,13 @@
     margin: 0;
     width: 100%;
     font-weight: 600;
+
+    a {
+      color: white;
+    }
   }
 
   li:hover {
     background: #3d3d3d;
   }
-}
-
-.tippy-tooltip.tomato-theme {
-  background-color: tomato;
-  color: yellow;
 }
