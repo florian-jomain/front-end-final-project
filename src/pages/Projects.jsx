@@ -4,7 +4,6 @@ import Filter from "../components/UI/Filter";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import InfoCard from "../components/UI/InfoCard";
-import TextContainer from "../components/UI/TextContainer";
 
 export class Projects extends Component {
   state = {

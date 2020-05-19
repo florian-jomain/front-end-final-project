@@ -1,14 +1,15 @@
 import React from "react";
 import axios from "axios";
 import BackButton from "../components/UI/BackButton";
-import Button from "../components/UI/Button";
 import SkillsCard from "../components/UI/SkillsCard";
 import TeamMembersCard from "../components/UI/TeamMembersCard";
 import Charity from "../components/UI/Charity";
+import ApplicationPopUp from "../components/UI/ApplicationPopUp";
 
 export default class SingleProject extends React.Component {
   state = {
     project: null,
+    showPopup: false,
   };
 
   componentDidMount() {
@@ -21,6 +22,10 @@ export default class SingleProject extends React.Component {
       .catch((apiError) => {
         console.log(apiError);
       });
+  }
+
+  togglePopup() {
+    this.setState({ showPopup: !this.state.showPopup });
   }
 
   render() {
@@ -62,10 +67,16 @@ export default class SingleProject extends React.Component {
           <div className='singleProject__rightColumn'>
             <TeamMembersCard members={id_teamMembers} />
             <SkillsCard skills={skills} />
-            <Button className='rightColumn__button' type='primary'>
+            <button
+              onClick={() => this.togglePopup()}
+              className='primaryButton'
+            >
               Apply to this project
-            </Button>
+            </button>
           </div>
+          {this.state.showPopup ? (
+            <ApplicationPopUp togglePopup={this.togglePopup} />
+          ) : null}
         </div>
       );
     }
