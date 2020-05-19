@@ -79,6 +79,13 @@ export default {
       .catch(errorHandler);
   },
 
+  createApplication(id, data) {
+    return service
+      .post(`/api/projects/${id}`, data)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
   deleteProject(id) {
     return service
       .delete(`/api/items/${id}`)
