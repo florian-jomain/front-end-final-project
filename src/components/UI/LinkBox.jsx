@@ -3,9 +3,10 @@ import { NavLink } from 'react-router-dom'
 import Button from '../../components/UI/Button'
 
 function LinkBox(props) {
+  
   return (
     <React.Fragment>
-      <NavLink to={props.link}>
+      <NavLink to={{pathname:props.link,categoryProps:{category:props.category}}} >
         <div className="LinkBox">
           <span>{props.emoji}</span>
           <h4 className="serif">{props.title}</h4>
