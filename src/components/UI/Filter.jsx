@@ -20,12 +20,12 @@ export class Filter extends Component {
       <div className={this.props.className}>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
         <div className='form__group'>
-            <label htmlFor='category'>Category</label>
+            <p htmlFor='category'>Category</p>
             <div>
             <label htmlFor='Covid-19'>Covid-19</label>
             <input type="checkbox" name="Covid-19"/>
             </div>
-            {/* <label htmlFor='Education'>Education</label>
+            <label htmlFor='Education'>Education</label>
             <input type="checkbox" name="Education">Education</input>
             <label htmlFor='Arts'>Arts</label>
             <input type="checkbox" name="Arts">Arts</input>
@@ -37,7 +37,7 @@ export class Filter extends Component {
             <input type="checkbox" name="Covid-19">Covid-19</input>
             <label htmlFor='category'>Category</label>
             <input type="checkbox" name="Covid-19">Covid-19</input>
-            <select multiple={true} name='category'>
+            {/* <select multiple={true} name='category'>
               <option value='Covid-19'>Covid-19</option>
               <option value='Education'>Education</option>
               <option value='Arts'>Arts</option>
