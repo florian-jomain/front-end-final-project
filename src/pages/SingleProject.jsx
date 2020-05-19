@@ -4,7 +4,7 @@ import BackButton from "../components/UI/BackButton";
 import SkillsCard from "../components/UI/SkillsCard";
 import TeamMembersCard from "../components/UI/TeamMembersCard";
 import Charity from "../components/UI/Charity";
-import ApplicationPopUp from "../components/UI/ApplicationPopUp";
+import ApplicationPopUp from "../components/Forms/ApplicationPopUp";
 
 export default class SingleProject extends React.Component {
   state = {
@@ -75,7 +75,10 @@ export default class SingleProject extends React.Component {
             </button>
           </div>
           {this.state.showPopup ? (
-            <ApplicationPopUp togglePopup={this.togglePopup} />
+            <ApplicationPopUp
+              id={this.state.project._id}
+              togglePopup={this.togglePopup}
+            />
           ) : null}
         </div>
       );
