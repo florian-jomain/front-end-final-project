@@ -1,25 +1,73 @@
 import React from "react";
+import axios from "axios";
 import BackButton from "../components/UI/BackButton";
-import TagsCard from "../components/UI/TagsCard";
+import Button from "../components/UI/Button";
+import SkillsCard from "../components/UI/SkillsCard";
 import TeamMembersCard from "../components/UI/TeamMembersCard";
+import Charity from "../components/UI/Charity";
 
-const SingleProject = (props) => {
-  console.log(props);
+export default class SingleProject extends React.Component {
+  state = {
+    project: null,
+  };
 
-  return (
-    <React.Fragment>
-      <BackButton />
-      <h1>{props.title}</h1>
-      <h3>{props.name}</h3>
-      <p>{props.description}</p>
-      <img className='' src={props.image} alt={props.name} />
-      <p>{props.description}</p>
-      <div className='rightColumn'>
-        <TeamMembersCard />
-        <TagsCard />
-      </div>
-    </React.Fragment>
-  );
-};
+  componentDidMount() {
+    const id = this.props.match.params.id;
+    axios
+      .get("http://localhost:4000/api/projects/" + id)
+      .then((apiResponse) => {
+        this.setState({ project: apiResponse.data });
+      })
+      .catch((apiError) => {
+        console.log(apiError);
+      });
+  }
 
-export default SingleProject;
+  render() {
+    if (!this.state.project) {
+      return (
+        <div className='loading'>
+          Loading...
+          <span role='img' aria-label='zzz'>
+            😴
+          </span>
+        </div>
+      );
+    } else {
+      const {
+        category,
+        description,
+        id_owner,
+        id_teamMembers,
+        image,
+        skills,
+        title,
+      } = this.state.project;
+
+      return (
+        <div className='singleProject'>
+          <div className='singleProject__leftColumn'>
+            <BackButton />
+            <h1>{title}</h1>
+            <Charity
+              className='singleProject__charity'
+              charityName={id_owner.username}
+              charityImage={id_owner.image}
+            />
+            <h5 className='singleProject__category'>{category}</h5>
+            <p className='singleProject__charity-bio'>{description}</p>
+            <img className='singleProject__image' src={image} alt={title} />
+            <p className='singleProject__project-description'>{description}</p>
+          </div>
+          <div className='singleProject__rightColumn'>
+            <TeamMembersCard members={id_teamMembers} />
+            <SkillsCard skills={skills} />
+            <Button className='rightColumn__button' type='primary'>
+              Apply to this project
+            </Button>
+          </div>
+        </div>
+      );
+    }
+  }
+}

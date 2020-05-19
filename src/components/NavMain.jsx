@@ -119,15 +119,15 @@ const NavMain = (props) => {
             </li>
 
             <li>
-              <NavLink to="/signup">Sign up</NavLink>
-            </li>
-
-            <li>
               <NavLink to="/projects">Browse project</NavLink>
             </li>
 
             <li>
-              <NavLink to="/signin">
+              <NavLink to="/signup">Sign up</NavLink>
+            </li>
+
+            <li>
+              <NavLink className="notActive" to="/signin">
                 <Button type="secondary">Log in</Button>
               </NavLink>
             </li>

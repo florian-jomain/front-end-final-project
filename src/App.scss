@@ -6,6 +6,7 @@
 @import 'styles/components/categories.scss';
 @import 'styles/components/textContainer.scss';
 @import 'styles/components/linkBox.scss';
+@import 'styles/components/infoCard.scss';
 
 @import 'styles/reset.scss';
 // @import "styles/pages/navbar.scss";
@@ -13,6 +14,7 @@
 @import 'styles/pages/ui.scss';
 @import 'styles/pages/signup.scss';
 @import 'styles/pages/projects.scss';
+@import 'styles/pages/singleProject.scss';
 
 // Components
 @import 'styles/components/buttons.scss';
@@ -23,6 +25,9 @@
 @import 'styles/components/projectCard.scss';
 @import 'styles/components/filter.scss';
 @import 'styles/components/tag.scss';
+@import 'styles/components/charity.scss';
+@import 'styles/components/skillsCard.scss';
+@import 'styles/components/teamMembersCard.scss';
 
 * {
   margin: 0;
@@ -41,6 +46,12 @@ html {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.colored {
+  color: $secondary;
+  font-weight: 600;
+  border-bottom: 1.5px solid $secondary;
 }
 
 ul {

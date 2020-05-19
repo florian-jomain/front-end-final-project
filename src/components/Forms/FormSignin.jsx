@@ -44,13 +44,20 @@ class FormSignin extends Component {
 
   render() {
     return (
-      <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-        <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" />
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" name="password" />
-        <Button type="primary">Let's go!</Button>
-      </form>
+      <React.Fragment>
+        <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
+          <div className="form__group">
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" />
+          </div>
+
+          <div className="form__group">
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" name="password" />
+          </div>
+          <Button type="primary">Let's go!</Button>
+        </form>
+      </React.Fragment>
     )
   }
 }
