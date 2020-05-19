@@ -1,0 +1,54 @@
+.ApplicationPopUp {
+    width: 50vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $lightGrey;
+    border-radius: $radius__medium;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.037),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.053),
+        0 12.5px 10px rgba(0, 0, 0, 0.065),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.077),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.093),
+        0 100px 80px rgba(0, 0, 0, 0.13);
+
+
+
+    &__header {
+        margin: 0 0 2vh 0;
+    }
+
+    &__copy {
+        margin: 0 0 2vh 0;
+        width: 80%;
+        text-align: center;
+    }
+
+    &__textarea {
+        margin: 0 0 3vh 0;
+        width: 60%;
+        border-radius: $radius__small;
+        border: none;
+        padding: 10px;
+    }
+
+    &__close {
+        font-size: 30px;
+        float: right;
+
+        &:hover {
+            color: #000;
+            cursor: pointer;
+        }
+    }
+
+
+}
