@@ -13,6 +13,12 @@ const SignupCharity = () => {
         <div className="form">
           <FormSignupCharity />
         </div>
+        <p className="centered">
+          Already have an account?
+          <a className="colored margin" href="/signin">
+            Log in
+          </a>
+        </p>
       </section>
     </React.Fragment>
   )

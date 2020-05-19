@@ -48,6 +48,12 @@ a {
   color: inherit;
 }
 
+.colored {
+  color: $secondary;
+  font-weight: 600;
+  border-bottom: 1.5px solid $secondary;
+}
+
 ul {
   list-style-type: none;
 }

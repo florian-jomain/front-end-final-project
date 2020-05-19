@@ -9,12 +9,13 @@ button {
 .primaryButton {
   background: black;
   color: white;
+  transition: all 0.4s ease;
 }
 
 .secondaryButton {
   background: white;
   color: black;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 7px 25px 0;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 7px 25px 0;
   transition: all 0.4s ease;
 }
 
@@ -23,9 +24,17 @@ button {
   border: 1px solid black;
 }
 
+.primaryButton:hover {
+  opacity: 1;
+  transform: translate3d(0px, -2px, 0px);
+  box-shadow: 0 0.9px 4px rgba(0, 0, 0, 0.003),
+    0 2.1px 8.5px rgba(0, 0, 0, 0.003), 0 3.9px 14.1px rgba(0, 0, 0, 0.01),
+    0 6.9px 22.4px rgba(0, 0, 0, 0.05), 0 13px 37.4px rgba(0, 0, 0, 0.014),
+    0 31px 80px rgba(0, 0, 0, 0.01);
+}
+
 .secondaryButton:hover {
   opacity: 1;
-  background: white;
   transform: translate3d(0px, -2px, 0px);
   box-shadow: 0 0.9px 4px rgba(0, 0, 0, 0.003),
     0 2.1px 8.5px rgba(0, 0, 0, 0.003), 0 3.9px 14.1px rgba(0, 0, 0, 0.01),

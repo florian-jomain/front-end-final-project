@@ -1,6 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import Button from './Button'
 import TextContainer from './TextContainer'
 
 function InfoCard(props) {
