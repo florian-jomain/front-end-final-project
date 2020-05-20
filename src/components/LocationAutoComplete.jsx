@@ -75,7 +75,9 @@ class LocationAutoComplete extends Component {
           onChange={this.handleSearchChange}
           autoComplete="off"
           placeholder={
-            this.props.default ? this.props.default : 'Enter an address'
+            this.props.defaultValue
+              ? this.props.defaultValue
+              : 'Enter an address'
           }
         />
         <ul className="LocationAutoComplete-results">
