@@ -25,9 +25,9 @@ class FormSignUpHelper extends Component {
 
     let errors = { is: false, messages: [] }
 
-    if (!this.state.password || this.state.password.length < 6) {
+    if (!this.state.password || this.state.password.length < 3) {
       errors.is = true
-      errors.messages.push('Your password needs to be at least 6 characters')
+      errors.messages.push('Password needs to be at least 3 characters')
     }
 
     if (errors.is) {
@@ -41,8 +41,8 @@ class FormSignUpHelper extends Component {
         })
         .catch((error) => {
           errors.is = true
-          errors.messages.push('error')
-          console.log(error)
+          errors.messages.push(error.response.data.message)
+          this.setState({ errors: errors.messages })
         })
     }
   }

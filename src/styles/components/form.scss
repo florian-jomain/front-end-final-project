@@ -57,6 +57,15 @@ form {
   }
 }
 
+.error__warnings {
+  background: $palePink;
+  color: #8d233b;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 16px;
+  border-radius: $radius__medium;
+}
+
 .LocationAutoComplete {
   position: relative;
 

@@ -4,6 +4,7 @@ import UserContext from '../Auth/UserContext'
 import { withRouter } from 'react-router-dom'
 import apiHandler from '../../api/apiHandler'
 import Button from '../../components/UI/Button'
+import ErrorMessageHandler from './ErrorMessageHandler'
 
 class FormSignin extends Component {
   static contextType = UserContext
@@ -11,40 +12,53 @@ class FormSignin extends Component {
   state = {
     email: '',
     password: '',
+    userType: '',
   }
 
   handleChange = (event) => {
     const key = event.target.name
-
-    // You can test more if you have to handle different sorts of inputs.
-    const value =
-      event.target.type === 'file'
-        ? event.target.files[0]
-        : event.target.type === 'checkbox'
-        ? event.target.checked
-        : event.target.value
-
-    this.setState({ [key]: value })
+    this.setState({ [key]: event.target.value })
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
 
-    apiHandler
-      .signin(this.state)
-      .then((data) => {
-        this.context.setUser(data)
-        this.props.history.push('/')
-      })
-      .catch((error) => {
-        console.log(error)
-        // Display error message here, if you set the state
-      })
+    let errors = { is: false, messages: [] }
+
+    if (!this.state.password) {
+      errors.is = true
+      errors.messages.push('Enter your password')
+    }
+
+    if (!this.state.email) {
+      errors.is = true
+      errors.messages.push('Enter your email')
+    }
+
+    if (errors.is) {
+      this.setState({ errors: errors.messages })
+    } else {
+      apiHandler
+        .signin(this.state)
+        .then((data) => {
+          console.log(data)
+          this.context.setUser(data)
+          this.props.history.push('/')
+        })
+        .catch((error) => {
+          errors.is = true
+          errors.messages.push(error.response.data.message)
+          this.setState({ errors: errors.messages })
+        })
+    }
   }
 
   render() {
     return (
       <React.Fragment>
+        {this.state.errors && (
+          <ErrorMessageHandler messages={this.state.errors} />
+        )}
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <div className="form__group">
             <label htmlFor="email">Email</label>

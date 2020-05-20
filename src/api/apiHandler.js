@@ -7,7 +7,6 @@ const service = axios.create({
 
 function errorHandler(error) {
   if (error.response.data) {
-    console.log(error.response && error.response.data)
     throw error
   }
   throw error
