@@ -25,6 +25,7 @@ export class ApplicationPopUp extends Component {
     apiHandler
       .createApplication(this.state.projectId, this.state)
       .then((apiResponse) => {
+        this.props.togglePopup();
         console.log(apiResponse);
       })
       .catch((apiError) => {
@@ -33,9 +34,6 @@ export class ApplicationPopUp extends Component {
   };
 
   render() {
-    console.log("I am the state", this.state);
-    console.log("I am the props", this.props);
-    console.log("I am the context", this.context);
     return (
       <div className='ApplicationPopUp'>
         <h1 className='ApplicationPopUp__header serif'>
@@ -56,13 +54,7 @@ export class ApplicationPopUp extends Component {
             placeholder='I want to join the team because...'
             name='application'
           />
-          <button
-            onClick={() => this.props.togglePopup()}
-            // onClick={this.props.history.push("/")}
-            className='primaryButton'
-          >
-            Send application
-          </button>
+          <button className='primaryButton'>Send application</button>
         </form>
       </div>
     );
