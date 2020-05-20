@@ -7,3 +7,13 @@
     background-color: lightgrey;
     border-radius: $radius__medium;
 }
+
+.form__group div {
+    display: flex;
+    align-items: center;
+}
+
+.form__group div label {
+    margin-right: 10px;
+    margin-bottom: 8px;
+}

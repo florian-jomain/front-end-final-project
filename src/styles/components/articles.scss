@@ -1,0 +1,22 @@
+.articleImg {
+    width: 40px;
+    border-radius: $radius__large;
+}
+
+.articles__container {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+.articles__container div {
+    width: 25%;
+}
+
+@media (max-width: 767px) {
+    .articles__container {
+        width: 100%;
+    }
+}
