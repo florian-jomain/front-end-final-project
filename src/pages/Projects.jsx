@@ -20,8 +20,7 @@ export class Projects extends Component {
     ],
     frequency: ["Regular", "Temporary"],
     status: ["Full", "Open", "Completed"],
-    selectedCategories: [],
-    // this.props.location.categoryProps.category?(selectedCategories:[this.props.location.categoryProps.category]):[],
+    selectedCategories:[],
     selectedFrequencies: "All",
     selectedStatus: "All",
   };
@@ -29,9 +28,10 @@ export class Projects extends Component {
   componentDidMount() {
     apiHandler
       .getProjects()
-      .then((data) => {
+      .then((apiResponse) => {
         this.setState({
-          projects: data,
+          projects: apiResponse.data,
+          selectedCategories:[this.props.location.categoryProps.category]
         });
       })
       .catch((apiError) => {
@@ -59,6 +59,7 @@ export class Projects extends Component {
     }
     return this.state.selectedFrequencies.includes(project.frequency);
   };
+  
 
   handleChange = (event) => {
     let categorySelected = this.state.selectedCategories;
@@ -87,7 +88,7 @@ export class Projects extends Component {
   };
 
   render() {
-    console.log(this.state);
+    console.log(this.state)
     let InfoCardText =
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quasi qui alias a eligendi voluptatum accusantium inventore quis reiciendis officiis corrupti possimus repudiandae, labore harum facere nihil incidunt deleniti et illum magnam? Magni dignissimos ea, voluptas et facere porro odio, hic eos voluptatibus iste, optio totam illum pariatur ullam incidunt.";
 
