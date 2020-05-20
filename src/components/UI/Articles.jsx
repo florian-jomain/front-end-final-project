@@ -7,7 +7,7 @@ export default function Articles() {
         <img
           className="articleImg"
           src="../../media/avatar.png"
-          alt="an image"
+          alt="icon"
         />
         <h3>Friendly</h3>
         <p>
@@ -20,7 +20,7 @@ export default function Articles() {
         <img
           className="articleImg"
           src="../../media/avatar.png"
-          alt="an image"
+          alt="icon"
         />
         <h3>Fast</h3>
         <p>
@@ -33,7 +33,7 @@ export default function Articles() {
         <img
           className="articleImg"
           src="../../media/avatar.png"
-          alt="an image"
+          alt="icon"
         />
         <h3>Free</h3>
         <p>
