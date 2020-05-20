@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "../components/UI/Hero";
 import Categories from "../components/UI/Categories";
 import InfoCard from "../components/UI/InfoCard";
+import Articles from "../components/UI/Articles";
 
 const Home = () => {
   let HeroText =
@@ -16,23 +17,24 @@ const Home = () => {
   return (
     <React.Fragment>
       <Hero
-        title='Helping the helpers'
+        title="Helping the helpers"
         text={HeroText}
         button={true}
         HeroWide={true}
         image={HeroImage}
-        buttonType='primary'
-        buttonLink='/signup'
-        buttonText='Get started'
+        buttonType="primary"
+        buttonLink="/signup"
+        buttonText="Get started"
       />
       <Categories />
       <InfoCard
-        title='In need of digital'
+        title="In need of digital"
         text={InfoCardText}
         HeroWide={true}
         image={InfoCardImage}
-        infoCardColor='paleYellow'
+        infoCardColor="paleYellow"
       />
+      <Articles />
     </React.Fragment>
   );
 };
