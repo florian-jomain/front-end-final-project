@@ -80,7 +80,7 @@ const NavMain = (props) => {
             </li>
 
             <li>
-              <NavLink to='/projects'>Browse project</NavLink>
+              <NavLink to='/projects'>Browse projects</NavLink>
             </li>
 
             <li>

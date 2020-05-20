@@ -5,8 +5,6 @@ const service = axios.create({
   withCredentials: true, // Cookie is sent to client when using this service. (used for session)
 });
 
-console.log('Hey')
-
 function errorHandler(error) {
   if (error.response.data) {
     console.log(error.response && error.response.data);

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "../UI/Button";
+// import Button from "../UI/Button";
 import { withRouter } from "react-router-dom";
 import UserContext from "../Auth/UserContext";
 import apiHandler from "../../api/apiHandler";
@@ -33,7 +33,9 @@ export class ApplicationPopUp extends Component {
   };
 
   render() {
-    console.log(this.state);
+    console.log("I am the state", this.state);
+    console.log("I am the props", this.props);
+    console.log("I am the context", this.context);
     return (
       <div className='ApplicationPopUp'>
         <h1 className='ApplicationPopUp__header serif'>
@@ -54,9 +56,12 @@ export class ApplicationPopUp extends Component {
             placeholder='I want to join the team because...'
             name='application'
           />
-          <Button className='ApplicationPopUp__button' type='primary'>
+          <button
+            onClick={() => this.props.togglePopup()}
+            className='primaryButton'
+          >
             Send application
-          </Button>
+          </button>
         </form>
       </div>
     );
