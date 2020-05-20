@@ -2,13 +2,9 @@ import React from "react";
 
 export default function Articles() {
   return (
-    <div className="articles__container">
+    <div className='articles__container'>
       <div>
-        <img
-          className="articleImg"
-          src="../../media/avatar.png"
-          alt="an image"
-        />
+        <img className='articleImg' src='../../media/avatar.png' alt='icon' />
         <h3>Friendly</h3>
         <p>
           You may not know much about the ins and outs of creating a website but
@@ -17,11 +13,7 @@ export default function Articles() {
         </p>
       </div>
       <div>
-        <img
-          className="articleImg"
-          src="../../media/avatar.png"
-          alt="an image"
-        />
+        <img className='articleImg' src='../../media/avatar.png' alt='icon' />
         <h3>Fast</h3>
         <p>
           You may be hoping to have your website ready in a short amount of
@@ -30,11 +22,7 @@ export default function Articles() {
         </p>
       </div>
       <div>
-        <img
-          className="articleImg"
-          src="../../media/avatar.png"
-          alt="an image"
-        />
+        <img className='articleImg' src='../../media/avatar.png' alt='icon' />
         <h3>Free</h3>
         <p>
           Our members care just as much as you do, and no remuneration will be
