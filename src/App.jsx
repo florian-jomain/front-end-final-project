@@ -16,7 +16,6 @@ import Error404 from './pages/Error404'
 import UIComponents from './pages/UIComponents'
 import './fonts/bodoni/BodoniFLF-Roman.ttf'
 import CreateProfileHelper from './pages/CreateProfileHelper'
-import EditProfileHelper from './pages/EditProfileHelper'
 import CreateProfileCharity from './pages/CreateProfileCharity'
 import CreateProject from './pages/CreateProject'
 
@@ -34,15 +33,12 @@ function App() {
         <Route exact path="/projects/create" component={CreateProject} />
         <Route exact path="/projects/:id" component={SingleProject} />
         <Route exact path="/users" component={Users} />
+
+        <Route exact path="/helpers/edit/:id" component={CreateProfileHelper} />
+
         <Route
           exact
-          path="/helpers/create/:id"
-          component={CreateProfileHelper}
-        />
-        <Route exact path="/helpers/edit/:id" component={EditProfileHelper} />
-        <Route
-          exact
-          path="/charities/create/:id"
+          path="/charities/edit/:id"
           component={CreateProfileCharity}
         />
 

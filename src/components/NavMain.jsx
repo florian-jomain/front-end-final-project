@@ -24,35 +24,40 @@ const NavMain = (props) => {
   }
 
   function DropdownContent() {
-    return (
-      <React.Fragment>
-        <div
-          className="dropdown"
-          onMouseEnter={handleMouseHover}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="user__menu">
-            <div className="user__image round__image navbar__image">
-              <img src={context.user.image} alt="" />
+    if (!context.user) {
+      return <p>Loading...</p>
+    } else {
+      return (
+        <React.Fragment>
+          <div
+            className="dropdown"
+            onMouseEnter={handleMouseHover}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="user__menu">
+              <div className="user__image round__image navbar__image">
+                <img src={context.user.image} alt="" />
+              </div>
+
+              <div>
+                <span>{context.user.name}</span>
+                <span>@{context.user.username}</span>
+              </div>
             </div>
-            <div>
-              <span>{context.user.name}</span>
-              <span>@{context.user.username}</span>
-            </div>
+            <ul>
+              <li>
+                <span>
+                  <a href="/user-profile">Profile page</a>
+                </span>
+              </li>
+              <li>
+                <span onClick={handleLogout}>Logout</span>
+              </li>
+            </ul>
           </div>
-          <ul>
-            <li>
-              <span>
-                <a href="/user-profile">Profile page</a>
-              </span>
-            </li>
-            <li>
-              <span onClick={handleLogout}>Logout</span>
-            </li>
-          </ul>
-        </div>
-      </React.Fragment>
-    )
+        </React.Fragment>
+      )
+    }
   }
 
   function handleMouseHover() {
@@ -81,11 +86,7 @@ const NavMain = (props) => {
             </li>
 
             <li>
-<<<<<<< HEAD
-              <NavLink to="/projects">Browse project</NavLink>
-=======
-              <NavLink to='/projects'>Browse projects</NavLink>
->>>>>>> 4f1042b2b7a3d27035b3a01710ece924b501f6fd
+              <NavLink to="/projects">Browse projects</NavLink>
             </li>
 
             <li>

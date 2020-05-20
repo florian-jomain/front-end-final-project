@@ -5,7 +5,7 @@ const CreateProfileHelper = () => {
   return (
     <React.Fragment>
       <section className="signup__page">
-        <h2 className="serif centered">Create your profile</h2>
+        <h2 className="serif centered">Update your profile</h2>
         <p className="centered">Let helpers know more about you.</p>
         <p className="centered">
           Don't want to add this now?

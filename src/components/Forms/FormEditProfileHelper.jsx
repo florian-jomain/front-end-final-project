@@ -284,7 +284,7 @@ class EditProfileHelper extends Component {
               defaultValue={this.context.user.links}
             />
           </div>
-          <Button type="primary">Create your profile!</Button>
+          <Button type="primary">Update your profile</Button>
         </form>
       </React.Fragment>
     )
