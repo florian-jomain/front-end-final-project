@@ -58,6 +58,7 @@ export class ApplicationPopUp extends Component {
           />
           <button
             onClick={() => this.props.togglePopup()}
+            // onClick={this.props.history.push("/")}
             className='primaryButton'
           >
             Send application
