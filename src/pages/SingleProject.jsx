@@ -27,9 +27,11 @@ export default class SingleProject extends React.Component {
       });
   }
 
-  togglePopup() {
+  togglePopup = () => {
     this.setState({ showPopup: !this.state.showPopup });
-  }
+  };
+
+  hidePopup() {}
 
   render() {
     if (!this.state.project) {
@@ -67,29 +69,29 @@ export default class SingleProject extends React.Component {
             <img className='singleProject__image' src={image} alt={title} />
             <p className='singleProject__project-description'>{description}</p>
           </div>
-          {/* {!this.context.isLoggedin && ( */}
-          <div className='singleProject__rightColumn'>
-            <TeamMembersCard members={id_teamMembers} />
-            <SkillsCard skills={skills} />
-            <button
-              onClick={() => this.togglePopup()}
-              className='primaryButton'
-            >
-              Apply to this project
-            </button>
-          </div>
-          {/* )} */}
-          {/* {this.context.isLoggedin && (
+          {this.context.isLoggedIn && (
             <div className='singleProject__rightColumn'>
-              <h1>I'm here</h1>
+              <TeamMembersCard members={id_teamMembers} />
+              <SkillsCard skills={skills} />
+              <button
+                onClick={() => this.togglePopup()}
+                className='primaryButton'
+              >
+                Apply to this project
+              </button>
+            </div>
+          )}
+          {!this.context.isLoggedIn && (
+            <div className='singleProject__rightColumn'>
               <TeamMembersCard members={id_teamMembers} />
               <SkillsCard skills={skills} />
             </div>
-          )} */}
+          )}
           {this.state.showPopup ? (
             <ApplicationPopUp
               id={this.state.project._id}
               togglePopup={this.togglePopup}
+              showPopup={this.state.showPopup}
             />
           ) : null}
         </div>
