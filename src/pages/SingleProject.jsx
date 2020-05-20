@@ -20,6 +20,7 @@ export default class SingleProject extends React.Component {
     apiHandler
       .getOneProject(id)
       .then((data) => {
+        console.log("C'est ma data get one project", data);
         this.setState({ project: data });
       })
       .catch((apiError) => {
@@ -31,7 +32,13 @@ export default class SingleProject extends React.Component {
     this.setState({ showPopup: !this.state.showPopup });
   };
 
+  updateProject = (project) => {
+    console.log("Je suis la fonction");
+    this.setState({ project: project });
+  };
+
   render() {
+    console.log("Je suis le this.State", this.state.project);
     if (!this.context.user) {
       return null;
     }
@@ -54,6 +61,8 @@ export default class SingleProject extends React.Component {
         skills,
         title,
       } = this.state.project;
+
+      console.log(id_teamMembers);
 
       return (
         <div className='singleProject'>
@@ -90,9 +99,10 @@ export default class SingleProject extends React.Component {
           )}
           {this.state.showPopup ? (
             <ApplicationPopUp
+              members={id_teamMembers}
               id={this.state.project._id}
               togglePopup={this.togglePopup}
-              showPopup={this.state.showPopup}
+              updateProject={this.updateProject}
             />
           ) : null}
         </div>
