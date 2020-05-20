@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import UserContext from '../Auth/UserContext'
 import apiHandler from '../../api/apiHandler'
 import Button from '../../components/UI/Button'
+import ErrorMessageHandler from './ErrorMessageHandler'
 
 class FormSignUpHelper extends Component {
   static contextType = UserContext
@@ -11,38 +12,47 @@ class FormSignUpHelper extends Component {
     email: '',
     password: '',
     username: '',
+    userType: 'helper',
   }
 
   handleChange = (event) => {
-    const value =
-      event.target.type === 'file'
-        ? event.target.files[0]
-        : event.target.type === 'checkbox'
-        ? event.target.checked
-        : event.target.value
-
     const key = event.target.name
-
-    this.setState({ [key]: value })
+    this.setState({ [key]: event.target.value })
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
 
-    apiHandler
-      .signupHelper(this.state)
-      .then((data) => {
-        this.context.setUser(data)
-        this.props.history.push('/helpers/create/' + data.username)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+    let errors = { is: false, messages: [] }
+
+    if (!this.state.password || this.state.password.length < 6) {
+      errors.is = true
+      errors.messages.push('Your password needs to be at least 6 characters')
+    }
+
+    if (errors.is) {
+      this.setState({ errors: errors.messages })
+    } else {
+      apiHandler
+        .signupHelper(this.state)
+        .then((data) => {
+          this.context.setUser(data)
+          this.props.history.push('/helpers/edit/' + data.username)
+        })
+        .catch((error) => {
+          errors.is = true
+          errors.messages.push('error')
+          console.log(error)
+        })
+    }
   }
 
   render() {
     return (
       <div>
+        {this.state.errors && (
+          <ErrorMessageHandler messages={this.state.errors} />
+        )}
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <div className="form__group">
             <label htmlFor="username">Username</label>

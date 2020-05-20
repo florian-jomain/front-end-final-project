@@ -1,5 +1,5 @@
-import React from 'react'
-import LinkBox from '../../components/UI/LinkBox'
+import React from "react";
+import LinkBox from "../../components/UI/LinkBox";
 
 function Categories() {
   return (
@@ -18,7 +18,7 @@ function Categories() {
         </div>
       </section>
     </React.Fragment>
-  )
+  );
 }
 
-export default Categories
+export default Categories;

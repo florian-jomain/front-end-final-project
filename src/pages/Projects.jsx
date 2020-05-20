@@ -106,7 +106,7 @@ export class Projects extends Component {
     ],
     frequency: ["Regular", "Temporary"],
     status: ["Full", "Open", "Completed"],
-    selectedCategories:[],
+    selectedCategories: [],
     selectedFrequencies: "All",
     selectedStatus: "All",
     Equality:false,

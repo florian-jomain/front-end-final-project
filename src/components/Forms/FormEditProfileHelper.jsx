@@ -5,6 +5,7 @@ import { withUser } from '../../components/Auth/withUser'
 import apiHandler from '../../api/apiHandler'
 import Button from '../../components/UI/Button'
 import { TagBox } from 'react-tag-box'
+import LocationAutoComplete from '../LocationAutoComplete'
 
 const options = [
   'HTML',
@@ -123,6 +124,15 @@ class EditProfileHelper extends Component {
     }
   }
 
+  handlePlace = (place) => {
+    // This handle is passed as a callback to the autocomplete component.
+    // Take a look at the data and see what you can get from it.
+    // Look at the item model to know what you should retrieve and set as state.
+    console.log(place.place_name)
+
+    this.setState({ location: place.place_name })
+  }
+
   handleSubmit = (event) => {
     event.preventDefault()
     var formData = new FormData()
@@ -205,8 +215,10 @@ class EditProfileHelper extends Component {
 
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <div className="form__group">
-            <label htmlFor="image">Profile Image</label>
-            <input type="file" id="image" name="image" />
+            <label htmlFor="image" className="custom-upload label">
+              Upload profile image
+            </label>
+            <input className="input" type="file" id="image" name="image" />
           </div>
 
           <div className="form__group">
@@ -243,13 +255,14 @@ class EditProfileHelper extends Component {
           </div>
           <div className="form__group">
             <label htmlFor="location">Location</label>
-            <input
+            <LocationAutoComplete onSelect={this.handlePlace} />
+            {/* <input
               type="text"
               id="location"
               name="location"
               placeholder="Add location"
               defaultValue={this.context.user.location}
-            />
+            /> */}
           </div>
           <div className="form__group">
             <label htmlFor="phone">Phone</label>
@@ -271,7 +284,7 @@ class EditProfileHelper extends Component {
               defaultValue={this.context.user.links}
             />
           </div>
-          <Button type="primary">Create your profile!</Button>
+          <Button type="primary">Update your profile</Button>
         </form>
       </React.Fragment>
     )
