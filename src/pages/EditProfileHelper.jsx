@@ -12,7 +12,7 @@ const EditProfileHelper = () => {
         <p className="centered">
           Don't want to do this?
           <a className="colored margin" href="/user-profile">
-            Skip
+            Back to profile
           </a>
         </p>
         <div className="form">
