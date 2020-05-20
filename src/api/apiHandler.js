@@ -64,6 +64,13 @@ export default {
       .catch(errorHandler)
   },
 
+  getOneHelper(id) {
+    return service
+      .get(`/api/user/${id}`)
+      .then((res) => res.data)
+      .catch(errorHandler)
+  },
+
   createProject(data) {
     return service
       .post(`/api/projects/create`, data)

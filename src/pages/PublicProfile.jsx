@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react'
+import PublicProfile from '../components/UI/PublicProfile'
 
-const PublicProfile = (props) => {
+const PublicProfilePage = (props) => {
   return (
     <div>
-      <h1>Public profile page</h1>
+      <PublicProfile />
     </div>
-  );
-};
+  )
+}
 
-export default PublicProfile;
+export default PublicProfilePage
