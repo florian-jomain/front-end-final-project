@@ -31,9 +31,10 @@ export default class SingleProject extends React.Component {
     this.setState({ showPopup: !this.state.showPopup });
   };
 
-  hidePopup() {}
-
   render() {
+    if (!this.context.user) {
+      return null;
+    }
     if (!this.state.project) {
       return (
         <div className='loading'>

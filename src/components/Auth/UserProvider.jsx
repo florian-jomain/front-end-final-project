@@ -22,6 +22,7 @@ class UserProvider extends Component {
   }
 
   setUser = (user) => {
+    console.log(user);
     this.setState({ user, isLoggedIn: true });
   };
 
@@ -30,7 +31,6 @@ class UserProvider extends Component {
   };
 
   render() {
-    console.log(this.state.user);
     //  Setup all the values/functions you want to expose to anybody reading
     // from the AuthContext.
     const authValues = {
@@ -39,7 +39,6 @@ class UserProvider extends Component {
       removeUser: this.removeUser,
       isLoggedIn: this.state.isLoggedIn,
       isLoading: this.state.isLoading,
-      // userType: this.state.user.userType,
     };
 
     return (

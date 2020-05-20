@@ -10,8 +10,8 @@ import Users from "./pages/Users";
 import Projects from "./pages/Projects";
 import SingleProject from "./pages/SingleProject";
 import ProtectedRoute from "./components/ProtectedRoute";
-import PrivateProfile from "./pages/PrivateProfile";
-import PublicProfile from "./pages/PublicProfile";
+// import PrivateProfile from "./pages/PrivateProfile";
+// import PublicProfile from "./pages/PublicProfile";
 import Error404 from "./pages/Error404";
 import UIComponents from "./pages/UIComponents";
 import "./fonts/bodoni/BodoniFLF-Roman.ttf";
@@ -49,10 +49,10 @@ function App() {
         <Route exact path='/ui' component={UIComponents} />
 
         {/* Routing to the public profile page */}
-        <Route exact path='/profile' component={PublicProfile} />
+        {/* <Route exact path='/profile' component={PublicProfile} /> */}
 
         {/* Routing to your own profile page */}
-        <ProtectedRoute exact path='/user-profile' component={PrivateProfile} />
+        {/* <ProtectedRoute exact path='/user-profile' component={PrivateProfile} /> */}
 
         <Route path='' component={Error404} />
       </Switch>

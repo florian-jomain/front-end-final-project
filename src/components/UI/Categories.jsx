@@ -5,7 +5,7 @@ function Categories() {
   return (
     <React.Fragment>
       <section className='Categories'>
-        <h2 className='serif centered'>Browse categories</h2>
+        <h2 className='serif centered'>Browse projects by category</h2>
         <div className='LinkBox__container'>
           <LinkBox
             emoji='🐯'
