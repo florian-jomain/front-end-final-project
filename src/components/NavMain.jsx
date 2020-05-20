@@ -81,11 +81,7 @@ const NavMain = (props) => {
             </li>
 
             <li>
-<<<<<<< HEAD
-              <NavLink to="/projects">Browse project</NavLink>
-=======
-              <NavLink to='/projects'>Browse projects</NavLink>
->>>>>>> 4f1042b2b7a3d27035b3a01710ece924b501f6fd
+              <NavLink to="/projects">Browse projects</NavLink>
             </li>
 
             <li>
