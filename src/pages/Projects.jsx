@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ProjectCard from "../components/UI/ProjectCard";
 // import Filter from "../components/UI/Filter";
-import axios from "axios";
+import apiHandler from "../api/apiHandler";
 import { Link } from "react-router-dom";
 import InfoCard from "../components/UI/InfoCard";
 
@@ -20,18 +20,18 @@ export class Projects extends Component {
     ],
     frequency: ["Regular", "Temporary"],
     status: ["Full", "Open", "Completed"],
-    selectedCategories:[],
+    selectedCategories: [],
     // this.props.location.categoryProps.category?(selectedCategories:[this.props.location.categoryProps.category]):[],
     selectedFrequencies: "All",
     selectedStatus: "All",
   };
 
   componentDidMount() {
-    axios
-      .get("http://localhost:4000/api/projects")
-      .then((apiResponse) => {
+    apiHandler
+      .getProjects()
+      .then((data) => {
         this.setState({
-          projects: apiResponse.data,
+          projects: data,
         });
       })
       .catch((apiError) => {
@@ -87,11 +87,15 @@ export class Projects extends Component {
   };
 
   render() {
-    console.log(this.props)
+    console.log(this.state);
     let InfoCardText =
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quasi qui alias a eligendi voluptatum accusantium inventore quis reiciendis officiis corrupti possimus repudiandae, labore harum facere nihil incidunt deleniti et illum magnam? Magni dignissimos ea, voluptas et facere porro odio, hic eos voluptatibus iste, optio totam illum pariatur ullam incidunt.";
 
     let InfoCardImage = "/media/teammates-3.svg";
+
+    if (!this.state.projects) {
+      return null;
+    }
 
     let filteredProjects = this.state.projects
       .filter(this.filterCategory)
@@ -101,49 +105,49 @@ export class Projects extends Component {
     return (
       <React.Fragment>
         <InfoCard
-          title="In need of digital"
+          title='In need of digital'
           text={InfoCardText}
           HeroWide={true}
           image={InfoCardImage}
-          infoCardColor="paleGreen"
+          infoCardColor='paleGreen'
         />
-        <div className="Projects">
+        <div className='Projects'>
           {/* <TextContainer /> */}
           <div className={this.props.className}>
             <form
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
-              className="Projects__filter "
+              className='Projects__filter '
             >
-              <div className="form__group">
+              <div className='form__group'>
                 <p> Category </p>
                 <div>
-                  <label htmlFor="Covid-19"> Covid - 19 </label>
-                  <input type="checkbox" name="category" value="Covid-19" />
+                  <label htmlFor='Covid-19'> Covid - 19 </label>
+                  <input type='checkbox' name='category' value='Covid-19' />
                 </div>
                 <div>
-                  <label htmlFor="Education"> Education </label>
-                  <input type="checkbox" name="category" value="Education" />
+                  <label htmlFor='Education'> Education </label>
+                  <input type='checkbox' name='category' value='Education' />
                 </div>
                 <div>
-                  <label htmlFor="Arts"> Arts </label>
-                  <input type="checkbox" name="category" value="Arts" />
+                  <label htmlFor='Arts'> Arts </label>
+                  <input type='checkbox' name='category' value='Arts' />
                 </div>
                 <div>
-                  <label htmlFor="Animals"> Animals </label>
-                  <input type="checkbox" name="category" value="Animals" />
+                  <label htmlFor='Animals'> Animals </label>
+                  <input type='checkbox' name='category' value='Animals' />
                 </div>
                 <div>
-                  <label htmlFor="category"> Environment </label>
-                  <input type="checkbox" name="category" value="Environment" />
+                  <label htmlFor='category'> Environment </label>
+                  <input type='checkbox' name='category' value='Environment' />
                 </div>
                 <div>
-                  <label htmlFor="category"> Poverty </label>
-                  <input type="checkbox" name="category" value="Poverty" />
+                  <label htmlFor='category'> Poverty </label>
+                  <input type='checkbox' name='category' value='Poverty' />
                 </div>
                 <div>
-                  <label htmlFor="category"> Equality </label>
-                  <input type="checkbox" name="category" value="Equality" />
+                  <label htmlFor='category'> Equality </label>
+                  <input type='checkbox' name='category' value='Equality' />
                 </div>
               </div>
               {/* <div className='form__group'>
@@ -156,29 +160,29 @@ export class Projects extends Component {
                       backspaceDelete={true}
                     />
                   </div> */}
-              <div className="form__group">
-                <label htmlFor="frequency"> Frequency </label>
-                <select name="frequency">
-                  <option value="All"> All </option>
-                  <option value="Regular"> Regular </option>
-                  <option value="Temporary"> Temporary </option>
+              <div className='form__group'>
+                <label htmlFor='frequency'> Frequency </label>
+                <select name='frequency'>
+                  <option value='All'> All </option>
+                  <option value='Regular'> Regular </option>
+                  <option value='Temporary'> Temporary </option>
                 </select>
               </div>
-              <div className="form__group">
-                <label htmlFor="status"> Status </label>
-                <select name="status">
-                  <option value="All"> All </option>
-                  <option value="Full"> Full </option>
-                  <option value="Open"> Open </option>
-                  <option value="Completed"> Completed </option>
+              <div className='form__group'>
+                <label htmlFor='status'> Status </label>
+                <select name='status'>
+                  <option value='All'> All </option>
+                  <option value='Full'> Full </option>
+                  <option value='Open'> Open </option>
+                  <option value='Completed'> Completed </option>
                 </select>
               </div>
             </form>
           </div>
-          <div className="Projects__cards">
+          <div className='Projects__cards'>
             {filteredProjects.map((project, index) => (
               <Link
-                className="Projects__links"
+                className='Projects__links'
                 key={index}
                 to={`/projects/${this.state.projects[index]._id}`}
               >

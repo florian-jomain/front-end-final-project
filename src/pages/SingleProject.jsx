@@ -1,5 +1,6 @@
 import React from "react";
-import axios from "axios";
+import apiHandler from "../api/apiHandler";
+import UserContext from "../components/Auth/UserContext";
 import BackButton from "../components/UI/BackButton";
 import SkillsCard from "../components/UI/SkillsCard";
 import TeamMembersCard from "../components/UI/TeamMembersCard";
@@ -7,6 +8,8 @@ import Charity from "../components/UI/Charity";
 import ApplicationPopUp from "../components/Forms/ApplicationPopUp";
 
 export default class SingleProject extends React.Component {
+  static contextType = UserContext;
+
   state = {
     project: null,
     showPopup: false,
@@ -14,10 +17,10 @@ export default class SingleProject extends React.Component {
 
   componentDidMount() {
     const id = this.props.match.params.id;
-    axios
-      .get("http://localhost:4000/api/projects/" + id)
-      .then((apiResponse) => {
-        this.setState({ project: apiResponse.data });
+    apiHandler
+      .getOneProject(id)
+      .then((data) => {
+        this.setState({ project: data });
       })
       .catch((apiError) => {
         console.log(apiError);
@@ -64,6 +67,7 @@ export default class SingleProject extends React.Component {
             <img className='singleProject__image' src={image} alt={title} />
             <p className='singleProject__project-description'>{description}</p>
           </div>
+          {/* {!this.context.isLoggedin && ( */}
           <div className='singleProject__rightColumn'>
             <TeamMembersCard members={id_teamMembers} />
             <SkillsCard skills={skills} />
@@ -74,6 +78,14 @@ export default class SingleProject extends React.Component {
               Apply to this project
             </button>
           </div>
+          {/* )} */}
+          {/* {this.context.isLoggedin && (
+            <div className='singleProject__rightColumn'>
+              <h1>I'm here</h1>
+              <TeamMembersCard members={id_teamMembers} />
+              <SkillsCard skills={skills} />
+            </div>
+          )} */}
           {this.state.showPopup ? (
             <ApplicationPopUp
               id={this.state.project._id}
