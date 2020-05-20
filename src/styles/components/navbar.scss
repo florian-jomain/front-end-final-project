@@ -10,6 +10,7 @@
 .NavMain .nav-list {
   margin-left: auto;
   display: flex;
+  align-items: center;
 
   li {
     margin-right: 20px;
@@ -51,6 +52,7 @@
         height: 30px;
       }
     }
+
     .chevron {
       margin-left: 8px;
       margin-top: 1px;
@@ -81,6 +83,7 @@
 .tippy-box {
   background: $darkGrey;
   border-radius: $radius__medium;
+
   .tippy-content {
     padding: 15px 0;
   }
@@ -89,9 +92,11 @@
 .tippy-arrow {
   color: $darkGrey;
 }
+
 .dropdown {
   margin: 0;
   padding: 0;
+
   .user__menu {
     padding: 5px;
     margin: 0px 15px;
@@ -115,5 +120,16 @@
 
   li:hover {
     background: #3d3d3d;
+  }
+}
+
+.CreateProject__button {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
   }
 }

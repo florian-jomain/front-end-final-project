@@ -86,19 +86,20 @@ const NavMain = (props) => {
               <NavLink to='/ui'>UI</NavLink>
             </li>
 
+            <li>
+              <NavLink to='/projects'>Browse projects</NavLink>
+            </li>
+
             {context.user.userType === "charity" && (
               <li>
                 <NavLink to='/projects/create'>
-                  <button className='CreateProject__button'>
+                  <button className='secondaryButton CreateProject__button'>
+                    <img src='../media/plus_sign.svg' alt='plus sign' />
                     Create project
                   </button>
                 </NavLink>
               </li>
             )}
-
-            <li>
-              <NavLink to='/projects'>Browse projects</NavLink>
-            </li>
 
             <li>
               <Tippy

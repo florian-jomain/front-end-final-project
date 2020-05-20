@@ -4,6 +4,7 @@ import UserContext from "../Auth/UserContext";
 import apiHandler from "../../api/apiHandler";
 import Button from "../../components/UI/Button";
 import { TagBox } from "react-tag-box";
+import ErrorMessageHandler from './ErrorMessageHandler'
 
 const options = [
   "HTML",
@@ -102,6 +103,9 @@ class FormCreateProject extends Component {
     category: "",
     frequency: "",
     status: "",
+    image:"",
+    description:"",
+    title:""
   };
 
   handleChange = (event) => {
@@ -117,8 +121,25 @@ class FormCreateProject extends Component {
     this.setState({ [key]: value });
   };
 
+  
+
   handleSubmit = (event) => {
     event.preventDefault();
+
+    let errors = { is: false, messages: [] }
+
+    if (!this.state.title) {
+      errors.is = true
+      errors.messages.push('You need a title for your project')
+    }
+    if (!this.state.description) {
+      errors.is = true
+      errors.messages.push('You need a description for your project')
+    }
+    
+    if (errors.is) {
+      this.setState({ errors: errors.messages })
+    } else {
 
     var formData = new FormData();
     formData.append("image", this.state.image);
@@ -126,7 +147,7 @@ class FormCreateProject extends Component {
     formData.append("description", this.state.description);
     formData.append("skills", this.state.skills);
     formData.append("location", this.state.location);
-    console.log(!this.state.category);
+
     this.state.category
       ? formData.append("category", this.state.category)
       : formData.append("category", "Covid-19");
@@ -144,9 +165,12 @@ class FormCreateProject extends Component {
         this.props.history.push("/");
       })
       .catch((error) => {
-        console.log(error);
+        errors.is = true
+          errors.messages.push(error.response.data.message)
+          this.setState({ errors: errors.messages })
       });
   };
+}
 
   onSelect = (tag) => {
     const newTag = {
@@ -172,6 +196,9 @@ class FormCreateProject extends Component {
   render() {
     return (
       <div>
+      {this.state.errors && (
+        <ErrorMessageHandler messages={this.state.errors} />
+      )}
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <div className='form__group'>
             <label htmlFor='title'>Title</label>
@@ -206,6 +233,10 @@ class FormCreateProject extends Component {
               removeTag={this.remove}
               backspaceDelete={true}
             />
+            <div>
+            <input type="checkbox" name="DontKnow"></input> 
+             <label htmlFor="DontKnow">  I Don't know what skills I need for my project</label>
+            </div>
           </div>
           <div className='form__group'>
             <label htmlFor='location'>Location</label>
