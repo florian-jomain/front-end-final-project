@@ -88,7 +88,7 @@ const options = [
 }));
 
 let tagsArray = [];
-let skillsArray=[]
+let skillsArray = [];
 
 class FormCreateProject extends Component {
   static contextType = UserContext;
@@ -98,10 +98,10 @@ class FormCreateProject extends Component {
     password: "",
     tags: options,
     selected: [],
-    skills:[],
-    category:"",
-    frequency:"",
-    status:""
+    skills: [],
+    category: "",
+    frequency: "",
+    status: "",
   };
 
   handleChange = (event) => {
@@ -120,16 +120,22 @@ class FormCreateProject extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    var formData = new FormData()
-    formData.append("image",this.state.image)
-    formData.append("title",this.state.title)
-    formData.append("description",this.state.description)
-    formData.append("skills",this.state.skills)
-    formData.append("location",this.state.location)
-    console.log(!this.state.category)
-    this.state.category? formData.append("category",this.state.category):formData.append("category","Covid-19")
-    this.state.frequency? formData.append("frequency",this.state.frequency):formData.append("frequency","Regular")
-    this.state.status? formData.append("status",this.state.status):formData.append("status","Open")
+    var formData = new FormData();
+    formData.append("image", this.state.image);
+    formData.append("title", this.state.title);
+    formData.append("description", this.state.description);
+    formData.append("skills", this.state.skills);
+    formData.append("location", this.state.location);
+    console.log(!this.state.category);
+    this.state.category
+      ? formData.append("category", this.state.category)
+      : formData.append("category", "Covid-19");
+    this.state.frequency
+      ? formData.append("frequency", this.state.frequency)
+      : formData.append("frequency", "Regular");
+    this.state.status
+      ? formData.append("status", this.state.status)
+      : formData.append("status", "Open");
 
     apiHandler
       .createProject(formData)
@@ -149,11 +155,11 @@ class FormCreateProject extends Component {
       name: tag.name || tag.label,
     };
     tagsArray.push(newTag);
-    skillsArray.push(tag.name)
+    skillsArray.push(tag.name);
 
     this.setState({
       selected: tagsArray,
-      skills: skillsArray
+      skills: skillsArray,
     });
   };
 
