@@ -69,6 +69,8 @@ function Projects(props) {
                   ))}
                 </div>
                 <p>{project.description}</p>
+
+                <Button type="primary">Edit project</Button>
               </div>
             </NavLink>
           ))}
