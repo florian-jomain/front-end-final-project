@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TeamMembersCard = (props) => {
   return (
@@ -7,12 +8,14 @@ const TeamMembersCard = (props) => {
       <div className='teamMembersCard__images'>
         {props.members.map((member, index) => (
           <div key={index} className='teamMembersCard__rounded-div'>
+            <Link to={"/user/"+ member._id}>
             <img
               key={index}
               className='teamMembersCard__image'
               src={member.image}
               alt={member.username}
             />
+            </Link>
           </div>
         ))}
       </div>
