@@ -92,7 +92,7 @@ const NavMain = (props) => {
 
             {context.user.userType === 'charity' && (
               <li>
-                <NavLink to="/projects/create">
+                <NavLink to="/create-project" className="notActive">
                   <button className="secondaryButton CreateProject__button">
                     <img src="../media/plus_sign.svg" alt="plus sign" />
                     Create project

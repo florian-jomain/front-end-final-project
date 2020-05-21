@@ -53,6 +53,12 @@ function Profile(props) {
                 ) : (
                   <p>Edit your profile to add a bio about yourself</p>
                 )}
+                <div className="PublicProfile">
+                  <p>Link to your public profile</p>
+                  <a href={'http://localhost:3000/user/' + context.user._id}>
+                    http://localhost:3000/user/+{context.user._id}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
