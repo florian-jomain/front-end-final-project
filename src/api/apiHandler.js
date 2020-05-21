@@ -125,5 +125,5 @@ export default {
       .patch('/api/charities/create/', userInfo)
       .then((res) => res.data)
       .catch(errorHandler)
-  }
+  },
 }

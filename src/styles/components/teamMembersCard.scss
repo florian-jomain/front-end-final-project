@@ -20,3 +20,9 @@
         margin: 10px;
     }
 }
+
+@media (max-width: 767px) {
+    .teamMembersCard {
+        width: 100%;
+    }
+}

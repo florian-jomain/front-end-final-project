@@ -154,7 +154,9 @@ class EditProfileHelper extends Component {
       formData.append("bio", this.state.bio);
     }
 
-    if (this.state.skills) {
+    if (this.state.skills[0] === "") {
+      return null;
+    } else if (this.state.skills) {
       formData.append("skills", this.state.skills);
     }
 
@@ -199,6 +201,7 @@ class EditProfileHelper extends Component {
   };
 
   render() {
+    console.log("state", this.state.skills);
     let imgSrc = null;
     if (!this.context.user) {
       this.props.history.push("/");

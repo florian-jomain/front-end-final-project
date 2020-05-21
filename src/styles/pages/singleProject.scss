@@ -31,16 +31,26 @@
             0 31px 80px rgba(0, 0, 0, 0.01);
     }
 
-    &__charity-bio {
-        width: 80%;
-    }
-
     &__image {
         margin: 20px 0;
         border-radius: $radius__medium;
+        max-height: 30vh;
+        width: 90%;
+        object-fit: cover;
     }
 
     &__project-description {
         width: 80%;
+    }
+}
+
+@media (max-width: 767px) {
+    .singleProject {
+        display: flex;
+        flex-direction: column;
+
+        &__project-description {
+            width: 100%;
+        }
     }
 }

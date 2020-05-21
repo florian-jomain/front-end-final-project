@@ -87,18 +87,22 @@ const NavMain = (props) => {
             </li> */}
 
             <li>
-              <NavLink to='/projects'>All projects</NavLink>
+              <NavLink to='/projects'>See projects</NavLink>
             </li>
 
             <li>
-              <NavLink to='/helpers'>All helpers</NavLink>
+              <NavLink to='/helpers'>See helpers</NavLink>
             </li>
 
             {context.user.userType === "charity" && (
               <li>
                 <NavLink to='/create-project' className='notActive'>
                   <button className='secondaryButton CreateProject__button'>
-                    <img src='../media/plus_sign.svg' alt='plus sign' />
+                    <img
+                      className='mobileHidden'
+                      src='../media/plus_sign.svg'
+                      alt='plus sign'
+                    />
                     Create project
                   </button>
                 </NavLink>
@@ -143,11 +147,11 @@ const NavMain = (props) => {
             </li> */}
 
             <li>
-              <NavLink to='/projects'>All projects</NavLink>
+              <NavLink to='/projects'>See projects</NavLink>
             </li>
 
             <li>
-              <NavLink to='/helpers'>All helpers</NavLink>
+              <NavLink to='/helpers'>See helpers</NavLink>
             </li>
 
             <li>
