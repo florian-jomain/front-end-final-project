@@ -3,6 +3,7 @@ import Tag from "./Tag";
 
 function HelperCard(props) {
   const { image, username, skills, bio } = props.helper;
+  console.log(props);
 
   return (
     <React.Fragment>
@@ -11,11 +12,13 @@ function HelperCard(props) {
         <div className='HelperCard__text'>
           <h3>{username}</h3>
           <div className='HelperCard__tags'>
-            {skills.map((tag, index) => (
-              <Tag className='HelperCard__tag' key={index} tag={tag} />
-            ))}
+            {skills.length > 0 &&
+              skills[0] !== "" &&
+              skills.map((tag, index) => (
+                <Tag className='HelperCard__tag' key={index} tag={tag} />
+              ))}
           </div>
-          <p className='HelperCard__description'>{bio}</p>
+          <p className='HelperCard__bio'>{bio}</p>
         </div>
       </div>
     </React.Fragment>
