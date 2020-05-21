@@ -1,32 +1,32 @@
-import React from 'react'
-import { NavLink, withRouter } from 'react-router-dom'
-import { withUser } from '../components/Auth/withUser'
-import apiHandler from '../api/apiHandler'
-import Button from '../components/UI/Button'
-import Tippy from '../components/UI/Tippy'
+import React from "react";
+import { NavLink, withRouter } from "react-router-dom";
+import { withUser } from "../components/Auth/withUser";
+import apiHandler from "../api/apiHandler";
+import Button from "../components/UI/Button";
+import Tippy from "../components/UI/Tippy";
 
-import '../App.scss'
+import "../App.scss";
 
 const NavMain = (props) => {
-  const [isHoverd, setIsHovered] = React.useState(false)
-  const { context } = props
+  const [isHoverd, setIsHovered] = React.useState(false);
+  const { context } = props;
 
   function handleLogout() {
     apiHandler
       .logout()
       .then(() => {
-        props.history.push('/')
-        context.removeUser()
+        props.history.push("/");
+        context.removeUser();
       })
       .catch((error) => {
-        console.log(error)
-      })
+        console.log(error);
+      });
   }
 
   function DropdownContent() {
     if (!context.user) {
-      props.history.push('/')
-      return true
+      props.history.push("/");
+      return true;
     } else {
       return (
         <React.Fragment>
@@ -57,20 +57,20 @@ const NavMain = (props) => {
             </ul>
           </div>
         </React.Fragment>
-      )
+      );
     }
   }
 
   function handleMouseHover() {
     setTimeout(() => {
-      setIsHovered(true)
-    }, 0)
+      setIsHovered(true);
+    }, 0);
   }
 
   function handleMouseLeave() {
     setTimeout(() => {
-      setIsHovered(false)
-    }, 4000)
+      setIsHovered(false);
+    }, 4000);
   }
 
   return (
@@ -82,7 +82,7 @@ const NavMain = (props) => {
       <ul className="nav-list">
         {context.isLoggedIn && (
           <React.Fragment>
-            <li>
+            <li className="mobileHidden">
               <NavLink to="/ui">UI</NavLink>
             </li>
 
@@ -90,11 +90,15 @@ const NavMain = (props) => {
               <NavLink to="/projects">Browse projects</NavLink>
             </li>
 
-            {context.user.userType === 'charity' && (
+            {context.user.userType === "charity" && (
               <li>
                 <NavLink to="/projects/create">
                   <button className="secondaryButton CreateProject__button">
-                    <img src="../media/plus_sign.svg" alt="plus sign" />
+                    <img
+                      className="mobileHidden"
+                      src="../media/plus_sign.svg"
+                      alt="plus sign"
+                    />
                     Create project
                   </button>
                 </NavLink>
@@ -122,7 +126,7 @@ const NavMain = (props) => {
 
                   {/* {context.user && context.user.name} */}
 
-                  <div className={`chevron ${isHoverd ? 'rotate' : ''}`}>
+                  <div className={`chevron ${isHoverd ? "rotate" : ""}`}>
                     <img src="../../media/chevron.svg" alt="" />
                   </div>
                 </div>
@@ -133,7 +137,9 @@ const NavMain = (props) => {
         {!context.isLoggedIn && (
           <React.Fragment>
             <li>
-              <NavLink to="/ui">UI</NavLink>
+              <NavLink className="mobileHidden" to="/ui">
+                UI
+              </NavLink>
             </li>
 
             <li>
@@ -153,7 +159,7 @@ const NavMain = (props) => {
         )}
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default withUser(withRouter(NavMain))
+export default withUser(withRouter(NavMain));
