@@ -21,12 +21,26 @@ export class ApplicationPopUp extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    let newTeamMembers = [...this.props.members].map((member) => member._id);
+    newTeamMembers.push(this.state.id_applicant);
 
     apiHandler
-      .createApplication(this.state.projectId, this.state)
+      .createApplication(this.state.id_project, this.state)
       .then((apiResponse) => {
         this.props.togglePopup();
-        console.log(apiResponse);
+      })
+      .catch((apiError) => {
+        console.log(apiError);
+      });
+
+    apiHandler
+      .editProject(
+        this.state.id_project,
+        { id_teamMembers: newTeamMembers },
+        { new: true }
+      )
+      .then((apiResponse) => {
+        this.props.updateProject(apiResponse);
       })
       .catch((apiError) => {
         console.log(apiError);
@@ -36,6 +50,9 @@ export class ApplicationPopUp extends Component {
   render() {
     return (
       <div className='ApplicationPopUp'>
+        <span onClick={this.props.togglePopup} class='ApplicationPopUp__close'>
+          &times;
+        </span>
         <h1 className='ApplicationPopUp__header serif'>
           Tell us all about yourself
         </h1>

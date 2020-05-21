@@ -31,10 +31,14 @@ export default class SingleProject extends React.Component {
     this.setState({ showPopup: !this.state.showPopup });
   };
 
+  updateProject = (project) => {
+    this.setState({ project: project });
+  };
+
   render() {
-    if (!this.context.user) {
-      return null;
-    }
+    // if (!this.context.user) {
+    //   return null;
+    // }
     if (!this.state.project) {
       return (
         <div className='loading'>
@@ -90,9 +94,10 @@ export default class SingleProject extends React.Component {
           )}
           {this.state.showPopup ? (
             <ApplicationPopUp
+              members={id_teamMembers}
               id={this.state.project._id}
               togglePopup={this.togglePopup}
-              showPopup={this.state.showPopup}
+              updateProject={this.updateProject}
             />
           ) : null}
         </div>

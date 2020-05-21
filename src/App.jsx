@@ -33,7 +33,7 @@ function App() {
         <Route exact path="/projects" component={Projects} />
         <ProtectedRoute
           exact
-          path="/projects/create"
+          path="/create-project"
           component={CreateProject}
         />
         <Route exact path="/projects/:id" component={SingleProject} />

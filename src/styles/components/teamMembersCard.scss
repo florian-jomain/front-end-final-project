@@ -1,13 +1,14 @@
 .teamMembersCard {
     margin: 5vh 0 3vh 0;
-    background-color: lightgrey;
+    background-color: $lightGrey;
     padding: 30px;
-    width: 100%;
+    width: 30vw;
     border-radius: $radius__medium;
 
     &__images {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
     }
 
     &__rounded-div {

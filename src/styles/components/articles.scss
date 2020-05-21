@@ -1,6 +1,7 @@
-.articleImg {
-    width: 40px;
+.articles__image {
+    width: 80px;
     border-radius: $radius__large;
+    margin: 2vh;
 }
 
 .articles__container {
@@ -12,7 +13,14 @@
 }
 
 .articles__container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 25%;
+}
+
+.articles__header {
+    margin: 0 0 2vh 0;
 }
 
 @media (max-width: 767px) {
@@ -24,5 +32,6 @@
 
     .articles__container div {
         width: 80%;
+        text-align: justify;
     }
 }

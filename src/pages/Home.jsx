@@ -9,7 +9,7 @@ const Home = () => {
     "We connect volunteer designers and developers with charities who need help achieving their digital transformation.";
 
   let InfoCardText =
-    "Digital transformation can be challenging for charities. Today, more than half of them do not have a clear digital strategy, and access to digital tools is still limited for some. We’re here to help.";
+    "Digital transformation can be challenging for charities. Today, more than half of them do not have a clear digital strategy, and access to digital tools is still limited for some. We think we can help.";
 
   let HeroImage = "../../media/teammates-1.svg";
   let InfoCardImage = "../../media/teammates-3.svg";
@@ -17,22 +17,22 @@ const Home = () => {
   return (
     <React.Fragment>
       <Hero
-        title="Helping the helpers"
+        title='Helping the helpers'
         text={HeroText}
         button={true}
         HeroWide={true}
         image={HeroImage}
-        buttonType="primary"
-        buttonLink="/signup"
-        buttonText="Get started"
+        buttonType='primary'
+        buttonLink='/signup'
+        buttonText='Get started'
       />
       <Categories />
       <InfoCard
-        title="In need of digital"
+        title='Digital & charities'
         text={InfoCardText}
         HeroWide={true}
         image={InfoCardImage}
-        infoCardColor="paleYellow"
+        infoCardColor='paleYellow'
       />
       <Articles />
     </React.Fragment>

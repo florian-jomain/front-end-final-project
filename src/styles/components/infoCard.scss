@@ -13,6 +13,7 @@
   .text__container {
     max-width: 600px;
   }
+
   .illustration__container {
     max-width: 500px;
   }
@@ -29,6 +30,37 @@
 .paleYellow {
   background: $paleYellow;
 }
+
 .paleGreen {
   background: $paleGreen;
+}
+
+@media (max-width: 767px) {
+  .InfoCard {
+    // height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 50px 15px 60px 15px;
+
+    .text__container {
+      margin: 0;
+      padding: 10px;
+    }
+
+    h1 {
+      font-size: 26px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .illustration__container {
+      // flex: 1;
+      min-width: 200px;
+      max-width: 500px;
+    }
+  }
 }

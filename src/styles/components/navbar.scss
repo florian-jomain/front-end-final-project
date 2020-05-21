@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
 .NavMain {
   background-color: transparent;
   color: rgb(57, 57, 57);
@@ -5,6 +7,12 @@
   align-items: center;
   padding: 40px 60px;
   height: 70px;
+
+  &__logo {
+    font-size: 2rem;
+    font-family: 'Roboto Condensed',
+      sans-serif;
+  }
 }
 
 .NavMain .nav-list {
@@ -131,5 +139,29 @@
     width: 18px;
     height: 18px;
     margin-right: 6px;
+  }
+}
+
+@media (max-width: 767px) {
+
+
+  .NavMain {
+    color: rgb(34, 30, 30);
+    padding: 50px 0px;
+    background-color: #ebebf5;
+    // margin-bottom: 60px;
+
+  }
+
+  .user__image {
+    min-width: 30px;
+  }
+
+  .NavMain h3 {
+    padding: 0px 20px;
+  }
+
+  .mobileHidden {
+    display: none;
   }
 }
