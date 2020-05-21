@@ -1,19 +1,62 @@
 .Projects__filter {
-    // position: fixed;
     margin: 30px;
     padding: 20px;
     width: 85%;
-    height: 600px;
+    height: 57vh;
     background-color: $lightGrey;
     border-radius: $radius__medium;
-}
-
-.form__group div {
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
-.form__group div label {
+.Filter__block {
+    // background-color: $paleYellow;
+    border-radius: $radius__medium;
+    margin: 1vh 0 1vh 0;
+    padding: 10px;
+    box-shadow: 0 0.9px 4px rgba(0, 0, 0, 0.003),
+        0 2.1px 8.5px rgba(0, 0, 0, 0.003),
+        0 3.9px 14.1px rgba(0, 0, 0, 0.01),
+        0 6.9px 22.4px rgba(0, 0, 0, 0.05),
+        0 13px 37.4px rgba(0, 0, 0, 0.014),
+        0 31px 80px rgba(0, 0, 0, 0.01);
+}
+
+.Filter__block label {
     margin-right: 10px;
     margin-bottom: 8px;
+}
+
+.Filter__block input[type="checkbox"] {
+    display: none;
+}
+
+.Filter__select {
+    width: 100%;
+    background-color: $palePink;
+    border: none;
+    margin: 1vh 0 1vh 0;
+}
+
+.Filter__categoryGroupWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Filter__categoryGroup {
+    margin: 15px;
+}
+
+.Filter_categoryLabel {
+    background-color: $palePink;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: $radius__small;
+}
+
+@media (max-width: 767px) {
+    .Projects__filter {
+        height: 80vh;
+    }
 }

@@ -195,90 +195,121 @@ export class Projects extends Component {
             onSubmit={this.handleSubmit}
             className='Projects__filter '
           >
-            <div className='form__group'>
-              <h3>Category</h3>
-              <div>
-                <label htmlFor='Covid19'> Covid-19 </label>
-                <input
-                  type='checkbox'
-                  name='category'
-                  value='Covid-19'
-                  id='Covid19'
-                  checked={this.state.Covid19}
-                />
-              </div>
-              <div>
-                <label htmlFor='Education'> Education </label>
-                <input
-                  type='checkbox'
-                  name='category'
-                  value='Education'
-                  id='Education'
-                  checked={this.state.Education}
-                />
-              </div>
-              <div>
-                <label htmlFor='Arts'> Arts </label>
-                <input
-                  type='checkbox'
-                  name='category'
-                  value='Arts'
-                  id='Arts'
-                  checked={this.state.Arts}
-                />
-              </div>
-              <div>
-                <label htmlFor='Animals'> Animals </label>
-                <input
-                  type='checkbox'
-                  name='category'
-                  value='Animals'
-                  id='Animals'
-                  checked={this.state.Animals}
-                />
-              </div>
-              <div>
-                <label htmlFor='Environment'> Environment </label>
-                <input
-                  type='checkbox'
-                  name='category'
-                  value='Environment'
-                  id='Environment'
-                  checked={this.state.Environment}
-                />
-              </div>
-              <div>
-                <label htmlFor='Poverty'> Poverty </label>
-                <input
-                  type='checkbox'
-                  name='category'
-                  value='Poverty'
-                  id='Poverty'
-                  checked={this.state.Poverty}
-                />
-              </div>
-              <div>
-                <label htmlFor='Equality'> Equality </label>
-                <input
-                  type='checkbox'
-                  name='category'
-                  value='Equality'
-                  id='Equality'
-                  checked={this.state.Equality}
-                />
+            <h3 className='Filter__header'>Filters</h3>
+            <div className='Filter__block'>
+              <h5 className='Filter__blockHeader'>Categories</h5>
+              <div className='Filter__categoryGroupWrapper'>
+                <div className='Filter__categoryGroup'>
+                  <label className='Filter_categoryLabel' htmlFor='Covid19'>
+                    Covid-19
+                  </label>
+                  <input
+                    type='checkbox'
+                    name='category'
+                    value='Covid-19'
+                    id='Covid19'
+                    checked={this.state.Covid19}
+                  />
+                </div>
+                <div className='Filter__categoryGroup'>
+                  <label className='Filter_categoryLabel' htmlFor='Education'>
+                    Education
+                  </label>
+                  <input
+                    type='checkbox'
+                    name='category'
+                    value='Education'
+                    id='Education'
+                    checked={this.state.Education}
+                  />
+                </div>
+                <div className='Filter__categoryGroup'>
+                  <label className='Filter_categoryLabel' htmlFor='Arts'>
+                    Arts
+                  </label>
+                  <input
+                    type='checkbox'
+                    name='category'
+                    value='Arts'
+                    id='Arts'
+                    checked={this.state.Arts}
+                  />
+                </div>
+                <div className='Filter__categoryGroup'>
+                  <label className='Filter_categoryLabel' htmlFor='Animals'>
+                    Animals
+                  </label>
+                  <input
+                    type='checkbox'
+                    name='category'
+                    value='Animals'
+                    id='Animals'
+                    checked={this.state.Animals}
+                  />
+                </div>
+                <div className='Filter__categoryGroup'>
+                  <label className='Filter_categoryLabel' htmlFor='Environment'>
+                    Environment
+                  </label>
+                  <input
+                    type='checkbox'
+                    name='category'
+                    value='Environment'
+                    id='Environment'
+                    checked={this.state.Environment}
+                  />
+                </div>
+                <div className='Filter__categoryGroup'>
+                  <label className='Filter_categoryLabel' htmlFor='Poverty'>
+                    Poverty
+                  </label>
+                  <input
+                    type='checkbox'
+                    name='category'
+                    value='Poverty'
+                    id='Poverty'
+                    checked={this.state.Poverty}
+                  />
+                </div>
+                <div className='Filter__categoryGroup'>
+                  <label className='Filter_categoryLabel' htmlFor='Equality'>
+                    Equality
+                  </label>
+                  <input
+                    type='checkbox'
+                    name='category'
+                    value='Equality'
+                    id='Equality'
+                    checked={this.state.Equality}
+                  />
+                </div>
               </div>
             </div>
-            <div className='form__group'>
-              <label htmlFor='frequency'> Frequency </label>
-              <select name='frequency' id='frequency'>
+
+            <div className='Filter__block'>
+              <h5>
+                <label className='Filter__blockHeader' htmlFor='frequency'>
+                  Frequency
+                </label>
+              </h5>
+              <select
+                className='Filter__select'
+                name='frequency'
+                id='frequency'
+              >
                 <option value='All'> All </option>
                 <option value='Regular'> Regular </option>
                 <option value='Temporary'> Temporary </option>
               </select>
             </div>
-            <div className='form__group'>
-              <label htmlFor='status'> Status </label>
-              <select name='status' id='status'>
+
+            <div className='Filter__block'>
+              <h5>
+                <label className='Filter__blockHeader' htmlFor='status'>
+                  Status
+                </label>
+              </h5>
+              <select className='Filter__select' name='status' id='status'>
                 <option value='All'> All </option>
                 <option value='Full'> Full </option>
                 <option value='Open'> Open </option>
