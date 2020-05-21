@@ -11,6 +11,7 @@ export class PublicProfile extends Component {
   }
   componentDidMount() {
     const id = this.props.match.params.id
+    
 
     apiHandler
       .getOneHelper(id)
@@ -23,6 +24,7 @@ export class PublicProfile extends Component {
   }
 
   render() {
+    console.log(this.state.user)
     if (!this.state.user) {
       return (
         <div>
