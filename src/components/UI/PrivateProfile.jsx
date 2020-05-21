@@ -105,6 +105,7 @@ function PrivateProfile(props) {
               ) : null}
             </div>
             <div className="Profile__projects">
+              <h3>Your projects</h3>
               <GetProjects id={context.user._id} />
             </div>
           </div>

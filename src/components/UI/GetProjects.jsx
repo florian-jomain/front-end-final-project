@@ -6,6 +6,7 @@ export class GetProject extends Component {
   state = {
     projects: null,
   }
+
   componentDidMount() {
     // const id = this.props.match.params.id
     apiHandler
@@ -20,9 +21,9 @@ export class GetProject extends Component {
   }
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Projects projects={this.state.projects}></Projects>
-      </div>
+      </React.Fragment>
     )
   }
 }

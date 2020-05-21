@@ -105,7 +105,7 @@ export class PublicProfile extends Component {
               </div>
               <div className="Profile__projects">
                 <div className="tabs">
-                  <h4>Projects </h4>
+                  <h3>{this.state.user.username}s projects</h3>
                 </div>
 
                 <Projects projects={this.state.user} />
