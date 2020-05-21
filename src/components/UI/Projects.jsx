@@ -3,9 +3,25 @@ import { withUser } from '../Auth/withUser'
 import Button from './Button'
 import Tag from './Tag'
 import { NavLink } from 'react-router-dom'
+import apiHandler from '../../api/apiHandler'
 
 function Projects(props) {
   const { context } = props
+
+  const handleDelete = (id) => {
+    console.log('deleting')
+    apiHandler
+      .deleteProject(id)
+      .then((apiResponse) => {
+        const newItemsData = this.state.itemsData.filter((item, index) => {
+          return item._id !== id
+        })
+        this.setState({ itemsData: newItemsData })
+      })
+      .catch((apiError) => {
+        console.log(apiError)
+      })
+  }
 
   if (!props.projects) return null
   if (
@@ -54,6 +70,7 @@ function Projects(props) {
       </div>
     )
   else {
+    console.log(props)
     return (
       <React.Fragment>
         <div className="project">
@@ -65,6 +82,7 @@ function Projects(props) {
                   src={project.image}
                   alt={project.title}
                 />
+
                 <div className="ProjectCard__text">
                   <h3>{project.title}</h3>
                   <p>{project.category}</p>
@@ -77,16 +95,24 @@ function Projects(props) {
                 </div>
                 <p>{project.description}</p>
 
-                <NavLink
-                  to={{
-                    pathname: 'edit-project/' + project._id,
-                    aboutProps: {
-                      project: project,
-                    },
-                  }}
-                >
-                  <Button type="primary">Edit project</Button>
-                </NavLink>
+                {props.context.user._id === project.id_owner ? (
+                  <div>
+                    <NavLink
+                      to={{
+                        pathname: 'edit-project/' + project._id,
+                        aboutProps: {
+                          project: project,
+                        },
+                      }}
+                    >
+                      <Button type="primary">Edit project</Button>
+                    </NavLink>
+
+                    <Button type="delete" onClick={handleDelete(project._id)}>
+                      Delete project
+                    </Button>
+                  </div>
+                ) : null}
               </div>
             </NavLink>
           ))}
