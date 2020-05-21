@@ -57,7 +57,7 @@ function PrivateProfile(props) {
                 <div className="PublicProfile">
                   <p>Link to your public profile</p>
                   <NavLink to={'/user/' + context.user._id}>
-                    http://localhost:3000/user/+{context.user._id}
+                    https://dev43-front-end.now.sh/+{context.user._id}
                   </NavLink>
                 </div>
               </div>

@@ -214,13 +214,15 @@ class FormCreateProject extends Component {
           <ErrorMessageHandler messages={this.state.errors} />
         )}
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-          <div className="user__image round__image">
-            <img src={imgSrc} alt="project" />
-          </div>
+          {this.state.image ? (
+            <div className="user__image round__image">
+              <img src={imgSrc} alt="project" />
+            </div>
+          ) : null}
 
           <div className="form__group">
             <label htmlFor="image" className="custom-upload label">
-              Upload profile image
+              Upload project image
             </label>
             <input className="input" type="file" id="image" name="image" />
           </div>
@@ -242,7 +244,6 @@ class FormCreateProject extends Component {
               id="description"
               name="description"
               placeholder="Write something about this project"
-              defaultValue=""
             />
           </div>
           <div className="form__group">
@@ -280,10 +281,7 @@ class FormCreateProject extends Component {
           </div>
           <div className="form__group">
             <label htmlFor="location">Location</label>
-            <LocationAutoComplete
-              defaultValue={this.context.user.location}
-              onSelect={this.handlePlace}
-            />
+            <LocationAutoComplete onSelect={this.handlePlace} />
           </div>
           <div className="form__group">
             <label htmlFor="frequency">Frequency</label>
