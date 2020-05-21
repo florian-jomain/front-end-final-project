@@ -92,7 +92,7 @@ const options = [
 let tagsArray = []
 let skillsArray = []
 
-class FormCreateProject extends Component {
+class FormEditProject extends Component {
   static contextType = UserContext
 
   state = {
@@ -167,7 +167,7 @@ class FormCreateProject extends Component {
         : formData.append('status', 'Open')
 
       apiHandler
-        .createProject(formData)
+        .editProject(formData)
         .then((data) => {
           this.props.history.push('/user-profile')
         })
@@ -307,4 +307,4 @@ class FormCreateProject extends Component {
   }
 }
 
-export default withRouter(FormCreateProject)
+export default withRouter(FormEditProject)

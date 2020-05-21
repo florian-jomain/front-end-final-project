@@ -1,0 +1,27 @@
+.HelperCard {
+    padding: 20px;
+    width: 20vw;
+    background-color: $lightGrey;
+    border-radius: $radius__medium;
+    margin: 20px;
+
+    &__image {
+        border-radius: $radius__medium;
+        width: 100%;
+        max-height: 20vh;
+        object-fit: cover;
+    }
+
+    &__text {
+        margin-top: 10px;
+    }
+
+    &__description {
+        height: 100px;
+        overflow: scroll;
+    }
+
+    &__tag {
+        background-color: $paleBlue;
+    }
+}

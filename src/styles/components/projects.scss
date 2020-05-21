@@ -1,13 +1,9 @@
 .Profile__projects {
   width: 100%;
 
-  .project {
-    // background: white;
-    // padding: 40px;
-  }
-
   .ProjectCard {
     margin: 30px 0;
+    transition: all 0.4s ease;
 
     .ProjectCard__image {
       width: 100%;
@@ -15,6 +11,10 @@
       object-fit: cover;
     }
   }
+}
+
+.ProjectCard:hover {
+  transform: translate3d(0px, -4px, 0px);
 }
 
 .emptyStateProjects {
@@ -25,6 +25,7 @@
   width: 100%;
   background-color: #fcfcff;
   padding: 25px;
+  border-radius: $radius__medium;
 
   img {
     max-width: 150px;
