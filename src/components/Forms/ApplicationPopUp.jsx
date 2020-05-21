@@ -52,6 +52,9 @@ export class ApplicationPopUp extends Component {
     console.log("Le contexte", this.context);
     return (
       <div className='ApplicationPopUp'>
+        <span onClick={this.props.togglePopup} class='ApplicationPopUp__close'>
+          &times;
+        </span>
         <h1 className='ApplicationPopUp__header serif'>
           Tell us all about yourself
         </h1>
