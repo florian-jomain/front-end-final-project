@@ -1,9 +1,10 @@
 import React from 'react'
-import { withUser } from '../../components/Auth/withUser'
-import Button from '../../components/UI/Button'
+import { withUser } from '../Auth/withUser'
+import Button from './Button'
 import { NavLink } from 'react-router-dom'
+import GetProjects from './GetProjects'
 
-function Profile(props) {
+function PrivateProfile(props) {
   const { context } = props
 
   if (!context.user) {
@@ -104,10 +105,8 @@ function Profile(props) {
               ) : null}
             </div>
             <div className="Profile__projects">
-              <div className="tabs">
-                <h4> Active projects </h4> <h4> Inactive projects </h4>
-              </div>
-              <div className="project"> rerwerw </div>{' '}
+              <h3>Your projects</h3>
+              <GetProjects id={context.user._id} />
             </div>
           </div>
         </section>
@@ -116,4 +115,4 @@ function Profile(props) {
   }
 }
 
-export default withUser(Profile)
+export default withUser(PrivateProfile)

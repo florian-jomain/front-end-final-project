@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 // import ProjectCard from '../components/UI/ProjectCard'
 import apiHandler from '../../api/apiHandler'
+import Projects from './Projects'
 
 // import InfoCard from '../components/UI/InfoCard'
 
@@ -11,7 +12,6 @@ export class PublicProfile extends Component {
   }
   componentDidMount() {
     const id = this.props.match.params.id
-    
 
     apiHandler
       .getOneHelper(id)
@@ -105,9 +105,10 @@ export class PublicProfile extends Component {
               </div>
               <div className="Profile__projects">
                 <div className="tabs">
-                  <h4> Active projects </h4> <h4> Inactive projects </h4>
+                  <h3>{this.state.user.username}s projects</h3>
                 </div>
-                <div className="project"> rerwerw </div>{' '}
+
+                <Projects projects={this.state.user} />
               </div>
             </div>
           </section>
