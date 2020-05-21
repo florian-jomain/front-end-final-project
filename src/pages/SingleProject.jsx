@@ -39,9 +39,9 @@ export default class SingleProject extends React.Component {
 
   render() {
     console.log("Je suis le this.State", this.state.project);
-    if (!this.context.user) {
-      return null;
-    }
+    // if (!this.context.user) {
+    //   return null;
+    // }
     if (!this.state.project) {
       return (
         <div className='loading'>
