@@ -18,9 +18,9 @@ function ProjectCard(props) {
             />
           </div>
           <div className="ProjectCard__tags">
-            {skills.map((tag, index) => (
-              <Tag key={index} tag={tag} />
-            ))}
+            {skills.length > 0 &&
+              skills[0] !== '' &&
+              skills.map((tag, index) => <Tag key={index} tag={tag} />)}
           </div>
           <p className="ProjectCard__description">{description}</p>
         </div>
