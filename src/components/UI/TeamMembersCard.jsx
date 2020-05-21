@@ -1,8 +1,6 @@
 import React from "react";
 
 const TeamMembersCard = (props) => {
-  console.log("Dans la card", props.members);
-
   return (
     <div className='teamMembersCard'>
       <h5 className='teamMembersCard__header'>Team members</h5>
