@@ -4,7 +4,7 @@ import UserContext from "../Auth/UserContext";
 import apiHandler from "../../api/apiHandler";
 import Button from "../../components/UI/Button";
 import { TagBox } from "react-tag-box";
-import ErrorMessageHandler from './ErrorMessageHandler'
+import ErrorMessageHandler from "./ErrorMessageHandler";
 
 const options = [
   "HTML",
@@ -103,9 +103,9 @@ class FormCreateProject extends Component {
     category: "",
     frequency: "",
     status: "",
-    image:"",
-    description:"",
-    title:""
+    image: "",
+    description: "",
+    title: "",
   };
 
   handleChange = (event) => {
@@ -121,56 +121,53 @@ class FormCreateProject extends Component {
     this.setState({ [key]: value });
   };
 
-  
-
   handleSubmit = (event) => {
     event.preventDefault();
 
-    let errors = { is: false, messages: [] }
+    let errors = { is: false, messages: [] };
 
     if (!this.state.title) {
-      errors.is = true
-      errors.messages.push('You need a title for your project')
+      errors.is = true;
+      errors.messages.push("You need a title for your project");
     }
     if (!this.state.description) {
-      errors.is = true
-      errors.messages.push('You need a description for your project')
+      errors.is = true;
+      errors.messages.push("You need a description for your project");
     }
-    
+
     if (errors.is) {
-      this.setState({ errors: errors.messages })
+      this.setState({ errors: errors.messages });
     } else {
+      var formData = new FormData();
+      formData.append("image", this.state.image);
+      formData.append("title", this.state.title);
+      formData.append("description", this.state.description);
+      formData.append("skills", this.state.skills);
+      formData.append("location", this.state.location);
 
-    var formData = new FormData();
-    formData.append("image", this.state.image);
-    formData.append("title", this.state.title);
-    formData.append("description", this.state.description);
-    formData.append("skills", this.state.skills);
-    formData.append("location", this.state.location);
+      this.state.category
+        ? formData.append("category", this.state.category)
+        : formData.append("category", "Covid-19");
+      this.state.frequency
+        ? formData.append("frequency", this.state.frequency)
+        : formData.append("frequency", "Regular");
+      this.state.status
+        ? formData.append("status", this.state.status)
+        : formData.append("status", "Open");
 
-    this.state.category
-      ? formData.append("category", this.state.category)
-      : formData.append("category", "Covid-19");
-    this.state.frequency
-      ? formData.append("frequency", this.state.frequency)
-      : formData.append("frequency", "Regular");
-    this.state.status
-      ? formData.append("status", this.state.status)
-      : formData.append("status", "Open");
-
-    apiHandler
-      .createProject(formData)
-      .then((data) => {
-        this.context.setUser(data);
-        this.props.history.push("/");
-      })
-      .catch((error) => {
-        errors.is = true
-          errors.messages.push(error.response.data.message)
-          this.setState({ errors: errors.messages })
-      });
+      apiHandler
+        .createProject(formData)
+        .then((data) => {
+          this.context.setUser(data);
+          this.props.history.push("/");
+        })
+        .catch((error) => {
+          errors.is = true;
+          errors.messages.push(error.response.data.message);
+          this.setState({ errors: errors.messages });
+        });
+    }
   };
-}
 
   onSelect = (tag) => {
     const newTag = {
@@ -196,9 +193,9 @@ class FormCreateProject extends Component {
   render() {
     return (
       <div>
-      {this.state.errors && (
-        <ErrorMessageHandler messages={this.state.errors} />
-      )}
+        {this.state.errors && (
+          <ErrorMessageHandler messages={this.state.errors} />
+        )}
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <div className='form__group'>
             <label htmlFor='title'>Title</label>
@@ -215,6 +212,7 @@ class FormCreateProject extends Component {
           <div className='form__group'>
             <label htmlFor='category'>Category</label>
             <select name='category'>
+              <option value='0'>Select a category</option>
               <option value='Covid-19'>Covid-19</option>
               <option value='Education'>Education</option>
               <option value='Arts'>Arts</option>
@@ -234,8 +232,10 @@ class FormCreateProject extends Component {
               backspaceDelete={true}
             />
             <div>
-            <input type="checkbox" name="DontKnow"></input> 
-             <label htmlFor="DontKnow">  I Don't know what skills I need for my project</label>
+              <input type='checkbox' name='DontKnow'></input>
+              <label htmlFor='DontKnow'>
+                I'm not sure what skills I need for my project
+              </label>
             </div>
           </div>
           <div className='form__group'>

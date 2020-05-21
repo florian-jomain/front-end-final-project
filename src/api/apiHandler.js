@@ -57,6 +57,13 @@ export default {
       .catch(errorHandler)
   },
 
+  getHelpers() {
+    return service
+      .get('/api/helpers')
+      .then((res) => res.data)
+      .catch(errorHandler)
+  },
+
   getOneProject(id) {
     return service
       .get(`/api/projects/${id}`)
@@ -111,7 +118,5 @@ export default {
       .patch('/api/charities/create/', userInfo)
       .then((res) => res.data)
       .catch(errorHandler)
-  },
-
-  // getHelper()
+  }
 }

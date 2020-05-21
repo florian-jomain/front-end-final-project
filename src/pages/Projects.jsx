@@ -30,6 +30,7 @@ export class Projects extends Component {
     Arts: false,
     Education: false,
     Covid19: false,
+    categoryClicked: false,
     // tags: options,
     // selected: [],
     // skills: [],
@@ -141,26 +142,10 @@ export class Projects extends Component {
       [key]: value,
     });
   };
-  // onSelect = (tag) => {
-  //   const newTag = {
-  //     label: tag.label,
-  //     value: tag.value || tag.label,
-  //     name: tag.name || tag.label,
-  //   }
-  //   tagsArray.push(newTag)
-  //   skillsArray.push(tag.name)
 
-  //   this.setState({
-  //     selected: tagsArray,
-  //     skills: skillsArray,
-  //   })
-  // }
-
-  // remove = (tag) => {
-  //   this.setState({
-  //     selected: this.state.selected.filter((t) => t.value !== tag.value),
-  //   })
-  // }
+  toggleColor = () => {
+    this.setState({ categoryClicked: !this.state.categoryClicked });
+  };
 
   render() {
     let InfoCardText =
@@ -200,7 +185,11 @@ export class Projects extends Component {
               <h5 className='Filter__blockHeader'>Categories</h5>
               <div className='Filter__categoryGroupWrapper'>
                 <div className='Filter__categoryGroup'>
-                  <label className='Filter_categoryLabel' htmlFor='Covid19'>
+                  <label
+                    onClick={() => this.changeColor()}
+                    className={`Filter_categoryLabel ${this.state.categoryClicked}`}
+                    htmlFor='Covid19'
+                  >
                     Covid-19
                   </label>
                   <input
@@ -212,7 +201,11 @@ export class Projects extends Component {
                   />
                 </div>
                 <div className='Filter__categoryGroup'>
-                  <label className='Filter_categoryLabel' htmlFor='Education'>
+                  <label
+                    onClick={this.changeColor}
+                    className='Filter_categoryLabel'
+                    htmlFor='Education'
+                  >
                     Education
                   </label>
                   <input
@@ -224,7 +217,11 @@ export class Projects extends Component {
                   />
                 </div>
                 <div className='Filter__categoryGroup'>
-                  <label className='Filter_categoryLabel' htmlFor='Arts'>
+                  <label
+                    onClick={this.changeColor}
+                    className='Filter_categoryLabel'
+                    htmlFor='Arts'
+                  >
                     Arts
                   </label>
                   <input
@@ -236,7 +233,11 @@ export class Projects extends Component {
                   />
                 </div>
                 <div className='Filter__categoryGroup'>
-                  <label className='Filter_categoryLabel' htmlFor='Animals'>
+                  <label
+                    onClick={this.changeColor}
+                    className='Filter_categoryLabel'
+                    htmlFor='Animals'
+                  >
                     Animals
                   </label>
                   <input
@@ -248,7 +249,11 @@ export class Projects extends Component {
                   />
                 </div>
                 <div className='Filter__categoryGroup'>
-                  <label className='Filter_categoryLabel' htmlFor='Environment'>
+                  <label
+                    onClick={this.changeColor}
+                    className='Filter_categoryLabel'
+                    htmlFor='Environment'
+                  >
                     Environment
                   </label>
                   <input
@@ -260,7 +265,11 @@ export class Projects extends Component {
                   />
                 </div>
                 <div className='Filter__categoryGroup'>
-                  <label className='Filter_categoryLabel' htmlFor='Poverty'>
+                  <label
+                    onClick={this.changeColor}
+                    className='Filter_categoryLabel'
+                    htmlFor='Poverty'
+                  >
                     Poverty
                   </label>
                   <input
@@ -272,7 +281,11 @@ export class Projects extends Component {
                   />
                 </div>
                 <div className='Filter__categoryGroup'>
-                  <label className='Filter_categoryLabel' htmlFor='Equality'>
+                  <label
+                    onClick={this.changeColor}
+                    className='Filter_categoryLabel'
+                    htmlFor='Equality'
+                  >
                     Equality
                   </label>
                   <input
