@@ -1,16 +1,16 @@
 .Projects__filter {
+    position: fixed;
+    top: 33vh;
     margin: 30px;
     padding: 20px;
-    width: 85%;
-    height: 57vh;
-    background-color: $lightGrey;
-    border-radius: $radius__medium;
+    width: 30vw;
+    height: 50vh;
     display: flex;
     justify-content: center;
 }
 
 .Filter__block {
-    // background-color: $paleYellow;
+    background-color: $lightGrey;
     border-radius: $radius__medium;
     margin: 1vh 0 1vh 0;
     padding: 10px;
@@ -53,6 +53,10 @@
     padding: 10px;
     cursor: pointer;
     border-radius: $radius__small;
+
+    &.true {
+        background-color: $paleGreen;
+    }
 }
 
 @media (max-width: 767px) {

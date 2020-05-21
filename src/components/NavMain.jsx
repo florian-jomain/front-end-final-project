@@ -82,12 +82,16 @@ const NavMain = (props) => {
       <ul className='nav-list'>
         {context.isLoggedIn && (
           <React.Fragment>
-            <li className="mobileHidden">
-              <NavLink to="/ui">UI</NavLink>
+            {/* <li className='mobileHidden'>
+              <NavLink to='/ui'>UI</NavLink>
+            </li> */}
+
+            <li>
+              <NavLink to='/projects'>All projects</NavLink>
             </li>
 
             <li>
-              <NavLink to='/projects'>Browse projects</NavLink>
+              <NavLink to='/helpers'>All helpers</NavLink>
             </li>
 
             {context.user.userType === "charity" && (
@@ -132,14 +136,18 @@ const NavMain = (props) => {
         )}
         {!context.isLoggedIn && (
           <React.Fragment>
-            <li>
-              <NavLink className="mobileHidden" to="/ui">
+            {/* <li>
+              <NavLink className='mobileHidden' to='/ui'>
                 UI
               </NavLink>
+            </li> */}
+
+            <li>
+              <NavLink to='/projects'>All projects</NavLink>
             </li>
 
             <li>
-              <NavLink to='/projects'>Browse projects</NavLink>
+              <NavLink to='/helpers'>All helpers</NavLink>
             </li>
 
             <li>
