@@ -34,6 +34,9 @@
     &__image {
         margin: 20px 0;
         border-radius: $radius__medium;
+        max-height: 30vh;
+        width: 90%;
+        object-fit: cover;
     }
 
     &__project-description {
