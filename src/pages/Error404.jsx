@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Error404 = (props) => {
   return (
     <div>
-      <span role="img" aria-label="sad">Not found 🥺</span>
+      <Link to="/">
+      <img className="404" src="media/404Gif.gif" alt="404"></img>
+      </Link>
     </div>
   );
 };

@@ -65,7 +65,7 @@ function App() {
           component={PrivateProfilePage}
         />
 
-        <Route path="" component={Error404} />
+        <Route path="*" component={Error404} />
       </Switch>
     </div>
   )
