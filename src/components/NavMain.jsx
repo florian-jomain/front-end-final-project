@@ -1,43 +1,43 @@
-import React from 'react'
-import { NavLink, withRouter } from 'react-router-dom'
-import { withUser } from '../components/Auth/withUser'
-import apiHandler from '../api/apiHandler'
-import Button from '../components/UI/Button'
-import Tippy from '../components/UI/Tippy'
+import React from "react";
+import { NavLink, withRouter } from "react-router-dom";
+import { withUser } from "../components/Auth/withUser";
+import apiHandler from "../api/apiHandler";
+import Button from "../components/UI/Button";
+import Tippy from "../components/UI/Tippy";
 
-import '../App.scss'
+import "../App.scss";
 
 const NavMain = (props) => {
-  const [isHoverd, setIsHovered] = React.useState(false)
-  const { context } = props
+  const [isHoverd, setIsHovered] = React.useState(false);
+  const { context } = props;
 
   function handleLogout() {
     apiHandler
       .logout()
       .then(() => {
-        props.history.push('/')
-        context.removeUser()
+        props.history.push("/");
+        context.removeUser();
       })
       .catch((error) => {
-        console.log(error)
-      })
+        console.log(error);
+      });
   }
 
   function DropdownContent() {
     if (!context.user) {
-      props.history.push('/')
-      return true
+      props.history.push("/");
+      return true;
     } else {
       return (
         <React.Fragment>
           <div
-            className="dropdown"
+            className='dropdown'
             onMouseEnter={handleMouseHover}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="user__menu">
-              <div className="user__image round__image navbar__image">
-                <img src={context.user.image} alt="" />
+            <div className='user__menu'>
+              <div className='user__image round__image navbar__image'>
+                <img src={context.user.image} alt='' />
               </div>
 
               <div>
@@ -48,7 +48,7 @@ const NavMain = (props) => {
             <ul>
               <li>
                 <span>
-                  <a href="/user-profile">Profile page</a>
+                  <a href='/user-profile'>Profile page</a>
                 </span>
               </li>
               <li>
@@ -57,44 +57,44 @@ const NavMain = (props) => {
             </ul>
           </div>
         </React.Fragment>
-      )
+      );
     }
   }
 
   function handleMouseHover() {
     setTimeout(() => {
-      setIsHovered(true)
-    }, 0)
+      setIsHovered(true);
+    }, 0);
   }
 
   function handleMouseLeave() {
     setTimeout(() => {
-      setIsHovered(false)
-    }, 4000)
+      setIsHovered(false);
+    }, 4000);
   }
 
   return (
-    <nav className="NavMain">
-      <NavLink exact to="/">
-        <h3 className="logo">dev43</h3>
+    <nav className='NavMain'>
+      <NavLink exact to='/'>
+        <h3 className='NavMain__logo'>DEV4|3</h3>
       </NavLink>
 
-      <ul className="nav-list">
+      <ul className='nav-list'>
         {context.isLoggedIn && (
           <React.Fragment>
             <li>
-              <NavLink to="/ui">UI</NavLink>
+              <NavLink to='/ui'>UI</NavLink>
             </li>
 
             <li>
-              <NavLink to="/projects">Browse projects</NavLink>
+              <NavLink to='/projects'>Browse projects</NavLink>
             </li>
 
-            {context.user.userType === 'charity' && (
+            {context.user.userType === "charity" && (
               <li>
-                <NavLink to="/create-project" className="notActive">
-                  <button className="secondaryButton CreateProject__button">
-                    <img src="../media/plus_sign.svg" alt="plus sign" />
+                <NavLink to='/create-project' className='notActive'>
+                  <button className='secondaryButton CreateProject__button'>
+                    <img src='../media/plus_sign.svg' alt='plus sign' />
                     Create project
                   </button>
                 </NavLink>
@@ -104,26 +104,26 @@ const NavMain = (props) => {
             <li>
               <Tippy
                 content={<DropdownContent />}
-                appendTo="parent"
-                animation="fade"
+                appendTo='parent'
+                animation='fade'
                 interactive={true}
                 delay={(null, 200)}
                 hideOnClick={false}
                 // trigger="click"
               >
                 <div
-                  className="user__menu"
+                  className='user__menu'
                   onMouseEnter={handleMouseHover}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="user__image round__image navbar__image">
-                    <img src={context.user.image} alt="" />
+                  <div className='user__image round__image navbar__image'>
+                    <img src={context.user.image} alt='' />
                   </div>
 
                   {/* {context.user && context.user.name} */}
 
-                  <div className={`chevron ${isHoverd ? 'rotate' : ''}`}>
-                    <img src="../../media/chevron.svg" alt="" />
+                  <div className={`chevron ${isHoverd ? "rotate" : ""}`}>
+                    <img src='../../media/chevron.svg' alt='' />
                   </div>
                 </div>
               </Tippy>
@@ -133,27 +133,27 @@ const NavMain = (props) => {
         {!context.isLoggedIn && (
           <React.Fragment>
             <li>
-              <NavLink to="/ui">UI</NavLink>
+              <NavLink to='/ui'>UI</NavLink>
             </li>
 
             <li>
-              <NavLink to="/projects">Browse projects</NavLink>
+              <NavLink to='/projects'>Browse projects</NavLink>
             </li>
 
             <li>
-              <NavLink to="/signup">Sign up</NavLink>
+              <NavLink to='/signup'>Sign up</NavLink>
             </li>
 
             <li>
-              <NavLink className="notActive" to="/signin">
-                <Button type="secondary">Log in</Button>
+              <NavLink className='notActive' to='/signin'>
+                <Button type='secondary'>Log in</Button>
               </NavLink>
             </li>
           </React.Fragment>
         )}
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default withUser(withRouter(NavMain))
+export default withUser(withRouter(NavMain));
