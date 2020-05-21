@@ -30,6 +30,7 @@ export class PublicProfile extends Component {
         </div>
       )
     } else {
+      console.log(this.state.user)
       return (
         <React.Fragment>
           <section className="Profile">
