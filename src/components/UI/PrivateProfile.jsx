@@ -56,9 +56,9 @@ function PrivateProfile(props) {
                 )}
                 <div className="PublicProfile">
                   <p>Link to your public profile</p>
-                  <a href={'http://localhost:3000/user/' + context.user._id}>
+                  <NavLink to={'/user/' + context.user._id}>
                     http://localhost:3000/user/+{context.user._id}
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </div>
@@ -75,7 +75,7 @@ function PrivateProfile(props) {
                       ))}
                     </ul>
                   ) : (
-                    <p>Edit your profile to add your skills</p>
+                    <p>Edit your profile to add skills</p>
                   )}
                 </div>
               ) : null}

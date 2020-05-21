@@ -106,6 +106,13 @@ export default {
       .catch(errorHandler)
   },
 
+  addProjectToHelper(id, userInfo) {
+    return service
+      .patch(`/api/helpers/addProjectToHelper/${id}`, userInfo)
+      .then((res) => res.data)
+      .catch(errorHandler)
+  },
+
   createProfileCharity(userInfo) {
     return service
       .patch('/api/charities/create/', userInfo)
