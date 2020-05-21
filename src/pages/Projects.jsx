@@ -4,92 +4,6 @@ import ProjectCard from "../components/UI/ProjectCard";
 import apiHandler from "../api/apiHandler";
 import { Link } from "react-router-dom";
 import InfoCard from "../components/UI/InfoCard";
-// import { TagBox } from 'react-tag-box'
-
-// const options = [
-//   'HTML',
-//   'CSS',
-//   'JavaScript',
-//   'React',
-//   'Node.js',
-//   'Express',
-//   'MongoDB',
-//   'Ruby',
-//   'Rails',
-//   'MySQL',
-//   'NoSQL',
-//   'PHP',
-//   'Python',
-//   'C',
-//   'C++',
-//   'TypeScript',
-//   'Vue.js',
-//   'Angular',
-//   'Java',
-//   'Docker',
-//   'Azure',
-//   'React Native',
-//   'Swift',
-//   'Redux',
-//   'GraphQL',
-//   'Android',
-//   'Fullstack',
-//   'Bootstrap',
-//   'Spring',
-//   'PostgreSQL',
-//   'Agile methodology',
-//   'jhipster',
-//   'Heroku',
-//   'Netlify',
-//   'Wordpress',
-//   'Ionic',
-//   'Firebase',
-//   'Meteor.js',
-//   'API',
-//   'Django',
-//   'Git',
-//   'Symfony',
-//   'Scrum',
-//   'Laravel',
-//   'Semantic UI',
-//   'jQuery',
-//   'Figma',
-//   'Sketch',
-//   'InVision',
-//   'Zeplin',
-//   'Adobe Photoshop',
-//   'Adobe InDesign',
-//   'Adobe Illustrator',
-//   'Product Design',
-//   'User Testing',
-//   'UI Design',
-//   'UX Design',
-//   'Design Thinking',
-//   'Service Design',
-//   'Logo Design',
-//   'Graphic Design',
-//   'Print Design',
-//   'Workshops',
-//   'Wireframing',
-//   'Webdesign',
-//   'Artistic Direction',
-//   'Mobile Design',
-//   'Project Management',
-//   'Reporting',
-//   'Data analytics',
-//   'Web analytics',
-//   'Product Management',
-//   'Design Sprint',
-//   'E-commerce',
-//   'Go',
-// ].map((option) => ({
-//   label: option.toLowerCase(),
-//   value: option.toLowerCase(),
-//   name: option.toLowerCase(),
-// }))
-
-// let tagsArray = []
-// let skillsArray = []
 
 export class Projects extends Component {
   state = {
@@ -125,7 +39,6 @@ export class Projects extends Component {
     apiHandler
       .getProjects()
       .then((apiResponse) => {
-        // console.log(apiResponse)
         this.setState({
           projects: apiResponse,
         });
@@ -263,131 +176,151 @@ export class Projects extends Component {
       .filter(this.filterCategory)
       .filter(this.filterFrequency)
       .filter(this.filterStatus);
-    // .filter(this.filterSkills);;
 
     return (
       <React.Fragment>
-        <InfoCard
-          title="In need of digital"
-          text={InfoCardText}
-          HeroWide={true}
-          image={InfoCardImage}
-          infoCardColor="paleGreen"
-        />
-        <div className="Projects">
-          {/* <TextContainer /> */}
-          <div className={this.props.className}>
-            <form
-              onChange={this.handleChange}
-              onSubmit={this.handleSubmit}
-              className="Projects__filter "
-            >
-              <div className="form__group">
-                <p> Category </p>
-                <div>
-                  <label htmlFor="Covid19"> Covid-19 </label>
+        <div className='Projects'>
+          <div className='Projects__infoCard'>
+            <InfoCard
+              title='In need of digital'
+              text={InfoCardText}
+              HeroWide={true}
+              image={InfoCardImage}
+              infoCardColor='paleGreen'
+            />
+          </div>
+          {/* <div className={this.props.className}> */}
+          <form
+            onChange={this.handleChange}
+            onSubmit={this.handleSubmit}
+            className='Projects__filter '
+          >
+            <h3 className='Filter__header'>Filters</h3>
+            <div className='Filter__block'>
+              <h5 className='Filter__blockHeader'>Categories</h5>
+              <div className='Filter__categoryGroupWrapper'>
+                <div className='Filter__categoryGroup'>
+                  <label className='Filter_categoryLabel' htmlFor='Covid19'>
+                    Covid-19
+                  </label>
                   <input
-                    type="checkbox"
-                    name="category"
-                    value="Covid-19"
-                    id="Covid19"
+                    type='checkbox'
+                    name='category'
+                    value='Covid-19'
+                    id='Covid19'
                     checked={this.state.Covid19}
                   />
                 </div>
-                <div>
-                  <label htmlFor="Education"> Education </label>
+                <div className='Filter__categoryGroup'>
+                  <label className='Filter_categoryLabel' htmlFor='Education'>
+                    Education
+                  </label>
                   <input
-                    type="checkbox"
-                    name="category"
-                    value="Education"
-                    id="Education"
+                    type='checkbox'
+                    name='category'
+                    value='Education'
+                    id='Education'
                     checked={this.state.Education}
                   />
                 </div>
-                <div>
-                  <label htmlFor="Arts"> Arts </label>
+                <div className='Filter__categoryGroup'>
+                  <label className='Filter_categoryLabel' htmlFor='Arts'>
+                    Arts
+                  </label>
                   <input
-                    type="checkbox"
-                    name="category"
-                    value="Arts"
-                    id="Arts"
+                    type='checkbox'
+                    name='category'
+                    value='Arts'
+                    id='Arts'
                     checked={this.state.Arts}
                   />
                 </div>
-                <div>
-                  <label htmlFor="Animals"> Animals </label>
+                <div className='Filter__categoryGroup'>
+                  <label className='Filter_categoryLabel' htmlFor='Animals'>
+                    Animals
+                  </label>
                   <input
-                    type="checkbox"
-                    name="category"
-                    value="Animals"
-                    id="Animals"
+                    type='checkbox'
+                    name='category'
+                    value='Animals'
+                    id='Animals'
                     checked={this.state.Animals}
                   />
                 </div>
-                <div>
-                  <label htmlFor="Environment"> Environment </label>
+                <div className='Filter__categoryGroup'>
+                  <label className='Filter_categoryLabel' htmlFor='Environment'>
+                    Environment
+                  </label>
                   <input
-                    type="checkbox"
-                    name="category"
-                    value="Environment"
-                    id="Environment"
+                    type='checkbox'
+                    name='category'
+                    value='Environment'
+                    id='Environment'
                     checked={this.state.Environment}
                   />
                 </div>
-                <div>
-                  <label htmlFor="Poverty"> Poverty </label>
+                <div className='Filter__categoryGroup'>
+                  <label className='Filter_categoryLabel' htmlFor='Poverty'>
+                    Poverty
+                  </label>
                   <input
-                    type="checkbox"
-                    name="category"
-                    value="Poverty"
-                    id="Poverty"
+                    type='checkbox'
+                    name='category'
+                    value='Poverty'
+                    id='Poverty'
                     checked={this.state.Poverty}
                   />
                 </div>
-                <div>
-                  <label htmlFor="Equality"> Equality </label>
+                <div className='Filter__categoryGroup'>
+                  <label className='Filter_categoryLabel' htmlFor='Equality'>
+                    Equality
+                  </label>
                   <input
-                    type="checkbox"
-                    name="category"
-                    value="Equality"
-                    id="Equality"
+                    type='checkbox'
+                    name='category'
+                    value='Equality'
+                    id='Equality'
                     checked={this.state.Equality}
                   />
                 </div>
               </div>
-              {/* <div className='form__group'>
-                    <label htmlFor='skills'>Your skills</label>
-                    <TagBox
-                      tags={this.state.tags}
-                      selected={this.state.selected}
-                      onSelect={this.onSelect}
-                      removeTag={this.remove}
-                      backspaceDelete={true}
-                    />
-                  </div> */}
-              <div className="form__group">
-                <label htmlFor="frequency"> Frequency </label>
-                <select name="frequency" id="frequency">
-                  <option value="All"> All </option>
-                  <option value="Regular"> Regular </option>
-                  <option value="Temporary"> Temporary </option>
-                </select>
-              </div>
-              <div className="form__group">
-                <label htmlFor="status"> Status </label>
-                <select name="status" id="status">
-                  <option value="All"> All </option>
-                  <option value="Full"> Full </option>
-                  <option value="Open"> Open </option>
-                  <option value="Completed"> Completed </option>
-                </select>
-              </div>
-            </form>
-          </div>
-          <div className="Projects__cards">
+            </div>
+
+            <div className='Filter__block'>
+              <h5>
+                <label className='Filter__blockHeader' htmlFor='frequency'>
+                  Frequency
+                </label>
+              </h5>
+              <select
+                className='Filter__select'
+                name='frequency'
+                id='frequency'
+              >
+                <option value='All'> All </option>
+                <option value='Regular'> Regular </option>
+                <option value='Temporary'> Temporary </option>
+              </select>
+            </div>
+
+            <div className='Filter__block'>
+              <h5>
+                <label className='Filter__blockHeader' htmlFor='status'>
+                  Status
+                </label>
+              </h5>
+              <select className='Filter__select' name='status' id='status'>
+                <option value='All'> All </option>
+                <option value='Full'> Full </option>
+                <option value='Open'> Open </option>
+                <option value='Completed'> Completed </option>
+              </select>
+            </div>
+          </form>
+          <div className='Projects__cards'>
             {filteredProjects.map((project, index) => (
               <Link
-                className="Projects__links"
+                className='Projects__links'
                 key={index}
                 to={`/projects/${this.state.projects[index]._id}`}
               >
@@ -396,6 +329,8 @@ export class Projects extends Component {
             ))}
           </div>
         </div>
+
+        {/* </div> */}
       </React.Fragment>
     );
   }

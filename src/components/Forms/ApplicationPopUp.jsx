@@ -40,7 +40,6 @@ export class ApplicationPopUp extends Component {
         { new: true }
       )
       .then((apiResponse) => {
-        console.log("Je suis l'API response", apiResponse);
         this.props.updateProject(apiResponse);
       })
       .catch((apiError) => {
@@ -49,7 +48,6 @@ export class ApplicationPopUp extends Component {
   };
 
   render() {
-    console.log("Le contexte", this.context);
     return (
       <div className='ApplicationPopUp'>
         <span onClick={this.props.togglePopup} class='ApplicationPopUp__close'>

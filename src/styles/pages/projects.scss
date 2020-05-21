@@ -2,14 +2,27 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-        "filter cards cards"
+        "infocard infocard infocard"
+        "filter cards cards";
+}
+
+.Projects__infoCard {
+    max-width: 1200px;
+    width: 90%;
+    grid-area: infocard;
+    justify-self: center;
 }
 
 .Projects__filter {
+    position: relative;
+    left: 30px;
     grid-area: filter;
+    justify-self: flex-end;
 }
 
 .Projects__cards {
+    position: relative;
+    left: 25px;
     grid-area: cards;
     display: flex;
     flex-wrap: wrap;
@@ -17,5 +30,28 @@
 
 .Projects__links {
     width: 40%;
-    margin: 30px;
+    margin: 30px 25px 25px 25px;
+}
+
+@media (max-width: 767px) {
+    .Projects {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Projects__filter {
+        width: 80vw;
+        position: static;
+    }
+
+    .Projects__cards {
+        width: 100vw;
+    }
+
+    .Projects__links {
+        margin: 0 0 30px 0px;
+        width: 85%;
+    }
 }

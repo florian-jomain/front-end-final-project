@@ -6,7 +6,7 @@ export default function Articles() {
       <div>
         <img
           className='articles__image'
-          src='../../media/avatar.png'
+          src='../../media/heart.png'
           alt='icon'
         />
         <h3 className='articles__header serif'>Friendly</h3>
@@ -19,7 +19,7 @@ export default function Articles() {
       <div>
         <img
           className='articles__image'
-          src='../../media/avatar.png'
+          src='../../media/laptop.png'
           alt='icon'
         />
         <h3 className='articles__header serif'>Fast</h3>
@@ -32,7 +32,7 @@ export default function Articles() {
       <div>
         <img
           className='articles__image'
-          src='../../media/avatar.png'
+          src='../../media/rainbow.png'
           alt='icon'
         />
         <h3 className='articles__header serif'>Free</h3>
