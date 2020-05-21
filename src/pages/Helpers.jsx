@@ -13,7 +13,6 @@ export class Helpers extends Component {
     apiHandler
       .getHelpers()
       .then((apiResponse) => {
-        console.log(apiResponse);
         this.setState({
           helpers: apiResponse,
         });
@@ -24,7 +23,6 @@ export class Helpers extends Component {
   }
 
   render() {
-    console.log(this.state.helpers);
     let InfoCardText =
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quasi qui alias a eligendi voluptatum accusantium inventore quis reiciendis officiis corrupti possimus repudiandae, labore harum facere nihil incidunt deleniti et illum magnam? Magni dignissimos ea, voluptas et facere porro odio, hic eos voluptatibus iste, optio totam illum pariatur ullam incidunt.";
 
@@ -49,7 +47,9 @@ export class Helpers extends Component {
 
           <div className='Helpers__cards'>
             {this.state.helpers.map((helper, index) => (
-              <HelperCard key={index} index={index} helper={helper} />
+              <Link key={index} to={`/user/${this.state.helpers[index]._id}`}>
+                <HelperCard key={index} index={index} helper={helper} />
+              </Link>
             ))}
           </div>
         </div>
@@ -59,11 +59,3 @@ export class Helpers extends Component {
 }
 
 export default Helpers;
-
-{
-  /* <Link
-                className='Projects__links'
-                key={index}
-                to={`/helpers/${this.state.helpers[index]._id}`}
-              > */
-}
