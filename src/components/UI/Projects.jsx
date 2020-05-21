@@ -70,7 +70,16 @@ function Projects(props) {
                 </div>
                 <p>{project.description}</p>
 
-                <Button type="primary">Edit project</Button>
+                <NavLink
+                  to={{
+                    pathname: 'edit-project/' + project._id,
+                    aboutProps: {
+                      project: project,
+                    },
+                  }}
+                >
+                  <Button type="primary">Edit project</Button>
+                </NavLink>
               </div>
             </NavLink>
           ))}

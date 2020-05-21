@@ -96,8 +96,6 @@ class FormEditProject extends Component {
   static contextType = UserContext
 
   state = {
-    email: '',
-    password: '',
     tags: options,
     selected: [],
     skills: [],
@@ -128,55 +126,54 @@ class FormEditProject extends Component {
   }
 
   handlePlace = (place) => {
-    console.log(place.place_name)
+    // console.log(place.place_name)
     this.setState({ location: place.place_name })
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
 
-    let errors = { is: false, messages: [] }
+    var formData = new FormData()
 
-    if (!this.state.title) {
-      errors.is = true
-      errors.messages.push('You need a title for your project')
-    }
-    if (!this.state.description) {
-      errors.is = true
-      errors.messages.push('You need a description for your project')
-    }
-
-    if (errors.is) {
-      this.setState({ errors: errors.messages })
-    } else {
-      var formData = new FormData()
-      formData.append('image', this.state.image)
+    if (this.state.title) {
       formData.append('title', this.state.title)
-      formData.append('description', this.state.description)
-      formData.append('skills', this.state.skills)
-      formData.append('location', this.state.location)
-
-      this.state.category
-        ? formData.append('category', this.state.category)
-        : formData.append('category', 'Covid-19')
-      this.state.frequency
-        ? formData.append('frequency', this.state.frequency)
-        : formData.append('frequency', 'Regular')
-      this.state.status
-        ? formData.append('status', this.state.status)
-        : formData.append('status', 'Open')
-
-      apiHandler
-        .editProject(formData)
-        .then((data) => {
-          this.props.history.push('/user-profile')
-        })
-        .catch((error) => {
-          errors.is = true
-          errors.messages.push(error.response.data.message)
-          this.setState({ errors: errors.messages })
-        })
     }
+
+    if (this.state.image) {
+      formData.append('image', this.state.image)
+    }
+
+    if (this.state.description) {
+      formData.append('description', this.state.description)
+    }
+
+    if (this.state.skills) {
+      formData.append('skills', this.state.skills)
+    }
+
+    if (this.state.location) {
+      formData.append('location', this.state.location)
+    }
+
+    if (this.state.category) {
+      formData.append('category', this.state.category)
+    }
+
+    if (this.state.frequency) {
+      formData.append('category', this.state.frequency)
+    }
+
+    if (this.state.status) {
+      formData.append('category', this.state.status)
+    }
+
+    console.log(formData)
+    apiHandler
+      .editProject(this.props.project._id, formData)
+      .then((data) => {
+        this.props.history.push('/user-profile')
+      })
+      .catch((error) => {})
   }
 
   onSelect = (tag) => {
@@ -201,6 +198,7 @@ class FormEditProject extends Component {
   }
 
   render() {
+    console.log(this.state)
     let imgSrc = null
     if (!this.context.user) {
       this.props.history.push('/')
@@ -232,6 +230,7 @@ class FormEditProject extends Component {
               id="title"
               name="title"
               placeholder="Enter project name"
+              defaultValue={this.props.project.title}
             />
           </div>
 
@@ -242,12 +241,12 @@ class FormEditProject extends Component {
               id="description"
               name="description"
               placeholder="Write something about this project"
-              defaultValue=""
+              defaultValue={this.props.project.description}
             />
           </div>
           <div className="form__group">
             <label htmlFor="category">Category</label>
-            <select name="category">
+            <select name="category" defaultValue={this.props.project.category}>
               <option value="Covid-19">Covid-19</option>
               <option value="Education">Education</option>
               <option value="Arts">Arts</option>
@@ -281,13 +280,16 @@ class FormEditProject extends Component {
           <div className="form__group">
             <label htmlFor="location">Location</label>
             <LocationAutoComplete
-              defaultValue={this.context.user.location}
+              defaultValue={this.props.project.location}
               onSelect={this.handlePlace}
             />
           </div>
           <div className="form__group">
             <label htmlFor="frequency">Frequency</label>
-            <select name="frequency">
+            <select
+              name="frequency"
+              defaultValue={this.props.project.frequency}
+            >
               <option value="Regular">Regular</option>
               <option value="Temporary">Temporary</option>
             </select>
