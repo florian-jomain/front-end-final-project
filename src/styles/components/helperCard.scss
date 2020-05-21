@@ -1,34 +1,39 @@
 .HelperCard {
-    padding: 20px;
-    width: 25vw;
-    height: 40vh;
-    background-color: $lightGrey;
+  padding: 20px;
+  width: 25vw;
+  height: 40vh;
+  background-color: $lightGrey;
+  border-radius: $radius__medium;
+  margin: 20px;
+  transition: all 0.4s ease;
+
+  &__image {
     border-radius: $radius__medium;
-    margin: 20px;
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+  }
 
-    &__image {
-        border-radius: $radius__medium;
-        width: 100%;
-        height: 20vh;
-        object-fit: cover;
-    }
+  &__text {
+    margin-top: 10px;
+  }
 
-    &__text {
-        margin-top: 10px;
-    }
+  &__bio {
+    height: 100px;
+    overflow: scroll;
+  }
 
-    &__bio {
-        height: 100px;
-        overflow: scroll;
-    }
+  &__tag {
+    background-color: $paleBlue;
+  }
+}
 
-    &__tag {
-        background-color: $paleBlue;
-    }
+.HelperCard:hover {
+  transform: translate3d(0px, -4px, 0px);
 }
 
 @media (max-width: 767px) {
-    .HelperCard {
-        width: 80vw;
-    }
+  .HelperCard {
+    width: 80vw;
+  }
 }
