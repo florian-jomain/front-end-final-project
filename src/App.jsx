@@ -10,8 +10,7 @@ import Users from './pages/Users'
 import Projects from './pages/Projects'
 import SingleProject from './pages/SingleProject'
 import ProtectedRoute from './components/ProtectedRoute'
-import PrivateProfile from './pages/PrivateProfile'
-import PublicProfile from './pages/PublicProfile'
+import PrivateProfilePage from './pages/PrivateProfilePage'
 import PublicProfilePage from './pages/PublicProfile'
 import Error404 from './pages/Error404'
 import UIComponents from './pages/UIComponents'
@@ -53,8 +52,11 @@ function App() {
         <Route exact path="/user/:id" component={PublicProfilePage} />
 
         {/* Routing to your own profile page */}
-        <ProtectedRoute exact path="/user-profile" component={PrivateProfile} />
-        <Route exact path="/profile" component={PublicProfile} />
+        <ProtectedRoute
+          exact
+          path="/user-profile"
+          component={PrivateProfilePage}
+        />
 
         <Route path="" component={Error404} />
       </Switch>
