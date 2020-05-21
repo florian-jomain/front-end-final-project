@@ -178,7 +178,7 @@ export class Projects extends Component {
           <form
             onChange={this.handleChange}
             onSubmit={this.handleSubmit}
-            className='Projects__filter '
+            className='Projects__filter'
           >
             <h3 className='Filter__header'>Filters</h3>
             <div className='Filter__block'>
