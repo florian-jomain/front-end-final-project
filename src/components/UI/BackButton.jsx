@@ -4,7 +4,7 @@ const BackButton = (props) => {
   return (
     <React.Fragment>
       <a href='../projects'>
-        <p>← Go back</p>
+        <p className='backButton secondaryButton'>← Go back</p>
       </a>
     </React.Fragment>
   );
