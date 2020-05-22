@@ -57,7 +57,7 @@ function Projects(props) {
     return (
       <div className='emptyStateProjects'>
         <img src='../../media/teammates-5.svg' alt='empty state' />
-        <p>This user have no projects</p>
+        <p>This user has no projects</p>
       </div>
     );
 

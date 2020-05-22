@@ -44,18 +44,31 @@ export class PublicProfile extends Component {
                 </div>
               </div>
               <div className='Profile__info'>
-                <h2>{this.state.user.username}</h2>
+                <h2>{this.state.user.name}</h2>
                 {this.state.user.location ? (
                   <div className='Profile__location'>
                     <img src='../../media/location.svg' alt='' />
                     <p>{this.state.user.location}</p>
                   </div>
                 ) : null}
+
+                <div className='Profile__email'>
+                  <p>
+                    Reach me!{" "}
+                    <span role='img' aria-label='call-me'>
+                      {" "}
+                      🤙
+                    </span>
+                    <br></br>
+                    <span className='bold'>{this.state.user.email}</span>
+                  </p>
+                </div>
+
                 <div className='Profile__bio'>
                   {this.state.user.bio ? (
                     <p>{this.state.user.bio}</p>
                   ) : (
-                    <p>This user don't have a bio :(</p>
+                    <p>This user didn't fill his biography yet :(</p>
                   )}
                 </div>
               </div>
@@ -103,7 +116,7 @@ export class PublicProfile extends Component {
               </div>
               <div className='Profile__projects'>
                 <div className='tabs'>
-                  <h3>{this.state.user.username}s projects`</h3>
+                  <h3>{this.state.user.username}'s projects</h3>
                 </div>
 
                 <Projects projects={this.state.user} />
