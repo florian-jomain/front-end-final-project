@@ -9,11 +9,11 @@ export default function Articles() {
           src='../../media/heart.png'
           alt='icon'
         />
-        <h3 className='articles__header serif'>Friendly</h3>
+        <h3 className='articles__header serif'>Give</h3>
         <p>
-          You may not know much about the ins and outs of creating a website but
-          don't worry, if you don't our members do and can guide you through the
-          process and find out exactly what you need.
+          Dear non-profits. You may not know much about the ins and outs of
+          creating a website but don't worry. Our members do and can guide you
+          through the process and find out exactly what you need.
         </p>
       </div>
       <div>
@@ -22,11 +22,11 @@ export default function Articles() {
           src='../../media/laptop.png'
           alt='icon'
         />
-        <h3 className='articles__header serif'>Fast</h3>
+        <h3 className='articles__header serif'>Learn</h3>
         <p>
-          You may be hoping to have your website ready in a short amount of
-          time, that is why we have created a "team" feature, where several
-          people can come together to create your project.
+          Dear helpers. For each project, you will be part of a team of
+          generous, talented, like-minded digital folks, from which you can
+          learn skills, tools and the latest hyped-up language.
         </p>
       </div>
       <div>
@@ -35,11 +35,11 @@ export default function Articles() {
           src='../../media/rainbow.png'
           alt='icon'
         />
-        <h3 className='articles__header serif'>Free</h3>
+        <h3 className='articles__header serif'>Care</h3>
         <p>
-          Our members care just as much as you do, and no remuneration will be
-          expected. Everyone here just wants to help as best as they can with
-          the time they can spare.
+          Our members care just as much as you do, and they are truly here to
+          help. No tip expected. We're like that. We all just want to help the
+          best we can with the time we have.
         </p>
       </div>
     </div>
