@@ -66,7 +66,7 @@ class FormSignUpHelper extends Component {
             <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" />
           </div>
-          <Button type="primary">Get started!</Button>
+          <button className="primaryButton">Get started!</button>
         </form>
       </div>
     )

@@ -289,7 +289,7 @@ class EditProfileHelper extends Component {
               defaultValue={this.context.user.links}
             />
           </div>
-          <Button type="primary">Update your profile</Button>
+          <button className="primaryButton">Update your profile</button>
         </form>
       </React.Fragment>
     )

@@ -4,8 +4,8 @@ import LinkBox from './LinkBox'
 function UserFunnel() {
   return (
     <React.Fragment>
-      <section className="Categories">
-        <div className="LinkBox__container nowrap centered">
+      <section className="Categories funnel">
+        <div className="LinkBox__container funnel nowrap centered">
           <LinkBox
             emoji="🙏"
             title="Give your time"
