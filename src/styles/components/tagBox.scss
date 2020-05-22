@@ -1,3 +1,8 @@
+.tag-box ul:first-of-type {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .tag-box input {
     width: 100%;
     padding: 10px;
@@ -5,7 +10,7 @@
 
 .tag-box-pills {
     display: flex;
-    flex-wrap: no-wrap;
+    flex-wrap: nowrap;
 }
 
 .tag-box-pill {
