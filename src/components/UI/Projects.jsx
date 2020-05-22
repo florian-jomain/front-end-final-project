@@ -106,7 +106,7 @@ function Projects(props) {
                   </NavLink>
 
                   <button
-                    type="delete"
+                    className="deleteButton margin"
                     onClick={() => handleDelete(project._id)}
                   >
                     Delete

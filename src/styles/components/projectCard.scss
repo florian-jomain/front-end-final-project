@@ -1,23 +1,29 @@
 .ProjectCard {
-    padding: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  background-color: $lightGrey;
+  border-radius: $radius__medium;
+
+  &__image {
+    height: 20vh;
     width: 100%;
-    max-width: 400px;
-    background-color: $lightGrey;
+    object-fit: cover;
     border-radius: $radius__medium;
+  }
 
-    &__image {
-        height: 20vh;
-        width: 100%;
-        object-fit: cover;
-        border-radius: $radius__medium;
-    }
+  &__text {
+    margin-top: 10px;
+  }
 
-    &__text {
-        margin-top: 10px;
-    }
+  &__description {
+    margin-top: 10px;
+    height: 100px;
+    overflow: scroll;
+  }
 
-    &__description {
-        height: 100px;
-        overflow: scroll;
-    }
+  .Tag {
+    margin: 2px;
+    font-size: 12px;
+  }
 }

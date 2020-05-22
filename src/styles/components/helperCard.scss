@@ -17,6 +17,11 @@
 
   &__text {
     margin-top: 10px;
+    overflow-x: hidden;
+
+    h3 {
+      font-size: 1.3rem;
+    }
   }
 
   &__bio {
@@ -31,8 +36,8 @@
 
   .HelperCard__tags {
     .Tag {
-      margin: 5px;
-      font-size: 14px;
+      margin: 2px;
+      font-size: 12px;
     }
   }
 }
@@ -43,7 +48,7 @@
 
 @media (max-width: 767px) {
   .HelperCard {
-    max-width: 400px;
+    max-width: 350px;
     min-height: 300px;
     margin: 20px;
   }
@@ -55,7 +60,7 @@
   .HelperCard__tags {
     .Tag {
       margin: 3px;
-      font-size: 13px;
+      font-size: 11px;
     }
   }
 
