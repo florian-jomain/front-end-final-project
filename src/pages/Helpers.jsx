@@ -3,6 +3,7 @@ import HelperCard from "../components/UI/HelperCard";
 import apiHandler from "../api/apiHandler";
 import { Link } from "react-router-dom";
 import InfoCard from "../components/UI/InfoCard";
+import Footer from "../components/UI/Footer";
 
 export class Helpers extends Component {
   state = {
@@ -53,6 +54,7 @@ export class Helpers extends Component {
             ))}
           </div>
         </div>
+        <Footer />
       </React.Fragment>
     );
   }
