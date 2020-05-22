@@ -5,6 +5,11 @@
   background-color: $lightGrey;
   border-radius: $radius__medium;
 
+  .desc {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
   &__image {
     height: 20vh;
     width: 100%;
@@ -17,7 +22,6 @@
   }
 
   &__description {
-    margin-top: 10px;
     height: 100px;
     overflow: scroll;
   }
