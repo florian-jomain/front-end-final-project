@@ -25,6 +25,13 @@
 
       .Profile__location {
         display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+
+        p {
+          margin: 0;
+        }
 
         img {
           margin-right: 8px;

@@ -30,10 +30,8 @@ button {
   font-weight: 700;
   transition: all 0.4s ease;
   box-shadow: 0 0.9px 4px rgba(0, 0, 0, 0.003),
-    0 2.1px 8.5px rgba(0, 0, 0, 0.003),
-    0 3.9px 14.1px rgba(0, 0, 0, 0.01),
-    0 6.9px 22.4px rgba(0, 0, 0, 0.05),
-    0 13px 37.4px rgba(0, 0, 0, 0.014),
+    0 2.1px 8.5px rgba(0, 0, 0, 0.003), 0 3.9px 14.1px rgba(0, 0, 0, 0.01),
+    0 6.9px 22.4px rgba(0, 0, 0, 0.05), 0 13px 37.4px rgba(0, 0, 0, 0.014),
     0 31px 80px rgba(0, 0, 0, 0.01);
 }
 
@@ -60,4 +58,11 @@ button {
   padding: 5px 10px 5px 10px;
   display: inline-block;
   border-radius: $radius__small;
+}
+
+@media (max-width: 767px) {
+  button {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
 }
