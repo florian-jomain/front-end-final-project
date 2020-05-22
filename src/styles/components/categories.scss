@@ -18,3 +18,12 @@
 .nowrap {
   flex-wrap: nowrap;
 }
+
+@media (max-width: 767px) {
+  .Categories {
+    .funnel {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

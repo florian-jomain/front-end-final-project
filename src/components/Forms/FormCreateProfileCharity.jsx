@@ -11,13 +11,14 @@ class FormCreateProfileCharity extends Component {
 
   state = {
     name: '',
-    links: [],
+    links: '',
     bio: '',
     location: '',
     tempUrl: '',
   }
 
   handleChange = (event) => {
+    console.log(this.state)
     let key = event.target.name
     switch (event.target.type) {
       case 'file':
@@ -65,7 +66,6 @@ class FormCreateProfileCharity extends Component {
     apiHandler
       .createProfileCharity(formData)
       .then((data) => {
-        console.log(data)
         this.context.setUser(data)
         this.props.history.push('/user-profile')
       })

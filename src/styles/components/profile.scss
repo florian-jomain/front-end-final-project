@@ -21,6 +21,19 @@
       }
     }
 
+    .Profile__email {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      display: inline-block;
+      border-radius: $radius__small;
+      margin-top: 2vh;
+
+      .bold {
+        font-weight: 900;
+      }
+    }
+
     .Profile__info {
       width: 100%;
 
@@ -46,17 +59,13 @@
       .PublicProfile {
         margin-top: 20px;
 
-        p {
-          margin: 20px 0;
-          font-size: 14px;
-          font-weight: 600;
-        }
-
         a {
           margin-top: 10px;
           border-radius: $radius__small;
-          background: $lightGrey;
           padding: 10px;
+          background-color: black;
+          color: white;
+          font-weight: 600;
         }
       }
     }
@@ -140,22 +149,16 @@
       }
 
       .Profile__info {
-        width: 350px;
-        padding: 10px;
+        min-width: 0px;
+        max-width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-        .PublicProfile {
-          margin-top: 20px;
+        .Profile__email {
 
           p {
-            margin: 20px 0;
-            font-size: 14px;
-            font-weight: 600;
-          }
-
-          a {
-            margin-top: 10px;
-            border-radius: $radius__small;
-            background: transparent;
+            margin-bottom: 0;
           }
         }
 
@@ -183,6 +186,8 @@
         font-size: 14px;
       }
     }
+
+
 
     .Profile__content {
       display: flex;

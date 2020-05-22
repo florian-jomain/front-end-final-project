@@ -3,7 +3,6 @@ import Tag from "./Tag";
 
 function HelperCard(props) {
   const { image, username, skills, bio } = props.helper;
-  console.log(props);
 
   return (
     <React.Fragment>

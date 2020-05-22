@@ -60,9 +60,14 @@ button {
   border-radius: $radius__small;
 }
 
+.deleteButton {
+  background: #e81e4e;
+  color: white;
+}
+
 @media (max-width: 767px) {
   button {
     font-size: 13px;
-    padding: 10px 20px;
+    padding: 12px 20px;
   }
 }

@@ -107,7 +107,7 @@ class FormCreateProject extends Component {
     image: '',
     description: '',
     title: '',
-    tempUrl: '',
+    tempUrl: '../../media/avatar-project.png',
   }
 
   handleChange = (event) => {
@@ -128,7 +128,6 @@ class FormCreateProject extends Component {
   }
 
   handlePlace = (place) => {
-    console.log(place.place_name)
     this.setState({ location: place.place_name })
   }
 
@@ -201,7 +200,7 @@ class FormCreateProject extends Component {
   }
 
   render() {
-    let imgSrc = null
+    let imgSrc = '../../media/avatar-project.png'
     if (!this.context.user) {
       this.props.history.push('/')
       return true
@@ -214,11 +213,9 @@ class FormCreateProject extends Component {
           <ErrorMessageHandler messages={this.state.errors} />
         )}
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-          {this.state.image ? (
-            <div className="user__image round__image">
-              <img src={imgSrc} alt="project" />
-            </div>
-          ) : null}
+          <div className="user__image round__image">
+            <img src={imgSrc} alt="project" />
+          </div>
 
           <div className="form__group">
             <label htmlFor="image" className="custom-upload label">
