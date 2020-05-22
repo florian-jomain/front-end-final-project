@@ -15,6 +15,7 @@
       justify-content: flex-start;
       min-width: 350px;
       min-height: 350px;
+
       button {
         margin-top: 20px;
       }
@@ -60,6 +61,7 @@
       }
     }
   }
+
   .Profile__content {
     max-width: 900px;
     margin: 70px auto;
@@ -79,11 +81,26 @@
   border-radius: $radius__medium;
   margin-bottom: 20px;
   background: $lightGrey;
+  // display: flex;
+  // flex-wrap: wrap;
 
   a {
     color: $secondary;
     font-weight: 600;
+    // max-width: 100%;
+    // display: flex;
+    // flex-wrap: wrap;
+    // background-color: green;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    margin-bottom: 20px;
   }
+
+  li {
+
+    // background-color: red;
+  }
+
 }
 
 .tabs {
@@ -99,6 +116,7 @@
   border-radius: 100%;
   overflow: hidden;
   position: relative;
+
   img {
     height: 250px;
     width: 250px;
@@ -165,6 +183,7 @@
         font-size: 14px;
       }
     }
+
     .Profile__content {
       display: flex;
       flex-direction: column;
