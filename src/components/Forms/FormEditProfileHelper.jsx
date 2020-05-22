@@ -129,8 +129,6 @@ class EditProfileHelper extends Component {
     // This handle is passed as a callback to the autocomplete component.
     // Take a look at the data and see what you can get from it.
     // Look at the item model to know what you should retrieve and set as state.
-    console.log(place.place_name);
-
     this.setState({ location: place.place_name });
   };
 
@@ -201,7 +199,6 @@ class EditProfileHelper extends Component {
   };
 
   render() {
-    console.log("state", this.state.skills);
     let imgSrc = null;
     if (!this.context.user) {
       this.props.history.push("/");
