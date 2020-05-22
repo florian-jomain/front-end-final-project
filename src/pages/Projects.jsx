@@ -333,7 +333,7 @@ export class Projects extends Component {
                 <Link
                   className="Projects__links"
                   key={index}
-                  to={`/projects/${this.state.projects[index]._id}`}
+                  to={`/projects/${project._id}`}
                 >
                   <ProjectCard key={index} index={index} project={project} />
                 </Link>

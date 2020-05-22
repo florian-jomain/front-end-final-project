@@ -1,6 +1,6 @@
 .Footer {
     background-color: $lightGrey;
-    height: 20vh;
+    height: 25vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,6 +16,16 @@
         img {
             height: 5vh;
             margin: 1vh 1vw;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+
+        li {
+            margin: 1vh 2vw;
+            font-weight: 600;
         }
     }
 
