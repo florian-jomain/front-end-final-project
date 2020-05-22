@@ -1,0 +1,25 @@
+.Footer {
+    background-color: $lightGrey;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__header {
+        margin: 1vh 0;
+    }
+
+    &__logos {
+        display: flex;
+
+        img {
+            height: 5vh;
+            margin: 1vh 1vw;
+        }
+    }
+
+    &__react {
+        margin: 0 0;
+    }
+}

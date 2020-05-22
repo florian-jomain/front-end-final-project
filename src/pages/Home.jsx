@@ -3,6 +3,7 @@ import Hero from "../components/UI/Hero";
 import Categories from "../components/UI/Categories";
 import InfoCard from "../components/UI/InfoCard";
 import Articles from "../components/UI/Articles";
+import Footer from "../components/UI/Footer";
 
 const Home = () => {
   let HeroText =
@@ -35,6 +36,7 @@ const Home = () => {
         infoCardColor='paleYellow'
       />
       <Articles />
+      <Footer />
     </React.Fragment>
   );
 };
