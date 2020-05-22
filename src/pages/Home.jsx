@@ -28,7 +28,7 @@ const Home = () => {
       />
       <Categories />
       <InfoCard
-        title='Digital & charities'
+        title='We all need digital'
         text={InfoCardText}
         HeroWide={true}
         image={InfoCardImage}

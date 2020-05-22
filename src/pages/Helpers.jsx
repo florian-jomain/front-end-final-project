@@ -24,7 +24,7 @@ export class Helpers extends Component {
 
   render() {
     let InfoCardText =
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quasi qui alias a eligendi voluptatum accusantium inventore quis reiciendis officiis corrupti possimus repudiandae, labore harum facere nihil incidunt deleniti et illum magnam? Magni dignissimos ea, voluptas et facere porro odio, hic eos voluptatibus iste, optio totam illum pariatur ullam incidunt.";
+      "If you have a digital project you would need help developing, we probably can help put you in touch with the right team of people. Simply create an account to get started on your first project.";
 
     let InfoCardImage = "/media/teammates-3.svg";
 
@@ -37,7 +37,7 @@ export class Helpers extends Component {
         <div className='Helpers'>
           <div className='Helpers__infoCard'>
             <InfoCard
-              title='In need of digital'
+              title='Are you a non-profit in need of help?'
               text={InfoCardText}
               HeroWide={true}
               image={InfoCardImage}

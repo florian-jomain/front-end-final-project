@@ -149,7 +149,7 @@ export class Projects extends Component {
 
   render() {
     let InfoCardText =
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quasi qui alias a eligendi voluptatum accusantium inventore quis reiciendis officiis corrupti possimus repudiandae, labore harum facere nihil incidunt deleniti et illum magnam? Magni dignissimos ea, voluptas et facere porro odio, hic eos voluptatibus iste, optio totam illum pariatur ullam incidunt.";
+      "Beyond the joy of doing something that matters, helping out a charity and joining a project team will help you meet like-minded creative people and learn new skills from others as you go. ";
 
     let InfoCardImage = "/media/teammates-3.svg";
 
@@ -167,7 +167,7 @@ export class Projects extends Component {
         <div className='Projects'>
           <div className='Projects__infoCard'>
             <InfoCard
-              title='In need of digital'
+              title='Care to give some time?'
               text={InfoCardText}
               HeroWide={true}
               image={InfoCardImage}
