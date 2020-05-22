@@ -101,7 +101,7 @@ export default {
 
   deleteProject(id) {
     return service
-      .delete(`/api/items/${id}`)
+      .delete(`/api/projects/${id}`)
       .then((res) => res.data)
       .catch(errorHandler)
   },

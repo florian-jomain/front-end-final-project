@@ -160,11 +160,11 @@ class FormEditProject extends Component {
     }
 
     if (this.state.frequency) {
-      formData.append('category', this.state.frequency)
+      formData.append('frequency', this.state.frequency)
     }
 
     if (this.state.status) {
-      formData.append('category', this.state.status)
+      formData.append('status', this.state.status)
     }
 
     console.log(formData)
@@ -199,13 +199,14 @@ class FormEditProject extends Component {
 
   render() {
     console.log(this.state)
-    let imgSrc = null
+    let imgSrc = this.props.project.image
     if (!this.context.user) {
       this.props.history.push('/')
       return true
     } else if (this.state.tempUrl === '') {
-      imgSrc = null
+      imgSrc = this.props.project.image
     } else imgSrc = this.state.tempUrl
+    console.log(this.state)
     return (
       <div>
         {this.state.errors && (
@@ -231,6 +232,7 @@ class FormEditProject extends Component {
               name="title"
               placeholder="Enter project name"
               defaultValue={this.props.project.title}
+              required
             />
           </div>
 
