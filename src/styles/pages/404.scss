@@ -1,4 +1,18 @@
-.404 {
-    display: flex;
-    justify-items: center;
+.error-page {
+    width: 60%;
+    margin: 2vh auto 0;
+    padding: 0 20px;
+    text-align: center;
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    &__button {
+        margin: 3vh 0;
+    }
 }
