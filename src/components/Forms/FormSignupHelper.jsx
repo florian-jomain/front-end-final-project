@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import UserContext from '../Auth/UserContext'
 import apiHandler from '../../api/apiHandler'
-import Button from '../../components/UI/Button'
 import ErrorMessageHandler from './ErrorMessageHandler'
 
 class FormSignUpHelper extends Component {

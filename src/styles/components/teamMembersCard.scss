@@ -1,28 +1,36 @@
 .teamMembersCard {
-    margin: 5vh 0 3vh 0;
-    background-color: $lightGrey;
-    padding: 30px;
-    width: 30vw;
-    border-radius: $radius__medium;
+  margin: 5vh 0 3vh 0;
+  background-color: $lightGrey;
+  padding: 30px;
+  width: 30vw;
+  border-radius: $radius__medium;
 
-    &__images {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+  &__images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
-    &__rounded-div {
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        overflow: hidden;
-        position: relative;
-        margin: 10px;
+    img {
+      max-width: 100%;
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
+  }
+
+  &__rounded-div {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+  }
 }
 
 @media (max-width: 767px) {
-    .teamMembersCard {
-        width: 100%;
-    }
+  .teamMembersCard {
+    width: 100%;
+  }
 }

@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom'
 import UserContext from '../Auth/UserContext'
 import { withUser } from '../../components/Auth/withUser'
 import apiHandler from '../../api/apiHandler'
-import Button from '../../components/UI/Button'
 import { TagBox } from 'react-tag-box'
 import LocationAutoComplete from '../LocationAutoComplete'
 
