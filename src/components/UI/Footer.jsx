@@ -8,34 +8,42 @@ const Footer = () => {
         <ul className='Footer__list'>
           <a href='https://github.com/rebeccanoren'>
             <li>
-              Rebecca{" "}
-              <span role='img' aria-label='emoji'>
-                🦊
-              </span>
+              <img
+                className='Footer__github-logo'
+                src='../../media/github_logo.svg'
+                alt='Github logo'
+              />
+              Rebecca
             </li>
           </a>
           <a href='https://github.com/guiohm432'>
             <li>
-              Guillaume{" "}
-              <span role='img' aria-label='emoji'>
-                🐝
-              </span>
+              <img
+                className='Footer__github-logo'
+                src='../../media/github_logo.svg'
+                alt='Github logo'
+              />
+              Guillaume
             </li>
           </a>
           <a href='https://github.com/lalib19'>
             <li>
-              Louis{" "}
-              <span role='img' aria-label='emoji'>
-                🐯
-              </span>
+              <img
+                className='Footer__github-logo'
+                src='../../media/github_logo.svg'
+                alt='Github logo'
+              />
+              Louis
             </li>
           </a>
           <a href='https://github.com/florian-jomain'>
             <li>
-              Florian{" "}
-              <span role='img' aria-label='emoji'>
-                🐥
-              </span>
+              <img
+                className='Footer__github-logo'
+                src='../../media/github_logo.svg'
+                alt='Github logo'
+              />
+              Florian
             </li>
           </a>
         </ul>
